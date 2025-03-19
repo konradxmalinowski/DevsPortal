@@ -1,0 +1,28 @@
+.custom-button *:is(:hover, :visited, :active, :link) {
+  text-decoration: none;
+  color: white;
+}
+
+.custom-button {
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: none;
+  font-weight: 500;
+}
+
+.custom-button-light {
+  background-color: var(--buttons-clr);
+
+  & * {
+    color: var(--menu-clr) !important;
+  }
+}
+
+.custom-button-dark {
+  background-color: var(--menu-clr);
+  color: var(--buttons-clr);
+
+  & * {
+    color: var(--buttons-clr) !important;
+  }
+}

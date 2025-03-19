@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+  --background-clr: #08090a;
+  --background-clr2: #0e0f10;
+  --buttons-clr: #ffffff;
+  --header-clr: #09090a;
+  --menu-clr: #18191a;
+  --grey-clr: #828790;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+/* TODO: selection */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body,
+#root {
+  width: 100%;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--background-clr);
+  color: var(--buttons-clr);
+}
+
+.grey {
+  color: var(--grey-clr);
+}
+
+button {
+  cursor: pointer;
+}
+
+a:is(:active, :hover, :visited) {
+  color: var(--buttons-clr);
+  cursor: pointer;
+  text-decoration: none;
+}

@@ -1,23 +1,28 @@
 import './Footer.css';
 
 import ListItem from '../ListItem.jsx';
+import { Link } from 'react-router-dom';
 
-const labels = [
-  'Blog',
-  'Challenges',
-  'Forum',
-  'Admin Panel',
-  'Privacy',
-  'Use of terms',
-];
+const labels = ['Terms', 'Privacy', 'Contact'];
 
 export default function Footer() {
   return (
     <footer>
-      <span className="logo">DevsPortal</span>
       <ul>
+        <Link to="/">
+          <ListItem>© {new Date().getFullYear()} DevsPortal, Inc.</ListItem>
+        </Link>
+
+        <Link to="/adminPanel">
+          <ListItem content="Admin Panel" />
+        </Link>
+
         {labels.map((label) => (
-          <ListItem content={label} key={label} />
+          <li key={label} className="grey">
+            <a href={`${label}.pdf`} target="_blank">
+              {label}
+            </a>
+          </li>
         ))}
       </ul>
     </footer>

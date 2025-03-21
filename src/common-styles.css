@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+  --background-clr: #08090a;
+  --background-clr2: #0e0f10;
+  --background-clr3: #0a0b0c;
+  --inputs-clr: #141516;
+  --buttons-clr: #ffffff;
+  --header-clr: #09090a;
+  --menu-clr: #18191a;
+  --grey-clr: #828790;
+  --clr-green-50: #05b263;
+  --clr-green-100: #18361e;
+  --clr-green-200: #112a16;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+*::selection {
+  background-color: var(--clr-green-200);
+  color: var(--buttons-clr);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body,
+#root {
+  width: 100%;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--background-clr);
+  color: var(--buttons-clr);
+}
+
+.grey {
+  color: var(--grey-clr);
+  transition: color 0.3s ease-in-out;
+}
+
+.buttons-clr {
+  color: var(--buttons-clr);
+  transition: color 0.3s ease-in-out;
+}
+
+.bold {
+  font-weight: 800;
+}
+
+button {
+  cursor: pointer;
+  outline: none;
+
+  &:focus {
+    border-color: var(--clr-green-50);
+  }
+}
+
+a:is(:active, :hover, :visited, :link) {
+  color: var(--buttons-clr);
+  cursor: pointer;
+  text-decoration: none !important;
+}
+
+input[type='email'],
+input[type='password'],
+input[type='text'] {
+  width: 100%;
+  height: 40px;
+  padding: 0 20px;
+  background-color: var(--inputs-clr);
+  color: var(--buttons-clr);
+  border: 1px solid var(--inputs-clr);
+  border-radius: 8px;
+  outline: none;
+  position: relative;
+
+  &:focus {
+    border-color: var(--clr-green-50);
+  }
+}
+
+input[type='checkbox'] {
+  accent-color: var(--clr-green-50);
+  margin-right: 10px;
+}
+
+label {
+  font-size: 14px;
+  display: block;
+  margin-bottom: 7px;
+}
+
+progress {
+  background-color: var(--clr-green-100);
+  border-radius: 10px;
+  overflow: hidden;
+  width: 200px;
+  border: none;
+}
+
+progress::-webkit-progress-bar {
+  background-color: var(--clr-green-100);
+  border-radius: 10px;
+}
+
+progress::-webkit-progress-value {
+  background-color: var(--clr-green-50);
+  border-radius: 10px;
+}
+
+progress::-moz-progress-bar {
+  background-color: var(--clr-green-50);
+  border-radius: 10px;
+}
+
+.green-button {
+  width: 100%;
+  height: 40px;
+  background-color: var(--clr-green-100);
+  color: var(--clr-green-50);
+  border: 1px solid var(--clr-green-50);
+  border-radius: 8px;
+  transition: background-color 0.3s ease-in-out;
+
+  &:hover {
+    background-color: var(--clr-green-200);
+    transition: background-color 0.3s ease-in-out;
+  }
+}

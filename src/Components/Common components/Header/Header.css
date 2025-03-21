@@ -7,6 +7,7 @@ header {
   position: sticky;
   top: 0;
   left: 0;
+  z-index: 3;
 }
 
 header ul {
@@ -22,10 +23,6 @@ header li {
   cursor: pointer;
   font-weight: 600;
   font-size: 16px;
-
-  & > * {
-    text-decoration: none;
-  }
 }
 
 .logo {

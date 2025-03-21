@@ -1,0 +1,39 @@
+dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-60%);
+  width: 200px;
+  height: 200px;
+  background-color: var(--background-clr2);
+  color: var(--buttons-clr);
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  box-sizing: content-box;
+  z-index: -2;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+dialog[open] {
+  animation: slide-in-from-top 0.35s ease-out forwards;
+}
+
+@keyframes slide-in-from-top {
+  0% {
+    z-index: -2;
+  }
+  100% {
+    z-index: 3;
+  }
+}

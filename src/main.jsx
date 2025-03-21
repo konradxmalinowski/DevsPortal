@@ -1,6 +1,7 @@
+//#region imports
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import './index.css';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import App from './Components/Websites/Home Page/App.jsx';
 import Challenges from './Components/Websites/Challenges/Challenges.jsx';
@@ -11,9 +12,11 @@ import AdminPanel from './Components/Websites/Admin Panel/AdminPanel.jsx';
 import Forum from './Components/Websites/Forum/Forum.jsx';
 import Login from './Components/Websites/Login & signup/Login.jsx';
 import Signup from './Components/Websites/Login & signup/Signup.jsx';
-
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Blog from './Components/Websites/Blog/Blog';
+import ResetPassword from './Components/Websites/Reset Password/ResetPassword.jsx';
+
+import './common-styles.css';
+//#endregion
 
 const router = createBrowserRouter([
   { path: '/', element: <App /> },
@@ -29,6 +32,7 @@ const router = createBrowserRouter([
   { path: '/adminPanel', element: <AdminPanel /> },
   { path: '/login', element: <Login /> },
   { path: '/signup', element: <Signup /> },
+  { path: '/resetPassword', element: <ResetPassword /> },
 ]);
 
 createRoot(document.getElementById('root')).render(

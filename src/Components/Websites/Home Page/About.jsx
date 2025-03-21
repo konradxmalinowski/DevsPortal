@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Button from '../../Common components/Button/Button';
 
 export default function About() {
@@ -10,12 +11,13 @@ export default function About() {
           projects, and product roadmaps.
         </p>
         <div className="buttons-wrapper">
-          <Button label="Let's see apps" type="light" />
-          <Button
-            label="More about author"
-            type="dark"
-            onClick={() => window.open('//www.portfolio-website.ct8.pl')}
-          />
+          <a href="#apps-wrapper">
+            <Button label="Let's see apps" type="light" />
+          </a>
+
+          <Link to="/portfolio">
+            <Button label="More about author" type="dark" />
+          </Link>
         </div>
       </section>
     </div>

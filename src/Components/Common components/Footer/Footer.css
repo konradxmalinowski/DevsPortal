@@ -25,9 +25,9 @@ footer li {
   list-style-type: none;
   cursor: pointer;
   font-weight: 600;
+  font-size: 16px;
 }
 
-footer .logo {
-  font-weight: 600;
-  font-size: 16px;
+footer a {
+  color: var(--grey) !important;
 }

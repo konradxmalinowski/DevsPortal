@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 import './Login.css';
 import './form.css';
 
-import hidePasswordIcon from './Icons/hide_password.png';
-import showPasswordIcon from './Icons/show_password.png';
+import hidePasswordIcon from './../../../assets/Password Icons/hide_password.png';
+import showPasswordIcon from './../../../assets/Password Icons/show_password.png';
 
 import Header from '../../Common components/Header/Header.jsx';
 import Footer from '../../Common components/Footer/Footer.jsx';
@@ -13,23 +13,23 @@ import Button from '../../Common components/Button/Button.jsx';
 import Input from './Input.jsx';
 
 import { emailRegEx, passwordRegex as passwordRegEx } from '../../../RegEx.js';
+import Modal from '../../Common components/Modal/Modal.jsx';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [dialogContent, setDialogContent] = useState('');
+  const dialogRef = useRef(null);
 
   function handleLogin() {
-    if (email === 'admin' && password === 'admin') {
-      alert('Approved');
-      return;
-    }
-
     if (!emailRegEx.test(email)) {
-      alert('Enter correct format of email');
+      setDialogContent('Enter correct format of email');
+      dialogRef.current?.open();
       return;
     }
     if (!passwordRegEx.test(password)) {
-      alert('Enter correct format of password');
+      setDialogContent('Enter correct format of password');
+      dialogRef.current?.open();
       return;
     }
   }
@@ -85,6 +85,7 @@ const Login = () => {
           </form>
         </div>
       </section>
+      <Modal ref={dialogRef}>{dialogContent}</Modal>
       <Footer />
     </>
   );

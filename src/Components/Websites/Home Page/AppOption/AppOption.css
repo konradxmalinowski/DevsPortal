@@ -24,3 +24,7 @@
 .grey-rectangle {
   background-color: var(--grey-clr);
 }
+
+.option section {
+  font-size: 20px;
+}

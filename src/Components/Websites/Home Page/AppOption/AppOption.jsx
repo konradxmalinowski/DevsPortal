@@ -1,6 +1,6 @@
-import './Option.css';
+import './AppOption.css';
 
-const Option = ({ label, className, ...props }) => {
+const AppOption = ({ label, className, ...props }) => {
   return (
     <button className="option" {...props}>
       <section
@@ -14,4 +14,4 @@ const Option = ({ label, className, ...props }) => {
   );
 };
 
-export default Option;
+export default AppOption;

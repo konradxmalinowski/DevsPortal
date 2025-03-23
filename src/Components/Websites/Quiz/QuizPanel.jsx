@@ -4,7 +4,7 @@ import Footer from '../../Common components/Footer/Footer.jsx';
 import './Quiz.css';
 import QuizItem from './QuizItem.jsx';
 
-const Quiz = () => {
+const QuizPanel = () => {
   return (
     <>
       <Header />
@@ -44,9 +44,10 @@ const Quiz = () => {
           />
         </section>
       </div>
+
       <Footer />
     </>
   );
 };
 
-export default Quiz;
+export default QuizPanel;

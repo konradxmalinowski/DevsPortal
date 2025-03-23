@@ -1,11 +1,15 @@
-import { forwardRef, useImperativeHandle, useRef } from 'react';
+import { useImperativeHandle, useRef } from 'react';
 import { createPortal } from 'react-dom';
+
 import './Modal.css';
 import Button from '../Button/Button';
 
-const Modal = forwardRef(({ children }, ref) => {
-  console.log('Modal rendered, ref:', ref.current);
+const Modal = ({ children, ref }) => {
   const dialog = useRef();
+
+  function handleClose() {
+    ref.current.close();
+  }
 
   useImperativeHandle(ref, () => {
     return {
@@ -19,21 +23,14 @@ const Modal = forwardRef(({ children }, ref) => {
   });
 
   return createPortal(
-    <dialog ref={dialog} onClose={() => ref.current.close()}>
+    <dialog ref={dialog} onClose={handleClose}>
       {children}
       <form method="dialog">
-        <Button
-          type="light"
-          label="Close"
-          onClick={() => {
-            ref.current.close();
-            console.log('closed');
-          }}
-        />
+        <Button type="light" label="Close" onClick={handleClose} />
       </form>
     </dialog>,
     document.body
   );
-});
+};
 
 export default Modal;

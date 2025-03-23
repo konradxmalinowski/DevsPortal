@@ -1,8 +1,8 @@
-import './Info.css';
+import './AppDetails.css';
 
 const Info = ({ title, description }) => {
   return (
-    <div className="info">
+    <div className="app-detail">
       <span>{title}</span>
       <span className="grey">{description}</span>
     </div>

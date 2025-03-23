@@ -1,0 +1,58 @@
+.partners-wrapper p {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.partners {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 110px;
+  gap: 40px;
+}
+
+/* TODO: oddzielny plik */
+@media (width <= 670px) {
+  .partners {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* TODO: oddzielny plik */
+@media (width <= 500px) {
+  .partners {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.partner {
+  background-color: var(--background-clr2);
+  padding: 25px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  scale: 1;
+  transition: scale 0.3s ease-in-out;
+
+  &:hover {
+    scale: 1.1;
+    transition: scale 0.3s ease-in-out;
+  }
+}
+
+.partner img {
+  height: 35px;
+}
+
+.partner img[alt='Dell logo'] {
+  height: 60px;
+}
+
+.partner img[alt='OpenAI logo'] {
+  height: 25px;
+}
+
+.partner img[alt='Apple logo'] {
+  height: 50px;
+}

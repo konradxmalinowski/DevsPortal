@@ -1,12 +1,14 @@
-.infos {
+.app-details {
   width: 100%;
-  height: 150px;
+  min-height: 150px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: start;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
-.info {
+.app-detail {
   width: calc((100% / 4) - 10px);
   height: 100%;
   display: flex;

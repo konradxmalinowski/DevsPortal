@@ -1,7 +1,9 @@
 import { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+
 import './Signup.css';
 import './form.css';
+
 import Header from '../../Common components/Header/Header.jsx';
 import Footer from '../../Common components/Footer/Footer.jsx';
 import Modal from '../../Common components/Modal/Modal.jsx';
@@ -29,13 +31,6 @@ const Signup = () => {
       refCurrent: ref.current,
     });
     const inputValue = ref.current?.value.trim() || '';
-    console.log(
-      'Input value:',
-      inputValue,
-      'RegEx test:',
-      regEx.test(inputValue)
-    );
-
     if (step === 4) {
       setDialogContent('Signup completed! Redirecting to login...');
       dialogRef.current?.showModal();

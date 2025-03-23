@@ -1,0 +1,77 @@
+.apps-wrapper {
+  flex-direction: column;
+}
+
+.apps-wrapper h1 {
+  font-size: 30px;
+  font-weight: 600;
+  margin-right: 20px;
+}
+
+.apps-wrapper p {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.apps img {
+  width: 200px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.apps-wrapper hr {
+  width: 100%;
+  height: 1px;
+  background-color: #1b1d1f;
+  border: 1px solid #1b1d1f;
+  margin-top: 50px;
+}
+
+.apps-wrapper > section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 30px;
+}
+
+.apps-wrapper > section > div:nth-of-type(1) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+}
+
+.apps {
+  width: 50%;
+  height: 100%;
+}
+
+.apps-right {
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.apps-left {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* TODO: oddzielny plik */
+@media (width <= 780px) {
+  .apps-wrapper > section > div:nth-of-type(1) {
+    flex-direction: column;
+  }
+
+  .apps {
+    width: 100%;
+    align-items: center;
+  }
+
+  .apps > div {
+    display: flex;
+    justify-content: center;
+  }
+}

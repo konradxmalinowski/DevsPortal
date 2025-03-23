@@ -76,6 +76,6 @@
   list-style-type: none;
 
   &::marker {
-    content: '-> ';
+    content: url('./../../../assets/next.png');
   }
 }

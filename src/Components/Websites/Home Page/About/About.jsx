@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
-import Button from '../../Common components/Button/Button';
+import Button from '../../../Common components/Button/Button';
+
+import './About.css';
 
 export default function About() {
   return (

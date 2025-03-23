@@ -7,7 +7,7 @@ import App from './Components/Websites/Home Page/App.jsx';
 import Challenges from './Components/Websites/Challenges/Challenges.jsx';
 import CodeGenerators from './Components/Websites/Code generators/CodeGenerators.jsx';
 import Portfolio from './Components/Websites/Portfolio/Portfolio.jsx';
-import Quiz from './Components/Websites/Quiz/Quiz.jsx';
+import QuizPanel from './Components/Websites/Quiz/QuizPanel.jsx';
 import AdminPanel from './Components/Websites/Admin Panel/AdminPanel.jsx';
 import Forum from './Components/Websites/Forum/Forum.jsx';
 import Login from './Components/Websites/Login & signup/Login.jsx';
@@ -27,7 +27,7 @@ const router = createBrowserRouter([
     element: <CodeGenerators />,
   },
   { path: '/portfolio', element: <Portfolio /> },
-  { path: '/quiz', element: <Quiz /> },
+  { path: '/quizPanel', element: <QuizPanel /> },
   { path: '/forum', element: <Forum /> },
   { path: '/adminPanel', element: <AdminPanel /> },
   { path: '/login', element: <Login /> },

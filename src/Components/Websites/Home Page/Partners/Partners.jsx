@@ -1,0 +1,53 @@
+import openAILogo from '../../../../assets/Partners logo/openai-logo.png';
+import perplexityLogo from '../../../../assets/Partners logo/perplexity-logo.png';
+import arcBrowserLogo from '../../../../assets/Partners logo/arc-browser-logo.png';
+import appleLogo from '../../../../assets/Partners logo/apple-logo.png';
+import microsoftLogo from '../../../../assets/Partners logo/microsoft-logo.png';
+import dellLogo from '../../../../assets/Partners logo/dell-logo.png';
+
+import Partner from './Partner';
+
+import './Partners.css';
+
+const logos = [
+  openAILogo,
+  microsoftLogo,
+  dellLogo,
+  perplexityLogo,
+  arcBrowserLogo,
+  appleLogo,
+];
+
+const labels = [
+  'OpenAI logo',
+  'Microsoft logo',
+  'Dell logo',
+  'PerplexityAI logo',
+  'Arc browser logo',
+  'Apple logo',
+];
+
+const indexes = [0, 1, 2, 3, 4, 5];
+
+export default function Partners() {
+  return (
+    <div className="wrapper partners-wrapper">
+      <section>
+        <h2>Powering the world’s best product teams.</h2>
+        <p className="grey">
+          From next-gen startups to established enterprises.
+        </p>
+
+        <div className="partners">
+          {indexes.map((number) => (
+            <Partner
+              name={labels[number]}
+              logo={logos[number]}
+              key={number + labels[number]}
+            />
+          ))}
+        </div>
+      </section>
+    </div>
+  );
+}

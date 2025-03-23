@@ -1,16 +1,18 @@
 import { useState } from 'react';
 
-import Option from './Option/Option';
-import Application from './Application';
+import AppOption from '../AppOption/AppOption.jsx';
+import Application from './Application.jsx';
+import AppDetails from '../AppDetails/AppDetails.jsx';
 
-import QuizImg from './Apps images/Quiz.png';
-import ShopImg from './Apps images/shop.png';
-import TimerImg from './Apps images/Timer.png';
-import TodoAppImg from './Apps images/Todo list app.png';
-import Info from './Info/Info';
+import QuizImg from '../../../../assets/Apps images/Quiz.png';
+import ShopImg from '../../../../assets/Apps images/shop.png';
+import TimerImg from '../../../../assets/Apps images/Timer.png';
+import TodoAppImg from '../../../../assets/Apps images/Todo list app.png';
+
+import './Applications.css';
 
 const defaultArrayOfClassNames = ['buttons-clr', 'grey', 'grey', 'grey'];
-const optionsLabels = ['Shop', 'Timer', 'Quiz', 'Todo App'];
+const appOptionsLabels = ['Shop', 'Timer', 'Quiz', 'Todo App'];
 const infoDescriptions = [
   'Coordinate strategic product efforts.',
   'Collaborate across teams and departments.',
@@ -49,11 +51,11 @@ const Applications = () => {
     />,
   ];
 
-  const options = optionsLabels.map((label) => {
-    const idx = optionsLabels.indexOf(label);
+  const appOptions = appOptionsLabels.map((label) => {
+    const idx = appOptionsLabels.indexOf(label);
 
     return (
-      <Option
+      <AppOption
         key={idx}
         label={label}
         onClick={() => handleClick(idx)}
@@ -62,10 +64,10 @@ const Applications = () => {
     );
   });
 
-  const infos = optionsLabels.map((label) => (
-    <Info
+  const appDetails = appOptionsLabels.map((label) => (
+    <AppDetails
       title={label}
-      description={infoDescriptions[optionsLabels.indexOf(label)]}
+      description={infoDescriptions[appOptionsLabels.indexOf(label)]}
       key={label}
     />
   ));
@@ -87,10 +89,11 @@ const Applications = () => {
   return (
     <div className="apps-wrapper wrapper" id="apps-wrapper">
       <section>
+        <h1>Choose the best app for you </h1>
+        <p className="grey">Click on the image to open website</p>
         <div>
           <section className="apps-left apps">
-            <p>Choose the best app for you </p>
-            <div>{options}</div>
+            <div>{appOptions}</div>
           </section>
           <section className="apps-right apps">
             {applications[selectedApp]}
@@ -98,7 +101,7 @@ const Applications = () => {
         </div>
 
         <hr />
-        <div className="infos">{infos}</div>
+        <div className="app-details">{appDetails}</div>
       </section>
     </div>
   );

@@ -10,7 +10,7 @@ import showPasswordIcon from './../../../assets/Password Icons/show_password.png
 import Header from '../../Common components/Header/Header.jsx';
 import Footer from '../../Common components/Footer/Footer.jsx';
 import Button from '../../Common components/Button/Button.jsx';
-import Input from './Input.jsx';
+import Input from './../../Common components/Input.jsx';
 
 import { emailRegEx, passwordRegex as passwordRegEx } from '../../../RegEx.js';
 import Modal from '../../Common components/Modal/Modal.jsx';

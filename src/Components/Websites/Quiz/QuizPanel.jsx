@@ -12,35 +12,33 @@ const QuizPanel = () => {
         <section>
           <QuizItem
             label="INF.02"
-            onClick={() => window.open('https://www.google.com')}
             description="Test your knowledge of computer system administration and peripheral device operation. Prepare for practical vocational tasks!"
+            to="/quiz-inf.02"
           />
           <QuizItem
             label="INF.03"
-            onClick={() =>
-              window.open('https://portfolio-website.ct8.pl/websites/exam-test')
-            }
             description="A quiz on creating and managing websites and databases. Perfect for aspiring programmers and IT administrators."
+            to="/quiz-inf.03"
           />
           <QuizItem
             label="INF.04"
-            onClick={() => window.open('https://www.google.com')}
             description="Tackle questions about designing and programming desktop and mobile applications. Enhance your coding skills!"
+            to="/quiz-inf.04"
           />
           <QuizItem
             label="English B2"
-            onClick={() => window.open('https://www.google.com')}
             description="Assess your English skills at B2 level. The quiz covers grammar, vocabulary, and reading comprehension."
+            to="/quiz-english"
           />
           <QuizItem
             label="German B1"
-            onClick={() => window.open('https://www.google.com')}
             description="Test your German at B1 level! The quiz includes grammar, vocabulary, and basic communication exercises."
+            to="/quiz-german"
           />
           <QuizItem
             label="IT - basics"
-            onClick={() => window.open('https://www.google.com')}
             description="Learn the basics of IT: hardware, software, and computer networks. A great starting point for tech beginners!"
+            to="/quiz-it"
           />
         </section>
       </div>

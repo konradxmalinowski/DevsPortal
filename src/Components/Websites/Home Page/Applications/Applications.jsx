@@ -14,10 +14,10 @@ import './Applications.css';
 const defaultArrayOfClassNames = ['buttons-clr', 'grey', 'grey', 'grey'];
 const appOptionsLabels = ['Shop', 'Timer', 'Quiz', 'Todo App'];
 const infoDescriptions = [
-  'Coordinate strategic product efforts.',
-  'Collaborate across teams and departments.',
-  'Break projects down into concrete phases.',
-  'Track scope, velocity, and progress over time.',
+  'Example of website on which you can buy sth',
+  'Example of website on which you can use timer or stopwatch',
+  'Example of website on which you can take part in difference quiz',
+  'Example of website on which you can note your taks to do.',
 ];
 
 const Applications = () => {

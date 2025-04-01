@@ -3,10 +3,20 @@ import { Link } from 'react-router-dom';
 import './Header.css';
 import Button from '../Button/Button';
 import ListItem from '../ListItem';
+import { useState } from 'react';
 
-const labels = ['Blog', 'Challenges', 'Forum', 'Quiz', 'Admin Panel'];
+const labels = [
+  'Blog',
+  'Challenges',
+  'Forum',
+  'Quiz',
+  'Admin Panel',
+  'Snippets',
+];
 
 export default function Header() {
+  const [isExtended, setIsExtended] = useState(false);
+
   const headerItems = labels.map((label) => (
     <ListItem key={label}>
       {label === 'Quiz' && (
@@ -14,7 +24,12 @@ export default function Header() {
           {label}
         </Link>
       )}
-      {label !== 'Quiz' && (
+      {label === 'Snippets' && (
+        <Link to="/codeGenerators" key={label}>
+          {label}
+        </Link>
+      )}
+      {label !== 'Quiz' && label != 'Snippets' && (
         <Link to={`/${label.toLowerCase().replace(' ', '')}`} key={label}>
           {label}
         </Link>
@@ -23,24 +38,43 @@ export default function Header() {
   ));
 
   return (
-    <header>
-      <section className="narrow-header">
-        <span className="logo">
-          <Link to="/">DevsPortal</Link>
-        </span>
-      </section>
-      <section className="wide-header">
+    <>
+      <header>
+        <section className="narrow-header">
+          <span className="logo">
+            <Link to="/">DevsPortal</Link>
+          </span>
+        </section>
+        <section className="wide-header">
+          <ul>{headerItems}</ul>
+        </section>
+        <section className="narrow-header">
+          <Link to="/login">
+            <Button type="dark" label="Log in" />
+          </Link>
+
+          <Link to="/signup">
+            <Button type="light" label="Sign up" />
+          </Link>
+        </section>
+
+        <section className="narrow-header">
+          <button
+            className={`hamburger ${isExtended ? 'hamburger--active' : ''}`}
+            onClick={() => setIsExtended((isExtended) => !isExtended)}
+          >
+            <span className="hamburger__box">
+              <span className="hamburger__inner"></span>
+            </span>
+          </button>
+        </section>
+      </header>
+
+      <section
+        className={`navigation ${isExtended ? 'navigation--active' : ''}`}
+      >
         <ul>{headerItems}</ul>
       </section>
-      <section className="narrow-header">
-        <Link to="/login">
-          <Button type="dark" label="Log in" />
-        </Link>
-
-        <Link to="/signup">
-          <Button type="light" label="Sign up" />
-        </Link>
-      </section>
-    </header>
+    </>
   );
 }

@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import Button from '../../../Common components/Button/Button';
-import Input from '../Input';
+import Input from './../../../Common components/Input.jsx';
 import ListItem from '../../../Common components/ListItem';
 
 import { usernameRegEx, usernameRequirements } from '../../../../RegEx';

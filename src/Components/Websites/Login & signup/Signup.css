@@ -74,8 +74,10 @@
 
 .signup-wrapper li {
   list-style-type: none;
+  width: fit-content;
+  padding-left: 7px;
 
   &::marker {
-    content: url('./../../../assets/next.png');
+    content: '✅';
   }
 }

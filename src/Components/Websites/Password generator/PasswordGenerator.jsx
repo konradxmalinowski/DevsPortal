@@ -7,7 +7,7 @@ const PasswordGenerator = () => {
   return (
     <>
       <Header />
-      <div>PasswordGenerator</div>
+      <section></section>
       <Footer />
     </>
   );

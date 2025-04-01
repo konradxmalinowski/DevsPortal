@@ -48,15 +48,13 @@
   height: 100%;
 }
 
-.apps-right {
-  flex-direction: row;
-  justify-content: flex-end;
-}
-.apps-left {
+.apps-right > div {
   display: flex;
-  flex-direction: column;
-  row-gap: 20px;
-  flex-wrap: wrap;
+  justify-content: flex-start;
+
+  img {
+    margin-left: 70px;
+  }
 }
 
 /* TODO: oddzielny plik */
@@ -73,5 +71,11 @@
   .apps > div {
     display: flex;
     justify-content: center;
+  }
+
+  .apps-right > div {
+    img {
+      margin-left: 0px;
+    }
   }
 }

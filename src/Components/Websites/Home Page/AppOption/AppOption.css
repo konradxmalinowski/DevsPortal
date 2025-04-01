@@ -1,3 +1,14 @@
+.apps-left {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  align-items: center;
+}
+
+.apps-left > div {
+  flex-wrap: wrap;
+}
+
 .option {
   background-color: transparent;
   border: none;
@@ -9,6 +20,7 @@
   font-size: 17px;
   font-weight: 600;
   color: var(--grey-clr);
+  min-width: 100px;
 }
 
 .rectangle {

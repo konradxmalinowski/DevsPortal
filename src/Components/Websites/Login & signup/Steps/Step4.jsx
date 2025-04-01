@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 
-import Input from '../Input';
+import Input from './../../../Common components/Input.jsx';
 import Button from '../../../Common components/Button/Button';
 
 import hidePasswordIcon from './../../../../assets/Password Icons/hide_password.png';

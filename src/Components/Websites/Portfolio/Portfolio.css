@@ -1,0 +1,169 @@
+/* author */
+
+:root {
+  --clr-grey: #c5c5c6;
+}
+
+.author-wrapper {
+  min-height: calc(100svh - 63px);
+  display: flex;
+  flex-wrap: wrap-reverse;
+}
+
+.author-wrapper .image-wrapper {
+  align-items: center;
+  width: 30%;
+}
+
+.author-wrapper .image-wrapper img {
+  width: 300px;
+  border-radius: 10px;
+}
+
+.author-wrapper > section {
+  align-items: flex-start;
+  min-width: 300px;
+}
+
+@media (width <= 850px) {
+  .author-wrapper {
+    flex-direction: column;
+  }
+}
+
+.author-wrapper .description-wrapper {
+  padding: 30px;
+  width: 50%;
+
+  .intro {
+    font-weight: 500;
+    font-size: 23px;
+    color: var(--buttons-clr);
+  }
+
+  h1 {
+    font-size: max(3vw, 50px);
+    max-width: 600px;
+  }
+
+  .job-type {
+    font-weight: 800;
+    font-size: 26px;
+    color: var(--buttons-clr);
+  }
+
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
+  }
+
+  img[alt*='logo'] {
+    width: 45px;
+    box-shadow: 0 0 6px 1px #a78bfa;
+    border-radius: 50%;
+  }
+
+  img[alt^='github'] {
+    width: 40px;
+  }
+}
+
+.special {
+  background: linear-gradient(30deg, #a78bfa 35%, #e2e8f0);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.author-wrapper h1,
+.projects-wrapper h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.author-wrapper p,
+.projects-wrapper p {
+  margin-bottom: 7px;
+  font-size: 18px;
+  color: var(--clr-grey);
+  line-height: 1.9;
+}
+
+.projects-wrapper h1 ~ p {
+  margin-bottom: 70px;
+}
+
+/* Projects */
+.projects-wrapper {
+  min-height: calc(100svh - 63px);
+  display: flex;
+  flex-direction: column;
+}
+
+.projects-wrapper :is(p, h1) {
+  text-align: center;
+}
+
+.projects-wrapper > section {
+  width: max(70%, 400px);
+}
+
+.projects-wrapper > div {
+  display: flex;
+  gap: 50px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+
+/* Skills */
+.skills-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#skills-content {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 40px 30px;
+  margin-top: 50px;
+  width: max(90%, 300px);
+  max-width: 1000px;
+}
+
+/* rates */
+.rates-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  background-color: var(--background-clr3);
+  margin-top: 60px;
+  padding: 0 20px;
+}
+
+.rates-wrapper button {
+  padding: 13px 23px;
+  background-color: var(--clr-green-100);
+  color: var(--clr-green-50);
+  border: 1px solid var(--clr-green-50);
+  border-radius: 8px;
+  transition: background-color 0.3s ease-in-out;
+  font-size: 16px;
+
+  &:hover {
+    background-color: var(--clr-green-200);
+    transition: background-color 0.3s ease-in-out;
+  }
+}

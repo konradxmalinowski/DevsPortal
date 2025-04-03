@@ -24,8 +24,8 @@
 }
 
 /* TODO: oddzielny plik */
-@media (width <= 1200px) {
+@media (width <= 1600px) {
   .wrapper > section {
-    width: 80vw;
+    width: max(60%, 300px);
   }
 }

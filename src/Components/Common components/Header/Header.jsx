@@ -74,6 +74,14 @@ export default function Header() {
         className={`navigation ${isExtended ? 'navigation--active' : ''}`}
       >
         <ul>{headerItems}</ul>
+
+        <Link to="/login">
+          <Button type="dark" label="Log in" />
+        </Link>
+
+        <Link to="/signup">
+          <Button type="light" label="Sign up" />
+        </Link>
       </section>
     </>
   );

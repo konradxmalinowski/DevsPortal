@@ -4,7 +4,7 @@ const Language = ({ name, logo, level, id }) => {
   return (
     <div className="language">
       <h3>{name}</h3>
-      <img src={logo} alt={[name, 'logo'].join(' ')} id={id} />
+      <img src={logo} alt={[name, 'logo'].join(' ')} id={id} loading="lazy" />
       <span>{level}</span>
     </div>
   );

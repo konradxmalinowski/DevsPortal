@@ -19,8 +19,17 @@ const Author = () => {
         </h1>
         <p className="job-type">Full-Stack Developer</p>
         <div>
-          <img src={githubLogo} alt="github logo" />
-          <img src={linkedInLogo} alt="linkedin logo" />
+          <a href="https://github.com/konradxmalinowski" target="_blank">
+            <img src={githubLogo} alt="github logo" loading="lazy" />
+          </a>
+          <a href="https://www.linkedin.com/in/konrad-malinowski-894a36323/">
+            <img
+              src={linkedInLogo}
+              alt="linkedin logo"
+              loading="lazy"
+              target="_blank"
+            />
+          </a>
         </div>
       </section>
     </section>

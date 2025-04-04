@@ -149,8 +149,8 @@
   justify-content: center;
   gap: 30px;
   background-color: var(--background-clr3);
-  margin-top: 60px;
-  padding: 0 20px;
+  margin-top: 150px;
+  padding: 70px 20px;
 }
 
 .rates-wrapper button {

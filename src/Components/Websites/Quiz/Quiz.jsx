@@ -1,5 +1,10 @@
-import React, { useState } from 'react';
-import './Quiz.css';
+import { useState } from "react";
+import { Link } from "react-router-dom";
+
+import Button from "../../Common components/Button/Button.jsx";
+
+import "./Quiz.css";
+import comeBackImg from "../../../assets/back.png";
 
 const Quiz = ({ url }) => {
   const [randomQuestion, setRandomQuestion] = useState(null);
@@ -7,17 +12,19 @@ const Quiz = ({ url }) => {
   const [correctAnswers, setCorrectAnswers] = useState(null);
   const [idxRandomNumber, setIdxRandomNumber] = useState(null);
   const [answerAStyle, setAnswerAStyle] = useState({
-    backgroundColor: '#26282e',
+    backgroundColor: "#26282e",
   });
   const [answerBStyle, setAnswerBStyle] = useState({
-    backgroundColor: '#26282e',
+    backgroundColor: "#26282e",
   });
   const [questionsData, setQuestionsData] = useState([...url]);
+  const [isExpanded, setIsExpanded] = useState(false);
 
   const generateRandomNumber = (min, max) =>
     Math.floor(Math.random() * (max - min + 1) + min);
 
   const createQuestion = () => {
+    setIsExpanded((prevExpanded) => !prevExpanded);
     if (questionsData.length === 0) return;
 
     const questions = questionsData.map((q) => q.name);
@@ -30,26 +37,34 @@ const Quiz = ({ url }) => {
     setAnswersRandomQuestion(answers);
     setCorrectAnswers(correct);
     setIdxRandomNumber(randomIdx);
-    setAnswerAStyle({ backgroundColor: '#26282e' });
-    setAnswerBStyle({ backgroundColor: '#26282e' });
+    setAnswerAStyle({ backgroundColor: "#26282e" });
+    setAnswerBStyle({ backgroundColor: "#26282e" });
   };
 
   const checkCorrectness = (key) => {
     if (key === correctAnswers) {
-      if (key === 'a') setAnswerAStyle({ backgroundColor: '#006A67' });
-      if (key === 'b') setAnswerBStyle({ backgroundColor: '#006A67' });
+      if (key === "a") setAnswerAStyle({ backgroundColor: "#006A67" });
+      if (key === "b") setAnswerBStyle({ backgroundColor: "#006A67" });
     } else {
-      if (key === 'a') setAnswerAStyle({ backgroundColor: 'rgb(201, 57, 32)' });
-      if (key === 'b') setAnswerBStyle({ backgroundColor: 'rgb(201, 57, 32)' });
+      if (key === "a") setAnswerAStyle({ backgroundColor: "rgb(201, 57, 32)" });
+      if (key === "b") setAnswerBStyle({ backgroundColor: "rgb(201, 57, 32)" });
     }
   };
 
   return (
     <section className="quiz-wrapper-question">
+      {isExpanded && (
+        <Link to="/quizPanel">
+          <Button className="arrow-back">
+            <img src={comeBackImg} alt="come back arrow" />
+          </Button>
+        </Link>
+      )}
+
       <span id="question-number">
         {randomQuestion
           ? `Question ${idxRandomNumber} / ${questionsData.length}`
-          : ''}
+          : ""}
       </span>
       <button id="generateButton" onClick={createQuestion}>
         Generate Question
@@ -63,14 +78,14 @@ const Quiz = ({ url }) => {
             <section
               className="answer answerA"
               style={answerAStyle}
-              onClick={() => checkCorrectness('a')}
+              onClick={() => checkCorrectness("a")}
             >
               <p>{answersRandomQuestion[0]}</p>
             </section>
             <section
               className="answer answerB"
               style={answerBStyle}
-              onClick={() => checkCorrectness('b')}
+              onClick={() => checkCorrectness("b")}
             >
               <p>{answersRandomQuestion[1]}</p>
             </section>

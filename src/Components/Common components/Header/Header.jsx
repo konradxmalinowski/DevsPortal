@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 import './Header.css';
 import Button from '../Button/Button';
 import ListItem from '../ListItem';
-import { useState } from 'react';
 
 const labels = [
   'Blog',

@@ -50,7 +50,10 @@ export default function Header() {
         </section>
         <section className="narrow-header">
           <Link to="/login">
-            <Button type="dark" label="Log in" />
+            <Button
+              type="dark"
+              label={localStorage.getItem('token') ? 'Logout' : 'Login'}
+            />
           </Link>
 
           <Link to="/signup">

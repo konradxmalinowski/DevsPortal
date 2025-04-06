@@ -12,7 +12,7 @@
   flex-direction: column;
   justify-content: space-evenly;
   row-gap: 20px;
-  background-color: var(--background-clr3);
+  background-color: var(--background-clr2);
   padding: 40px;
   border-radius: 10px;
   box-sizing: content-box;

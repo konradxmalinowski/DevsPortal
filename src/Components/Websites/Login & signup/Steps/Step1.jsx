@@ -1,9 +1,9 @@
 import { useRef } from 'react';
-import Button from '../../../Common components/Button/Button';
+import Button from '../../../Common components/Button/Button.jsx';
 import Input from './../../../Common components/Input.jsx';
-import ListItem from '../../../Common components/ListItem';
+import ListItem from '../../../Common components/ListItem.jsx';
 
-import { usernameRegEx, usernameRequirements } from '../../../../RegEx';
+import { usernameRegEx, usernameRequirements } from '../../../../RegEx.js';
 
 const Step1 = ({ stepFunctions }) => {
   const usernameRef = useRef();
@@ -22,7 +22,6 @@ const Step1 = ({ stepFunctions }) => {
       <Button
         label="Next"
         onClick={() => {
-          console.log('Next clicked in Step1');
           stepFunctions.handleClickNext(usernameRegEx, usernameRef, 'username');
         }}
         className="green-button"

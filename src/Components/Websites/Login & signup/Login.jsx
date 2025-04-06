@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
-import { useRef, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { useRef, useState, useEffect } from 'react';
 
 import './Login.css';
 import './form.css';
@@ -11,78 +11,128 @@ import Header from '../../Common components/Header/Header.jsx';
 import Footer from '../../Common components/Footer/Footer.jsx';
 import Button from '../../Common components/Button/Button.jsx';
 import Input from './../../Common components/Input.jsx';
-
-import { emailRegEx, passwordRegex as passwordRegEx } from '../../../RegEx.js';
 import Modal from '../../Common components/Modal/Modal.jsx';
+
+import { emailRegEx, passwordRegEx } from '../../../RegEx.js';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [dialogContent, setDialogContent] = useState('');
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const dialogRef = useRef(null);
+  const navigate = useNavigate();
 
-  function handleLogin() {
+  // Sprawdzenie, czy użytkownik jest zalogowany
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      setIsLoggedIn(true);
+    }
+  }, []);
+
+  const handleLogin = async () => {
     if (!emailRegEx.test(email)) {
-      setDialogContent('Enter correct format of email');
+      setDialogContent('Enter correct email format');
       dialogRef.current?.open();
       return;
     }
     if (!passwordRegEx.test(password)) {
-      setDialogContent('Enter correct format of password');
+      setDialogContent('Enter correct password');
       dialogRef.current?.open();
       return;
     }
-  }
+
+    try {
+      const response = await fetch('/api/login.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify({ email, password }),
+      });
+      const data = await response.json();
+      if (response.ok) {
+        localStorage.setItem('token', data.token);
+        setDialogContent('Login successful! Redirecting...');
+        dialogRef.current?.open();
+        setTimeout(() => navigate('/adminPanel'), 2000);
+      } else {
+        setDialogContent(data.message || 'Login failed');
+        dialogRef.current?.open();
+      }
+    } catch (error) {
+      setDialogContent('Server error: ' + error.message);
+      dialogRef.current?.open();
+    }
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    setIsLoggedIn(false);
+    navigate('/');
+  };
 
   return (
     <>
       <Header />
       <section className="login-wrapper">
         <div>
-          <div>
-            <h2>Welcome back!</h2>
-            <p className="grey">Enter your details to login</p>
-          </div>
-          <form
-            action=""
-            method="post"
-            onSubmit={(event) => {
-              event.preventDefault();
-              handleLogin();
-            }}
-          >
-            <Input
-              type="email"
-              label="Email"
-              onChange={(event) => setEmail(event.target.value)}
-              required={true}
-              autoFocus
-            />
-            <Input
-              type="password"
-              label="Password"
-              onChange={(event) => setPassword(event.target.value)}
-              required={true}
-              showIcon={showPasswordIcon}
-              hideIcon={hidePasswordIcon}
-            />
-            <div className="group">
-              <label>
-                <input
-                  type="checkbox"
-                  name="remember-me"
-                  id="remember-me"
-                  defaultChecked
-                  required
-                />
-                Remember me
-              </label>
-              <p>
-                Forgot Password? <Link to="/resetPassword">Reset it</Link>
-              </p>
+          {isLoggedIn ? (
+            <div>
+              <p className="logged-in">You are already logged in.</p>
+              <Button label="Logout" onClick={handleLogout} />
             </div>
-            <Button label="Login" onClick={handleLogin} />
-          </form>
+          ) : (
+            <>
+              <div>
+                <h2>Welcome back!</h2>
+                <p className="grey">Enter your details to login</p>
+              </div>
+
+              <form
+                onSubmit={(event) => {
+                  event.preventDefault();
+                  handleLogin();
+                }}
+              >
+                <Input
+                  type="email"
+                  label="Email"
+                  onChange={(event) => setEmail(event.target.value)}
+                  required={true}
+                  autoFocus
+                />
+                <Input
+                  type="password"
+                  label="Password"
+                  onChange={(event) => setPassword(event.target.value)}
+                  required={true}
+                  showIcon={showPasswordIcon}
+                  hideIcon={hidePasswordIcon}
+                />
+                <div className="group">
+                  <label>
+                    <input
+                      type="checkbox"
+                      name="remember-me"
+                      id="remember-me"
+                      defaultChecked
+                    />
+                    Remember me
+                  </label>
+                  <p>
+                    Forgot Password? <Link to="/resetPassword">Reset it</Link>
+                  </p>
+                </div>
+                <Button label="Login" onClick={handleLogin} />
+              </form>
+            </>
+          )}
+          {!isLoggedIn && (
+            <p className="has-account">
+              Don't have an account? <Link to="/signup">Sign up</Link>
+            </p>
+          )}
         </div>
       </section>
       <Modal ref={dialogRef}>{dialogContent}</Modal>

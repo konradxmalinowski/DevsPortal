@@ -139,3 +139,15 @@ Strona internetowa wydaje się być portfolio, platformą edukacyjną lub centru
 #### Zapytanie 12
 
 > Opisz tę stronę po angielsku (jakie technologie, co wykorzystuje, co zawiera, itp)
+
+---
+
+#### Zapytanie 13
+
+> A teraz dla tej strony stwórz plik terms.pdf w języku angielskim
+
+---
+
+#### Zapytanie 14
+
+> Teraz privacy po angielsku

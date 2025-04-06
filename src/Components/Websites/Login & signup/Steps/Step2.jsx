@@ -1,8 +1,8 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import Input from './../../../Common components/Input.jsx';
-import Button from '../../../Common components/Button/Button';
+import Button from '../../../Common components/Button/Button.jsx';
 
-import { emailRegEx } from '../../../../RegEx';
+import { emailRegEx } from '../../../../RegEx.js';
 
 const Step2 = ({ stepFunctions }) => {
   const emailRef = useRef();

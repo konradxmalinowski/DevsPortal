@@ -24,30 +24,56 @@ const Signup = () => {
   const [dialogContent, setDialogContent] = useState('');
   const dialogRef = useRef(null);
 
-  const handleClickNext = (regEx, ref, type) => {
-    console.log('handleClickNext called:', {
-      step,
-      type,
-      refCurrent: ref.current,
-    });
+  const handleClickNext = async (regEx, ref, type, additionalCheck = null) => {
     const inputValue = ref.current?.value.trim() || '';
-    if (step === 4) {
-      setDialogContent('Signup completed! Redirecting to login...');
-      dialogRef.current?.showModal();
-      return;
-    }
 
-    if (!inputValue || !regEx.test(inputValue)) {
+    if (
+      !inputValue ||
+      !regEx.test(inputValue) ||
+      (additionalCheck && !additionalCheck(inputValue))
+    ) {
       setDialogContent(
         `Please enter a valid ${type} (e.g., ${
-          type === 'email' ? 'user@example.com' : 'minimum 10 characters'
+          type === 'email'
+            ? 'user@example.com'
+            : type === 'password'
+            ? 'minimum 8 characters'
+            : 'minimum 3 characters'
         })`
       );
       dialogRef.current?.open();
       return;
     }
 
-    console.log('Validation passed, updating state');
+    if (step === 4) {
+      if (inputValue !== userData.password) {
+        setDialogContent('Passwords do not match');
+        dialogRef.current?.open();
+        return;
+      }
+      try {
+        const response = await fetch('/api/signup.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          credentials: 'include',
+          body: JSON.stringify(userData),
+        });
+        const data = await response.json();
+        if (response.ok) {
+          setDialogContent('Signup completed! Redirecting to login...');
+          dialogRef.current?.open();
+          setTimeout(() => (window.location.href = '/login'), 2000);
+        } else {
+          setDialogContent(data.message || 'Signup failed');
+          dialogRef.current?.open();
+        }
+      } catch (error) {
+        setDialogContent('Server error: ' + error.message);
+        dialogRef.current?.open();
+      }
+      return;
+    }
+
     setUserData((prev) => ({ ...prev, [type]: inputValue }));
     setStep((prevStep) => prevStep + 1);
   };
@@ -63,7 +89,7 @@ const Signup = () => {
     <Step1 key="step1" stepFunctions={stepFunctions} />,
     <Step2 key="step2" stepFunctions={stepFunctions} />,
     <Step3 key="step3" stepFunctions={stepFunctions} />,
-    <Step4 key="step4" stepFunctions={stepFunctions} />,
+    <Step4 key="step4" stepFunctions={stepFunctions} userData={userData} />,
   ];
 
   return (

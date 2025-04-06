@@ -1,19 +1,16 @@
 import { useRef } from 'react';
-
 import Input from './../../../Common components/Input.jsx';
 import Button from '../../../Common components/Button/Button';
 
 import hidePasswordIcon from './../../../../assets/Password Icons/hide_password.png';
 import showPasswordIcon from './../../../../assets/Password Icons/show_password.png';
 
-import { passwordRegex } from '../../../../RegEx';
-
-const Step4 = ({ stepFunctions }) => {
+const Step4 = ({ stepFunctions, userData }) => {
   const passwordRepeatedRef = useRef();
 
   return (
     <>
-      <h2>Repeat password</h2>
+      <h2>Repeat Password</h2>
       <Input
         label="Password"
         type="password"
@@ -30,10 +27,10 @@ const Step4 = ({ stepFunctions }) => {
           type="dark"
         />
         <Button
-          label="Next"
+          label="Sign Up"
           onClick={() =>
             stepFunctions.handleClickNext(
-              passwordRegex,
+              userData.password ? new RegExp(`^${userData.password}$`) : /.*/,
               passwordRepeatedRef,
               'password'
             )

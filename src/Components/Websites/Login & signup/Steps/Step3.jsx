@@ -6,7 +6,7 @@ import Button from '../../../Common components/Button/Button';
 import hidePasswordIcon from './../../../../assets/Password Icons/hide_password.png';
 import showPasswordIcon from './../../../../assets/Password Icons/show_password.png';
 
-import { passwordRegex, passwordRequirements } from '../../../../RegEx';
+import { passwordRegEx, passwordRequirements } from '../../../../RegEx';
 
 const Step3 = ({ stepFunctions }) => {
   const passwordRef = useRef();
@@ -14,7 +14,7 @@ const Step3 = ({ stepFunctions }) => {
 
   return (
     <>
-      <h2>Choose password</h2>
+      <h2>Choose Password</h2>
       <Input
         label="Password"
         type="password"
@@ -24,13 +24,11 @@ const Step3 = ({ stepFunctions }) => {
         hideIcon={hidePasswordIcon}
         autoFocus
       />
-
       <ul>
         {passwordRequirements.map((requirement) => (
           <ListItem content={requirement} key={requirement} />
         ))}
       </ul>
-
       <div className="buttons-wrapper">
         <Button
           label="Back"
@@ -42,7 +40,7 @@ const Step3 = ({ stepFunctions }) => {
           label="Next"
           onClick={() =>
             stepFunctions.handleClickNext(
-              passwordRegex,
+              passwordRegEx,
               passwordRef,
               'password'
             )

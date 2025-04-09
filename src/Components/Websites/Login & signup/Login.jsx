@@ -23,7 +23,6 @@ const Login = () => {
   const dialogRef = useRef(null);
   const navigate = useNavigate();
 
-  // Sprawdzenie, czy użytkownik jest zalogowany
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (token) {
@@ -44,12 +43,15 @@ const Login = () => {
     }
 
     try {
-      const response = await fetch('/api/login.php', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        credentials: 'include',
-        body: JSON.stringify({ email, password }),
-      });
+      const response = await fetch(
+        'http://localhost/Developers%20portal/api/login.php',
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          credentials: 'include',
+          body: JSON.stringify({ email, password }),
+        }
+      );
       const data = await response.json();
       if (response.ok) {
         localStorage.setItem('token', data.token);
@@ -98,15 +100,13 @@ const Login = () => {
                 <Input
                   type="email"
                   label="Email"
-                  onChange={(event) => setEmail(event.target.value)}
-                  required={true}
+                  onChange={(event) => setEmail(event.target.value.trim())}
                   autoFocus
                 />
                 <Input
                   type="password"
                   label="Password"
-                  onChange={(event) => setPassword(event.target.value)}
-                  required={true}
+                  onChange={(event) => setPassword(event.target.value.trim())}
                   showIcon={showPasswordIcon}
                   hideIcon={hidePasswordIcon}
                 />

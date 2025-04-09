@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import './Signup.css';
 import './form.css';
@@ -23,6 +23,7 @@ const Signup = () => {
   const [userData, setUserData] = useState({ ...userDataBasic });
   const [dialogContent, setDialogContent] = useState('');
   const dialogRef = useRef(null);
+  const navigate = useNavigate();
 
   const handleClickNext = async (regEx, ref, type, additionalCheck = null) => {
     const inputValue = ref.current?.value.trim() || '';
@@ -52,17 +53,20 @@ const Signup = () => {
         return;
       }
       try {
-        const response = await fetch('/api/signup.php', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          credentials: 'include',
-          body: JSON.stringify(userData),
-        });
+        const response = await fetch(
+          'http://localhost/Developers%20portal/api/signup.php',
+          {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            credentials: 'include',
+            body: JSON.stringify(userData),
+          }
+        );
         const data = await response.json();
         if (response.ok) {
           setDialogContent('Signup completed! Redirecting to login...');
           dialogRef.current?.open();
-          setTimeout(() => (window.location.href = '/login'), 2000);
+          setTimeout(() => navigate('/login'), 2000);
         } else {
           setDialogContent(data.message || 'Signup failed');
           dialogRef.current?.open();

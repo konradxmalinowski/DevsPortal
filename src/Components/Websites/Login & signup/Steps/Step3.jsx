@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import Input from './../../../Common components/Input.jsx';
-import ListItem from '../../../Common components/ListItem';
-import Button from '../../../Common components/Button/Button';
+import ListItem from '../../../Common components/ListItem.jsx';
+import Button from '../../../Common components/Button/Button.jsx';
 
 import hidePasswordIcon from './../../../../assets/Password Icons/hide_password.png';
 import showPasswordIcon from './../../../../assets/Password Icons/show_password.png';

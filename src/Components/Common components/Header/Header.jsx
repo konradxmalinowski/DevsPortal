@@ -5,14 +5,7 @@ import './Header.css';
 import Button from '../Button/Button';
 import ListItem from '../ListItem';
 
-const labels = [
-  'Blog',
-  'Challenges',
-  'Forum',
-  'Quiz',
-  'Admin Panel',
-  'Snippets',
-];
+const labels = ['Blog', 'Challenges', 'Quiz', 'Admin Panel', 'Snippets'];
 
 export default function Header() {
   const [isExtended, setIsExtended] = useState(false);

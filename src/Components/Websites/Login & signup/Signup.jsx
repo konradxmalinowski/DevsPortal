@@ -46,6 +46,33 @@ const Signup = () => {
       return;
     }
 
+    // Check availability for username or email
+    if (type === 'username' || type === 'email') {
+      try {
+        const response = await fetch(
+          'http://localhost/Developers%20portal/api/checkAvailability.php',
+          {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ type, value: inputValue }),
+          }
+        );
+        const data = await response.json();
+
+        if (!data.available) {
+          setDialogContent(
+            `${type === 'username' ? 'Username' : 'Email'} is already taken`
+          );
+          dialogRef.current?.open();
+          return;
+        }
+      } catch (error) {
+        setDialogContent('Server error: ' + error.message);
+        dialogRef.current?.open();
+        return;
+      }
+    }
+
     if (step === 4) {
       if (inputValue !== userData.password) {
         setDialogContent('Passwords do not match');
@@ -105,7 +132,7 @@ const Signup = () => {
             Step <span className="bold">{step}</span> of 4
           </div>
           <progress value={step} max={4}></progress>
-          <form onSubmit={(e) => e.preventDefault()}>{steps[step - 1]}</form>
+          <form onSubmit={(e) => e.preventDefault()}>{steps[step - 1]} </form>
           <p>
             Already have an account? <Link to="/login">Login</Link>
           </p>

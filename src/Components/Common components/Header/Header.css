@@ -124,7 +124,7 @@ header li {
   height: 100svh;
   width: 250px;
   background-color: var(--background-clr2);
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   transform: translateX(-250px);

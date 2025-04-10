@@ -9,7 +9,22 @@ const Forum = () => {
   const [newThreadTitle, setNewThreadTitle] = useState('');
   const [newComment, setNewComment] = useState('');
   const [selectedThread, setSelectedThread] = useState(null);
-  const [username, setUsername] = useState(''); // Dodano pole dla nazwy użytkownika
+  const [username, setUsername] = useState('');
+
+  // Pobieranie nazwy użytkownika z tokena
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      try {
+        const payload = token.split('.')[1]; // Extract the payload part of the JWT
+        const decodedPayload = JSON.parse(atob(payload)); // Decode the Base64 payload
+        setUsername(decodedPayload.username);
+      } catch (error) {
+        console.error('Failed to decode token:', error);
+        localStorage.removeItem('token'); // Remove invalid token
+      }
+    }
+  }, []);
 
   // Pobieranie wątków z bazy danych
   useEffect(() => {
@@ -27,13 +42,17 @@ const Forum = () => {
   }, []);
 
   const handleAddThread = async () => {
-    if (!newThreadTitle.trim() || !username.trim()) return;
+    if (!newThreadTitle.trim()) return;
 
     try {
+      const token = localStorage.getItem('token');
       const response = await fetch('/api/addThread.php', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ title: newThreadTitle, username }),
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ title: newThreadTitle }),
       });
 
       if (response.ok) {
@@ -49,17 +68,19 @@ const Forum = () => {
   };
 
   const handleAddComment = async () => {
-    if (!newComment.trim() || !username.trim() || selectedThread === null)
-      return;
+    if (!newComment.trim() || selectedThread === null) return;
 
     try {
+      const token = localStorage.getItem('token');
       const response = await fetch('/api/addComment.php', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
+        },
         body: JSON.stringify({
           threadId: selectedThread,
           comment: newComment,
-          username,
         }),
       });
 
@@ -88,12 +109,6 @@ const Forum = () => {
           <h2>Create a New Thread</h2>
           <input
             type="text"
-            placeholder="Enter your username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-          <input
-            type="text"
             placeholder="Enter thread title"
             value={newThreadTitle}
             onChange={(e) => setNewThreadTitle(e.target.value)}
@@ -120,7 +135,6 @@ const Forum = () => {
             ))
           )}
         </div>
-        =
         {selectedThread !== null && (
           <div className="comments">
             <h2>Comments</h2>
@@ -133,12 +147,6 @@ const Forum = () => {
               ))}
 
             <div className="add-comment">
-              <input
-                type="text"
-                placeholder="Enter your username"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-              />
               <input
                 type="text"
                 placeholder="Add a comment"

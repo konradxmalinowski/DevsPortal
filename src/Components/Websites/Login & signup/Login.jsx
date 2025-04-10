@@ -110,26 +110,16 @@ const Login = () => {
                   showIcon={showPasswordIcon}
                   hideIcon={hidePasswordIcon}
                 />
-                <div className="group">
-                  <label>
-                    <input
-                      type="checkbox"
-                      name="remember-me"
-                      id="remember-me"
-                      defaultChecked
-                    />
-                    Remember me
-                  </label>
-                  <p>
-                    Forgot Password? <Link to="/resetPassword">Reset it</Link>
-                  </p>
-                </div>
+
                 <Button label="Login" onClick={handleLogin} />
               </form>
+              <p className="login-details">
+                Forgot Password? <Link to="/resetPassword">Reset it</Link>
+              </p>
             </>
           )}
           {!isLoggedIn && (
-            <p className="has-account">
+            <p>
               Don't have an account? <Link to="/signup">Sign up</Link>
             </p>
           )}

@@ -7,10 +7,23 @@ import { emailRegEx } from '../../../../RegEx.js';
 const Step2 = ({ stepFunctions }) => {
   const emailRef = useRef();
 
+  function handleClickEnter(event) {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      stepFunctions.handleClickNext(emailRegEx, emailRef, 'email');
+    }
+  }
+
   return (
     <>
       <h2>Enter Your Email</h2>
-      <Input label="Email address" type="email" ref={emailRef} autoFocus />
+      <Input
+        label="Email address"
+        type="email"
+        ref={emailRef}
+        autoFocus
+        onKeyDown={(event) => handleClickEnter(event)}
+      />
       <div className="buttons-wrapper">
         <Button
           label="Back"

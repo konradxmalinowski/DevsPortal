@@ -17,7 +17,6 @@ import Portfolio from './Components/Websites/Portfolio/Portfolio.jsx';
 import QuizPanel from './Components/Websites/Quiz/QuizPanel.jsx';
 import Quiz from './Components/Websites/Quiz/Quiz.jsx';
 import AdminPanel from './Components/Websites/Admin Panel/AdminPanel.jsx';
-import Forum from './Components/Websites/Forum/Forum.jsx';
 import Login from './Components/Websites/Login & signup/Login.jsx';
 import Signup from './Components/Websites/Login & signup/Signup.jsx';
 import Blog from './Components/Websites/Blog/Blog';
@@ -61,7 +60,6 @@ const router = createBrowserRouter([
     path: '/quiz-it',
     element: <Quiz url={quizIT} />,
   },
-  { path: '/forum', element: <Forum /> },
   { path: '/adminPanel', element: <AdminPanel /> },
   { path: '/login', element: <Login /> },
   { path: '/signup', element: <Signup /> },

@@ -9,8 +9,8 @@ export default function About() {
       <section>
         <h1>DevsPortal is a purpose-built platform for every developer.</h1>
         <p className="grey">
-          Meet the system for modern software development. Streamline issues,
-          projects, and product roadmaps.
+          Meet the system for modern software development. Quizes, articles, and
+          challenges are all in one place.
         </p>
         <div className="buttons-wrapper">
           <a href="#apps-wrapper">

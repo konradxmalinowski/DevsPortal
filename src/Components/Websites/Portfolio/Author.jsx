@@ -1,5 +1,3 @@
-import React from 'react';
-
 import pfp from '../../../assets/Author images/pfp.jpg';
 import githubLogo from '../../../assets/Author images/github-icon2.png';
 import linkedInLogo from '../../../assets/Author images/linkedin.png';
@@ -22,13 +20,11 @@ const Author = () => {
           <a href="https://github.com/konradxmalinowski" target="_blank">
             <img src={githubLogo} alt="github logo" loading="lazy" />
           </a>
-          <a href="https://www.linkedin.com/in/konrad-malinowski-894a36323/">
-            <img
-              src={linkedInLogo}
-              alt="linkedin logo"
-              loading="lazy"
-              target="_blank"
-            />
+          <a
+            href="https://www.linkedin.com/in/konrad-malinowski-894a36323/"
+            target="_blank"
+          >
+            <img src={linkedInLogo} alt="linkedin logo" loading="lazy" />
           </a>
         </div>
       </section>

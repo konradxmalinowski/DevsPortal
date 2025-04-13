@@ -4,7 +4,7 @@ import { createPortal } from 'react-dom';
 import './Modal.css';
 import Button from '../Button/Button';
 
-const Modal = ({ children, ref }) => {
+const Modal = ({ children, ref, id = undefined }) => {
   const dialog = useRef();
 
   function handleClose() {
@@ -23,10 +23,12 @@ const Modal = ({ children, ref }) => {
   });
 
   return createPortal(
-    <dialog ref={dialog} onClose={handleClose}>
+    <dialog ref={dialog} onClose={handleClose} id={id}>
       {children}
       <form method="dialog">
-        <Button type="light" label="Close" onClick={handleClose} />
+        <div className="button-container">
+          <Button type="light" label="Close" onClick={handleClose} />
+        </div>
       </form>
     </dialog>,
     document.body

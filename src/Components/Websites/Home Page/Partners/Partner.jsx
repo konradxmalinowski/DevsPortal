@@ -1,6 +1,6 @@
-export default function Partner({ name, logo, className, ...props }) {
+export default function Partner({ name, logo, className, link, ...props }) {
   return (
-    <div className="partner">
+    <div className="partner" onClick={() => window.open(link)}>
       <img
         src={logo}
         alt={name}

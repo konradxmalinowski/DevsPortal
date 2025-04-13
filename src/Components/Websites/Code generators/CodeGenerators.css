@@ -6,7 +6,7 @@
   padding: 80px 0;
 }
 
-.snippets-wrapper>section {
+.snippets-wrapper > section {
   width: max(70%, 300px);
   display: flex;
   justify-content: space-evenly;
@@ -27,13 +27,14 @@
   box-sizing: content-box;
   padding: 30px;
   border-radius: 10px;
+  box-shadow: 0 0 10px 3px var(--background-clr2);
 }
 
 .snippet h2 {
   text-align: center;
 }
 
-.snippet>button {
+.snippet > button {
   width: 50%;
 }
 

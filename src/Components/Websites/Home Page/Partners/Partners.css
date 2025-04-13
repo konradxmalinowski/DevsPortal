@@ -11,6 +11,13 @@
   gap: 40px;
 }
 
+.partners,
+.partners * {
+  ::selection {
+    background-color: transparent;
+  }
+}
+
 /* TODO: oddzielny plik */
 @media (width <= 670px) {
   .partners {

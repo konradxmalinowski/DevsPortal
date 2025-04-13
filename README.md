@@ -151,3 +151,32 @@ Strona internetowa wydaje się być portfolio, platformą edukacyjną lub centru
 #### Zapytanie 14
 
 > Teraz privacy po angielsku
+
+---
+
+#### Zapytanie 15
+
+> Napisz mi treść takiego bloga nr 1 (po angielsku):
+
+```js
+const CONTENT_BLOG1 = ``;
+
+class Blog {
+  constructor(title, content) {
+    this.title = title;
+    this.content = content;
+  }
+}
+
+const blog1 = new Blog('AI vs programming');
+
+export const blogs = [];
+```
+
+---
+
+#### Zapytanie 16
+
+> Teraz (samą treść) opisz 4 tematy związane z AI też po angielsku i też w tej formie
+
+---

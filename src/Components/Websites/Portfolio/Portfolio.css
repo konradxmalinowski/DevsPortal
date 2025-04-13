@@ -1,5 +1,4 @@
 /* author */
-
 :root {
   --clr-grey: #c5c5c6;
 }
@@ -91,6 +90,10 @@
   line-height: 1.9;
 }
 
+.project {
+  box-shadow: 0 0 10px 2px var(--background-clr2);
+}
+
 .projects-wrapper h1 ~ p {
   margin-bottom: 70px;
 }
@@ -141,6 +144,10 @@
   max-width: 1000px;
 }
 
+.language {
+  box-shadow: 0 0 10px 2px var(--background-clr2);
+}
+
 /* rates */
 .rates-wrapper {
   display: flex;
@@ -148,7 +155,6 @@
   align-items: center;
   justify-content: center;
   gap: 30px;
-  background-color: var(--background-clr3);
   margin-top: 150px;
   padding: 70px 20px;
 }

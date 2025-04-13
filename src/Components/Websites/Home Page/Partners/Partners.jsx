@@ -27,6 +27,15 @@ const labels = [
   'Apple logo',
 ];
 
+const homepageLinks = [
+  'https://openai.com/',
+  'https://www.microsoft.com/',
+  'https://www.dell.com/',
+  'https://www.perplexity.ai/',
+  'https://arc.net/',
+  'https://www.apple.com/',
+];
+
 const indexes = [0, 1, 2, 3, 4, 5];
 
 export default function Partners() {
@@ -44,6 +53,7 @@ export default function Partners() {
               name={labels[number]}
               logo={logos[number]}
               key={number + labels[number]}
+              link={homepageLinks[number]}
             />
           ))}
         </div>

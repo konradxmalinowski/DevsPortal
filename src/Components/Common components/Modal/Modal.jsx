@@ -8,19 +8,24 @@ const Modal = ({ children, ref, id = undefined }) => {
   const dialog = useRef();
 
   function handleClose() {
-    ref.current.close();
+    dialog.current?.close();
+    document.body.classList.remove('no-scroll');
+    document.querySelector('#root').classList.remove('no-scroll');
   }
 
-  useImperativeHandle(ref, () => {
-    return {
-      open() {
-        dialog.current.showModal();
-      },
-      close() {
-        dialog.current.close();
-      },
-    };
-  });
+  useImperativeHandle(ref, () => ({
+    open() {
+      dialog.current?.showModal();
+      dialog.current?.scrollTo(0, 0);
+      document.querySelector('#root').classList.add('no-scroll');
+      document.body.classList.add('no-scroll');
+    },
+    close() {
+      dialog.current?.close();
+      document.querySelector('#root').classList.remove('no-scroll');
+      document.body.classList.remove('no-scroll');
+    },
+  }));
 
   return createPortal(
     <dialog ref={dialog} onClose={handleClose} id={id}>

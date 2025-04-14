@@ -29,6 +29,10 @@ dialog[open] {
   animation: slide-in-from-top 0.35s ease-out forwards;
 }
 
+.no-scroll {
+  overflow: hidden !important;
+}
+
 @keyframes slide-in-from-top {
   0% {
     z-index: -2;

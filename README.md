@@ -53,6 +53,14 @@ Strona internetowa wydaje się być portfolio, platformą edukacyjną lub centru
 - [Zapytanie10](#zapytanie-10)
 - [Zapytanie11](#zapytanie-11)
 - [Zapytanie12](#zapytanie-12)
+- [Zapytanie13](#zapytanie-13)
+- [Zapytanie14](#zapytanie-14)
+- [Zapytanie15](#zapytanie-15)
+- [Zapytanie16](#zapytanie-16)
+- [Zapytanie17](#zapytanie-17)
+- [Zapytanie18](#zapytanie-18)
+- [Zapytanie19](#zapytanie-19)
+- [Zapytanie20](#zapytanie-20)
 
 #### Zapytanie 1
 

@@ -19,14 +19,14 @@
 }
 
 /* TODO: oddzielny plik */
-@media (width <= 670px) {
+@media (width <= 930px) {
   .partners {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 /* TODO: oddzielny plik */
-@media (width <= 500px) {
+@media (width <= 700px) {
   .partners {
     grid-template-columns: repeat(1, 1fr);
   }

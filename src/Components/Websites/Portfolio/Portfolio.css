@@ -69,6 +69,20 @@
   }
 }
 
+@media (width <= 600px) {
+  .author-wrapper .description-wrapper {
+    width: 80%;
+    align-items: center;
+  }
+
+  .author-wrapper .description-wrapper h1 {
+    font-size: 30px;
+    width: fit-content;
+    text-align: center;
+    max-width: none;
+  }
+}
+
 .special {
   background: linear-gradient(30deg, #a78bfa 35%, #e2e8f0);
   background-clip: text;

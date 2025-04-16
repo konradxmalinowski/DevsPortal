@@ -139,3 +139,7 @@ progress::-moz-progress-bar {
     transition: background-color 0.3s ease-in-out;
   }
 }
+
+img::selection {
+  background-color: transparent;
+}

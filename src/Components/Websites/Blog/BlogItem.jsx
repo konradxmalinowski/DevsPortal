@@ -9,8 +9,12 @@ const BlogItem = ({ title, content, seenLength, onClick }) => {
     <div className="blog-item">
       <h2>{title}</h2>
       <pre>{words}...</pre>
-
-      <Button label="Show more" onClick={onClick} className="green-button" />
+      <Button onClick={onClick} className="learn-more">
+        <span className="circle" aria-hidden="true">
+          <span className="icon arrow"></span>
+        </span>
+        <span className="button-text">Read More</span>
+      </Button>
     </div>
   );
 };

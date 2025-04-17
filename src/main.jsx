@@ -22,6 +22,7 @@ import Signup from './Components/Websites/Login & signup/Signup.jsx';
 import Blog from './Components/Websites/Blog/Blog';
 import ResetPassword from './Components/Websites/Reset Password/ResetPassword.jsx';
 import NotFound from './Components/Websites/NotFound/NotFound.jsx';
+import PasswordGenerator from './Components/Websites/Password generator/PasswordGenerator.jsx';
 
 import './common-styles.css';
 //#endregion
@@ -64,6 +65,7 @@ const router = createBrowserRouter([
   { path: '/login', element: <Login /> },
   { path: '/signup', element: <Signup /> },
   { path: '/resetPassword', element: <ResetPassword /> },
+  { path: '/generate-password', element: <PasswordGenerator /> },
   { path: '*', element: <NotFound /> },
 ]);
 

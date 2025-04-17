@@ -8,7 +8,7 @@ const QuizPanel = () => {
   return (
     <>
       <Header />
-      <div className="quiz-wrapper ">
+      <div className="quiz-wrapper">
         <section>
           <QuizItem
             label="INF.02"

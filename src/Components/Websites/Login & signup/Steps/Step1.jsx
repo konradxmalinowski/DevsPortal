@@ -13,6 +13,7 @@ const Step1 = ({ stepFunctions }) => {
       <h2>Choose a Username</h2>
       <Input type="text" label="Username" ref={usernameRef} autoFocus />
 
+      <p id="requirements-p">Requirements:</p>
       <ul>
         {usernameRequirements.map((requirement) => (
           <ListItem content={requirement} key={requirement} />

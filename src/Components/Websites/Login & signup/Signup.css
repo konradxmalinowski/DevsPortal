@@ -69,7 +69,12 @@
   justify-content: center;
   row-gap: 10px;
   align-items: flex-start;
-  margin: 0 auto;
+  /* margin: 0 auto; */
+  margin-left: 15px;
+}
+
+.signup-wrapper #requirements-p {
+  font-weight: 700;
 }
 
 .signup-wrapper li {
@@ -78,6 +83,7 @@
   padding-left: 7px;
 
   &::marker {
-    content: '✅';
+    content: '✱';
+    color: var(--buttons-clr);
   }
 }

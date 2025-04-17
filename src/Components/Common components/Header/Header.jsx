@@ -5,7 +5,14 @@ import './Header.css';
 import Button from '../Button/Button';
 import ListItem from '../ListItem';
 
-const labels = ['Blog', 'Challenges', 'Quiz', 'Admin Panel', 'Snippets'];
+const labels = [
+  'Blog',
+  'Password',
+  'Challenges',
+  'Quiz',
+  'Admin Panel',
+  'Snippets',
+];
 
 export default function Header() {
   const [isExtended, setIsExtended] = useState(false);
@@ -22,7 +29,12 @@ export default function Header() {
           {label}
         </Link>
       )}
-      {label !== 'Quiz' && label != 'Snippets' && (
+      {label === 'Password' && (
+        <Link to="/generate-password" key={label}>
+          {label}
+        </Link>
+      )}
+      {label !== 'Quiz' && label !== 'Snippets' && label !== 'Password' && (
         <Link to={`/${label.toLowerCase().replace(' ', '')}`} key={label}>
           {label}
         </Link>

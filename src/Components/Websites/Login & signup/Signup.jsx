@@ -12,6 +12,8 @@ import Step2 from './Steps/Step2.jsx';
 import Step3 from './Steps/Step3.jsx';
 import Step4 from './Steps/Step4.jsx';
 
+import DialogContentHTML from './DialogContentHTML.jsx';
+
 const userDataBasic = {
   username: '',
   email: '',
@@ -21,7 +23,7 @@ const userDataBasic = {
 const Signup = () => {
   const [step, setStep] = useState(1);
   const [userData, setUserData] = useState({ ...userDataBasic });
-  const [dialogContent, setDialogContent] = useState('');
+  const [DialogContent, setDialogContent] = useState('');
   const dialogRef = useRef(null);
   const navigate = useNavigate();
 
@@ -91,9 +93,15 @@ const Signup = () => {
         );
         const data = await response.json();
         if (response.ok) {
-          setDialogContent('Signup completed! Redirecting to login...');
+          setDialogContent(
+            <DialogContentHTML content="Success! Redirecting to login" />
+          );
+
           dialogRef.current?.open();
-          setTimeout(() => navigate('/login'), 2000);
+          setTimeout(() => {
+            navigate('/login');
+            dialogRef.current.close();
+          }, 4000);
         } else {
           setDialogContent(data.message || 'Signup failed');
           dialogRef.current?.open();
@@ -102,6 +110,8 @@ const Signup = () => {
         setDialogContent('Server error: ' + error.message);
         dialogRef.current?.open();
       }
+
+      dialogRef.current.close();
       return;
     }
 
@@ -138,7 +148,7 @@ const Signup = () => {
           </p>
         </div>
       </section>
-      <Modal ref={dialogRef}>{dialogContent}</Modal>
+      <Modal ref={dialogRef}>{DialogContent}</Modal>
       <Footer />
     </>
   );

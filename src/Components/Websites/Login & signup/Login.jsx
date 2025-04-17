@@ -14,6 +14,7 @@ import Input from './../../Common components/Input.jsx';
 import Modal from '../../Common components/Modal/Modal.jsx';
 
 import { emailRegEx, passwordRegEx } from '../../../RegEx.js';
+import DialogContentHTML from './DialogContentHTML.jsx';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -55,9 +56,13 @@ const Login = () => {
       const data = await response.json();
       if (response.ok) {
         localStorage.setItem('token', data.token);
-        setDialogContent('Login successful! Redirecting...');
+        setDialogContent(<DialogContentHTML content="Login" />);
+
         dialogRef.current?.open();
-        setTimeout(() => navigate('/adminPanel'), 2000);
+        setTimeout(() => {
+          dialogRef.current?.close();
+          navigate('/adminPanel');
+        }, 4000);
       } else {
         setDialogContent(data.message || 'Login failed');
         dialogRef.current?.open();
@@ -70,8 +75,14 @@ const Login = () => {
 
   const handleLogout = () => {
     localStorage.removeItem('token');
-    setIsLoggedIn(false);
-    navigate('/');
+    setDialogContent(<DialogContentHTML content="Logout..." />);
+    dialogRef.current.open();
+
+    setTimeout(() => {
+      dialogRef.current.close();
+      setIsLoggedIn(false);
+      navigate('/');
+    }, 4000);
   };
 
   return (
@@ -125,7 +136,9 @@ const Login = () => {
           )}
         </div>
       </section>
-      <Modal ref={dialogRef}>{dialogContent}</Modal>
+      <Modal ref={dialogRef} id="login-and-signup">
+        {dialogContent}
+      </Modal>
       <Footer />
     </>
   );

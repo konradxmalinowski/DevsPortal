@@ -38,6 +38,7 @@
     font-weight: 500;
     font-size: 23px;
     color: var(--buttons-clr);
+    text-align: center;
   }
 
   h1 {

@@ -33,10 +33,10 @@ const Blog = () => {
       <div className="blogs-wrapper wrapper">{blogsItems}</div>
       <Modal ref={modalRef} id="blog-id">
         {selectedTopic != null && (
-          <>
+          <div>
             <h1>{blogs[selectedTopic].title}</h1>
             <pre>{blogs[selectedTopic].content}</pre>
-          </>
+          </div>
         )}
       </Modal>
       <Footer />

@@ -5,11 +5,12 @@
   justify-content: center;
   align-items: start;
   flex-wrap: wrap;
-  row-gap: 40px;
+  column-gap: 20px;
+  row-gap: 30px;
 }
 
 .app-detail {
-  width: calc((100% / 4) - 10px);
+  width: calc((100% / 4) - 15px);
   min-width: 190px;
   height: 100%;
   display: flex;

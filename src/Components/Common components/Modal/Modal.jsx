@@ -28,7 +28,12 @@ const Modal = ({ children, ref, id = undefined }) => {
   }));
 
   return createPortal(
-    <dialog ref={dialog} onClose={handleClose} id={id}>
+    <dialog
+      ref={dialog}
+      onClose={handleClose}
+      id={id}
+      onKeyDown={(event) => (event.key === 'Escape' ? handleClose : undefined)}
+    >
       {children}
       <form method="dialog">
         <div className="button-container">

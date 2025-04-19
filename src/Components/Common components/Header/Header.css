@@ -64,12 +64,12 @@ header li {
 /* link animation */
 .wide-header,
 .navigation {
-  a {
+  li a {
     position: relative;
     text-decoration: none;
   }
 
-  a::before {
+  li a::before {
     content: '';
     position: absolute;
     width: 100%;
@@ -83,7 +83,7 @@ header li {
     transition: transform 0.5s ease-in-out;
   }
 
-  a:hover::before {
+  li a:hover::before {
     transform-origin: left;
     transform: scaleX(1);
   }
@@ -124,7 +124,6 @@ header li {
   background-color: var(--buttons-clr);
   position: absolute;
   left: 0;
-
   transition: transform 0.3s ease-in-out 0.2s;
 }
 

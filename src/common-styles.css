@@ -144,3 +144,28 @@ progress::-moz-progress-bar {
 img::selection {
   background-color: transparent;
 }
+
+/* common styles for components in Home Page */
+.wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 70px 0;
+}
+
+.wrapper > section {
+  width: max(40%, 300px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 20px;
+}
+
+/* TODO: oddzielny plik */
+@media (width <= 1600px) {
+  .wrapper > section {
+    width: max(60%, 300px);
+  }
+}

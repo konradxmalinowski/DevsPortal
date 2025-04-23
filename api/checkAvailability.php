@@ -9,11 +9,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             throw new Exception("Missing required fields: type or value");
         }
 
-        $type = $data['type']; // 'username' or 'email'
+        $type = $data['type'];
         $value = $data['value'];
 
-        if ($type !== 'username' && $type !== 'email') {
-            throw new Exception("Invalid type. Allowed values are 'username' or 'email'");
+        if (!in_array($type, ['username', 'email', 'phone'], true)) {
+            throw new Exception("Invalid type. Allowed values are 'username', 'email', or 'phone'");
         }
 
         $stmt = $conn->prepare("SELECT COUNT(*) FROM users WHERE $type = :value");
@@ -29,6 +29,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         http_response_code(400);
     }
 } else {
-    http_response_code(405); // Method Not Allowed
+    http_response_code(405);
 }
 ?>

@@ -136,7 +136,7 @@ const Login = () => {
           )}
         </div>
       </section>
-      <Modal ref={dialogRef} id="login-and-signup">
+      <Modal ref={dialogRef} className="login-and-signup">
         {dialogContent}
       </Modal>
       <Footer />

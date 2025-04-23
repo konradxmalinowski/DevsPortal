@@ -1,9 +1,8 @@
 export const passwordRegEx =
   /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+{}[\]:;<>,.?~\\/-]).{8,}$/;
-
 export const usernameRegEx = /^[a-zA-Z0-9]{5,30}$/;
-
 export const emailRegEx = /^[a-z0-9._%+-]+@[a-z0-9-]+\.[a-z]{2,}$/i;
+export const numberRegEx = /^[0-9+]{9,14}$/;
 
 export const usernameRequirements = [
   '5-30 characters',

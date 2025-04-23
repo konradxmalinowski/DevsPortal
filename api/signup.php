@@ -9,26 +9,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 try {
     $data = json_decode(file_get_contents("php://input"), true);
 
-    if (!isset($data['username'], $data['email'], $data['password'])) {
-        throw new Exception("Missing required fields: username, email, or password");
+    if (!isset($data['username'], $data['email'], $data['password'], $data['phone'])) {
+        throw new Exception("Missing required fields: username, email, password or phone");
     }
 
+    $username = $data['username'];
+    $email = $data['email'];
     $password = $data['password'];
-
-    $stmt = $conn->prepare("SELECT * FROM users WHERE email = :email");
-    $stmt->bindParam(':email', $data['email']);
-    $stmt->execute();
-
-    if ($stmt->rowCount() > 0) {
-        throw new Exception("User with this email already exists");
-    }
+    $phone = $data['phone'];
 
     $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
 
-    $stmt = $conn->prepare("INSERT INTO users (username, email, password) VALUES (:username, :email, :password)");
-    $stmt->bindParam(':username', $data['username']);
-    $stmt->bindParam(':email', $data['email']);
+    $stmt = $conn->prepare("INSERT INTO users (username, email, password, phone) VALUES (:username, :email, :password, :phone)");
+    $stmt->bindParam(':username', $username);
+    $stmt->bindParam(':email', $email);
     $stmt->bindParam(':password', $hashedPassword);
+    $stmt->bindParam(':phone', $phone);
     $stmt->execute();
 
     echo json_encode(["message" => "User registered successfully"]);

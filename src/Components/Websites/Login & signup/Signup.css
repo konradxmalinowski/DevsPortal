@@ -87,3 +87,15 @@
     color: var(--buttons-clr);
   }
 }
+
+#phone-number {
+  margin-top: 20px;
+}
+
+datalist {
+  height: 100px;
+}
+
+datalist {
+  max-height: 300px;
+}

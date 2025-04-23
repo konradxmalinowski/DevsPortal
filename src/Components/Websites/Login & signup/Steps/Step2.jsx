@@ -23,6 +23,7 @@ const Step2 = ({ stepFunctions }) => {
         ref={emailRef}
         autoFocus
         onKeyDown={(event) => handleClickEnter(event)}
+        onChange={(event) => handleClickEnter(event)}
       />
       <div className="buttons-wrapper">
         <Button

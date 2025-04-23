@@ -4,7 +4,7 @@ import { createPortal } from 'react-dom';
 import './Modal.css';
 import Button from '../Button/Button';
 
-const Modal = ({ children, ref, id = undefined }) => {
+const Modal = ({ children, ref, ...props }) => {
   const dialog = useRef();
 
   function handleClose() {
@@ -31,8 +31,8 @@ const Modal = ({ children, ref, id = undefined }) => {
     <dialog
       ref={dialog}
       onClose={handleClose}
-      id={id}
       onKeyDown={(event) => (event.key === 'Escape' ? handleClose : undefined)}
+      {...props}
     >
       {children}
       <form method="dialog">

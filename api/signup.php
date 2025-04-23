@@ -1,11 +1,6 @@
 <?php
 require_once __DIR__ . '/database.php';
 
-if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
-    http_response_code(200);
-    exit;
-}
-
 try {
     $data = json_decode(file_get_contents("php://input"), true);
 

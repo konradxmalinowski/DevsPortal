@@ -6,7 +6,7 @@ const AppOption = ({ label, className, ...props }) => {
       <section
         className={[
           'rectangle',
-          className === 'buttons-clr' ? 'green-rectangle' : 'grey-rectangle',
+          className === 'buttons-clr' ? 'purple-rectangle' : 'grey-rectangle',
         ].join(' ')}
       ></section>
       <section className={className}>{label}</section>

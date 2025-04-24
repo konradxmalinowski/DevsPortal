@@ -7,14 +7,20 @@
   --background-clr: #08090a;
   --background-clr2: #0e0f10;
   --background-clr3: #0a0b0c;
+
   --inputs-clr: #1a1c1d;
   --buttons-clr: #ffffff;
   --header-clr: #09090a;
   --menu-clr: #18191a;
   --grey-clr: #828790;
+
   --clr-green-50: #05b263;
   --clr-green-100: #18361e;
   --clr-green-200: #112a16;
+
+  --clr-1-download: #644dff;
+  --clr-2-download: #4836bb;
+  --clr-3-download: #654dff63;
 }
 
 * {
@@ -25,7 +31,7 @@
 }
 
 *::selection {
-  background-color: var(--clr-green-200);
+  background-color: var(--clr-3-download);
   color: var(--buttons-clr);
 }
 
@@ -63,7 +69,7 @@ button {
   outline: none;
 
   &:focus {
-    border-color: var(--clr-green-50);
+    border-color: var(--clr-1-download);
   }
 }
 
@@ -89,12 +95,12 @@ input[type='tel'] {
   position: relative;
 
   &:focus {
-    border-color: var(--clr-green-50);
+    border-color: var(--clr-1-download);
   }
 }
 
 input[type='checkbox'] {
-  accent-color: var(--clr-green-50);
+  accent-color: var(--clr-1-download);
   margin-right: 10px;
 }
 
@@ -105,7 +111,7 @@ label {
 }
 
 progress {
-  background-color: var(--clr-green-100);
+  background-color: var(--clr-2-download);
   border-radius: 10px;
   overflow: hidden;
   width: 200px;
@@ -113,31 +119,31 @@ progress {
 }
 
 progress::-webkit-progress-bar {
-  background-color: var(--clr-green-100);
+  background-color: var(--clr-2-download);
   border-radius: 10px;
 }
 
 progress::-webkit-progress-value {
-  background-color: var(--clr-green-50);
+  background-color: var(--clr-1-download);
   border-radius: 10px;
 }
 
 progress::-moz-progress-bar {
-  background-color: var(--clr-green-50);
+  background-color: var(--clr-1-download);
   border-radius: 10px;
 }
 
 .green-button {
   width: 100%;
   height: 40px;
-  background-color: var(--clr-green-100);
-  color: var(--clr-green-50);
-  border: 1px solid var(--clr-green-50);
+  background-color: var(--clr-2-download);
+  color: var(--clr-1-download);
+  border: 1px solid var(--clr-1-download);
   border-radius: 8px;
   transition: background-color 0.3s ease-in-out;
 
   &:hover {
-    background-color: var(--clr-green-200);
+    background-color: var(--clr-3-download);
     transition: background-color 0.3s ease-in-out;
   }
 }
@@ -156,7 +162,7 @@ img::selection {
 }
 
 .wrapper > section {
-  width: max(40%, 300px);
+  width: max(45%, 300px);
   display: flex;
   flex-direction: column;
   align-items: center;

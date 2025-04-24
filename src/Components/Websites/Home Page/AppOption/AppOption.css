@@ -29,8 +29,8 @@
   border-radius: 3px;
 }
 
-.green-rectangle {
-  background-color: var(--clr-green-50);
+.purple-rectangle {
+  background-color: var(--clr-2-download);
 }
 
 .grey-rectangle {

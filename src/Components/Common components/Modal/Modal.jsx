@@ -37,7 +37,11 @@ const Modal = ({ children, ref, ...props }) => {
       {children}
       <form method="dialog">
         <div className="button-container">
-          <Button type="light" label="Close" onClick={handleClose} />
+          <Button
+            className="purple-button"
+            label="Close"
+            onClick={handleClose}
+          />
         </div>
       </form>
     </dialog>,

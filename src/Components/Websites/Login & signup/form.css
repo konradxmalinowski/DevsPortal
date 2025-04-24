@@ -21,7 +21,6 @@ span img {
   width: 100%;
   height: 100%;
 }
-
 @keyframes blinkCursor {
   50% {
     border-right-color: transparent;
@@ -104,9 +103,9 @@ span img {
   display: inline-block;
   white-space: nowrap;
   overflow: hidden;
-  border-right: 2px solid green;
+  border-right: 2px solid var(--clr-2-download);
   animation: typeAndDelete 4s steps(11) infinite,
     blinkCursor 0.5s step-end infinite alternate;
-  color: rgb(0, 196, 0);
+  color: var(--clr-1-download);
   font-weight: 600;
 }

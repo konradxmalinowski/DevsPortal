@@ -8,7 +8,7 @@ const QuizItem = ({ label, description, to }) => {
       <h2>{label}</h2>
       <p>{description}</p>
       <Link to={to}>
-        <Button label="Check" type="dark" className="green-button" />
+        <Button label="Check" type="dark" className="purple-button" />
       </Link>
     </div>
   );

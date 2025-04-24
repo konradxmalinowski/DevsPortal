@@ -32,15 +32,12 @@
 }
 
 .project button {
-  background-color: var(--clr-green-100);
-  color: var(--clr-green-50);
-  border: 1px solid var(--clr-green-50);
-  border-radius: 8px;
-  transition: background-color 0.3s ease-in-out;
-  font-size: 16px;
+  background-color: var(--clr-2-download);
+  color: var(--buttons-clr);
+  font-weight: bold;
+  border: 1px solid var(--clr-1-download);
 
   &:hover {
-    background-color: var(--clr-green-200);
-    transition: background-color 0.3s ease-in-out;
+    background-color: var(--clr-3-download);
   }
 }

@@ -2,6 +2,23 @@ import pfp from '../../../assets/Author images/pfp.jpg';
 import githubLogo from '../../../assets/Author images/github-icon2.png';
 import linkedInLogo from '../../../assets/Author images/linkedin.png';
 
+const AuthorButton = ({ logo, link, name }) => {
+  return (
+    <button
+      className={`${name}-button author-button`}
+      onClick={() => window.open(link)}
+    >
+      <img
+        src={logo}
+        alt={name}
+        loading="lazy"
+        className={`${name.toLowerCase()}-icon author-icon`}
+      />
+      <p className={`${name.toLowerCase()}-text author-text`}>Click me</p>
+    </button>
+  );
+};
+
 const Author = () => {
   return (
     <section className="author-wrapper wrapper">
@@ -17,15 +34,16 @@ const Author = () => {
         </h1>
         <p className="job-type">Full-Stack Developer</p>
         <div>
-          <a href="https://github.com/konradxmalinowski" target="_blank">
-            <img src={githubLogo} alt="github logo" loading="lazy" />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/konrad-malinowski-894a36323/"
-            target="_blank"
-          >
-            <img src={linkedInLogo} alt="linkedin logo" loading="lazy" />
-          </a>
+          <AuthorButton
+            logo={githubLogo}
+            link="https://github.com/konradxmalinowski"
+            name="Github"
+          />
+          <AuthorButton
+            logo={linkedInLogo}
+            link="https://www.linkedin.com/in/konrad-malinowski-894a36323/"
+            name="LinkedIn"
+          />
         </div>
       </section>
     </section>

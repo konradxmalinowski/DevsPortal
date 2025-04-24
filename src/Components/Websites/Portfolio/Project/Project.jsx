@@ -10,10 +10,6 @@ const Project = ({ name, description, link }) => {
     window.open(link);
   }
 
-  const styles = {
-    padding: '20px',
-  };
-
   return (
     <div className="project">
       <h2>{name}</h2>

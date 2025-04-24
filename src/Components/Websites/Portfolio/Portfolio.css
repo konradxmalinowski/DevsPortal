@@ -33,12 +33,12 @@
 .author-wrapper .description-wrapper {
   padding: 30px;
   width: 50%;
+  align-items: flex-start;
 
   .intro {
     font-weight: 500;
     font-size: 23px;
     color: var(--buttons-clr);
-    text-align: center;
   }
 
   h1 {
@@ -59,15 +59,40 @@
     column-gap: 10px;
   }
 
-  img[alt*='logo'] {
-    width: 45px;
-    box-shadow: 0 0 6px 1px #a78bfa;
-    border-radius: 50%;
-  }
-
   img[alt^='github'] {
-    width: 40px;
+    width: 35px;
   }
+}
+
+.author-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 15px;
+  gap: 15px;
+  background-color: #181717;
+  outline: 3px #181717 solid;
+  border-radius: 5px;
+  border: none;
+  margin-right: 10px;
+}
+
+.author-button .author-text {
+  color: white;
+  font-size: 17px;
+  transition: 400ms;
+  margin: 0;
+  padding: 0;
+  font-weight: 700;
+}
+
+.author-button .author-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.author-button:hover {
+  box-shadow: 0 0 10px #181717;
 }
 
 @media (width <= 600px) {
@@ -176,15 +201,16 @@
 
 .rates-wrapper button {
   padding: 13px 23px;
-  background-color: var(--clr-green-100);
-  color: var(--clr-green-50);
-  border: 1px solid var(--clr-green-50);
+  background-color: var(--clr-2-download);
+  color: var(--buttons-clr);
+  font-weight: bold;
+  border: 1px solid var(--clr-1-download);
   border-radius: 8px;
   transition: background-color 0.3s ease-in-out;
   font-size: 16px;
 
   &:hover {
-    background-color: var(--clr-green-200);
+    background-color: var(--clr-3-download);
     transition: background-color 0.3s ease-in-out;
   }
 }

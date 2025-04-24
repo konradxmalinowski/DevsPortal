@@ -43,9 +43,18 @@ export default function Partners() {
     <div className="wrapper partners-wrapper">
       <section>
         <h2>Powering the world’s best product teams.</h2>
-        <p className="grey">
-          From next-gen startups to established enterprises.
-        </p>
+        <div className="card">
+          <div className="loader">
+            <p>We offer the best</p>
+            <div className="words">
+              <span className="word">Quiz</span>
+              <span className="word">Apps</span>
+              <span className="word">Blogs</span>
+              <span className="word">Challenges</span>
+              <span className="word">Tools</span>
+            </div>
+          </div>
+        </div>
 
         <div className="partners">
           {indexes.map((number) => (

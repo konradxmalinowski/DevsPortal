@@ -34,12 +34,12 @@
 
 /* come back button */
 .back-to-homepage-link {
-  background-color: var(--buttons-clr);
+  background-color: var(--clr-2-download);
+  color: var(--clr-1-download);
   height: 35px;
   width: fit-content;
   padding: 23px;
   border-radius: 30px;
-  color: var(--background-clr);
   display: flex;
   justify-content: center;
   align-items: center;

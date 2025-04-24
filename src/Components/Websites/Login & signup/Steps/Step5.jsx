@@ -24,6 +24,8 @@ const Step5 = ({ stepFunctions, userData }) => {
         autoFocus
         showIcon={showPasswordIcon}
         hideIcon={hidePasswordIcon}
+        onChange={(event) => handleClickEnter(event)}
+        onKeyChange={(event) => handleClickEnter(event)}
       />
       <div className="buttons-wrapper">
         <Button
@@ -41,9 +43,6 @@ const Step5 = ({ stepFunctions, userData }) => {
               'password'
             )
           }
-          onChange={(event) => handleClickEnter(event)}
-          onKeyChange={(event) => handleClickEnter(event)}
-          onKeyDown={(event) => handleClickEnter(event)}
           className="email-button green-button"
           type="dark"
         />

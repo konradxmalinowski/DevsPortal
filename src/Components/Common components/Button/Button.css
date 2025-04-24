@@ -27,3 +27,31 @@
     color: var(--buttons-clr) !important;
   }
 }
+
+.purple-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #fff;
+  background: var(--clr-1-download);
+  border: 2px solid var(--clr-2-download);
+  border-radius: 75rem;
+  box-shadow: 0 5px 0 var(--clr-2-download);
+  transition: all 0.1s ease;
+  padding: 9px 20px;
+}
+
+.purple-button:active {
+  letter-spacing: 0px;
+  transform: translateY(8px);
+  box-shadow: 0 0 0 var(--clr-3-download);
+  border: 2px solid var(--clr-2-download);
+}
+
+.purple-button:focus {
+  border-color: var(--clr-2-download);
+}

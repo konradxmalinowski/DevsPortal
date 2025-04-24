@@ -68,20 +68,90 @@ Soft skills like critical thinking, creativity, and emotional intelligence will 
 The workplace of the future will be hybrid — with humans and AI working side by side, each doing what they do best. The goal isn’t to outcompete machines, but to collaborate with them. This is not the end of work — it’s a new beginning.
 `;
 
+const CONTENT_BLOG6 = `
+The Rise of Quantum Computing: What It Means for the Future of Technology
+
+Quantum computing is one of the most exciting advancements in modern technology. Unlike classical computers, which use bits to represent data as 0s or 1s, quantum computers use quantum bits, or qubits, which can exist in multiple states simultaneously thanks to the principles of superposition and entanglement. This allows quantum computers to perform complex calculations at speeds unimaginable for classical systems.
+
+Applications of quantum computing are vast and transformative. In cryptography, quantum computers could break traditional encryption methods, prompting the development of quantum-resistant algorithms. In healthcare, they could simulate molecular interactions to accelerate drug discovery. In logistics, they could optimize supply chains with unprecedented efficiency.
+
+However, the field is still in its infancy. Challenges such as error correction, qubit stability, and scalability must be overcome before quantum computing becomes mainstream. Despite these hurdles, the potential of quantum computing to revolutionize industries makes it a field worth watching closely.
+`;
+
+const CONTENT_BLOG7 = `
+Cybersecurity in the Age of AI: Opportunities and Threats
+
+Artificial intelligence is reshaping the cybersecurity landscape, offering both opportunities and challenges. On the defensive side, AI-powered tools can analyze vast amounts of data to detect anomalies, identify threats, and respond to attacks in real-time. Machine learning algorithms can predict vulnerabilities and recommend patches before exploits occur.
+
+However, AI is a double-edged sword. Cybercriminals are leveraging AI to create more sophisticated attacks. Automated phishing campaigns, AI-generated malware, and deepfake technology are just a few examples of how attackers are using AI to outsmart traditional defenses. This arms race between defenders and attackers is pushing the boundaries of cybersecurity innovation.
+
+To stay ahead, organizations must adopt AI-driven security solutions while also investing in human expertise. Cybersecurity professionals need to understand AI's capabilities and limitations to effectively combat emerging threats. Collaboration between governments, private companies, and academia will be crucial in building a secure digital future.
+`;
+
+const CONTENT_BLOG8 = `
+The Evolution of Programming Languages: From Assembly to Python
+
+Programming languages have evolved significantly over the decades, reflecting the changing needs of developers and the growing complexity of software systems. In the early days of computing, assembly language was the primary tool for programming. It provided direct control over hardware but required intricate knowledge of machine architecture.
+
+As software development matured, high-level languages like FORTRAN, COBOL, and C emerged, offering greater abstraction and productivity. These languages introduced concepts like structured programming, making code easier to write, read, and maintain. The rise of object-oriented programming in the 1980s, with languages like C++ and Java, further revolutionized software design by promoting modularity and reusability.
+
+Today, languages like Python, JavaScript, and Go dominate the landscape, emphasizing simplicity, readability, and versatility. The evolution of programming languages mirrors the industry's shift toward accessibility and efficiency, enabling developers to focus on solving problems rather than wrestling with syntax.
+`;
+
+const CONTENT_BLOG9 = `
+The Role of Open Source in Driving Innovation
+
+Open-source software has become a cornerstone of modern technology, fostering collaboration and innovation on a global scale. Projects like Linux, Apache, and Kubernetes have demonstrated the power of collective knowledge, enabling developers from diverse backgrounds to contribute to shared goals.
+
+One of the key benefits of open source is transparency. Developers can inspect, modify, and improve the code, ensuring that software meets the highest standards of quality and security. This collaborative approach accelerates innovation, as ideas and solutions are freely exchanged within the community.
+
+Open source also empowers individuals and organizations by reducing barriers to entry. Startups can build on existing frameworks without incurring high licensing costs, while developers can learn and grow by contributing to real-world projects. As the tech industry continues to evolve, open source will remain a driving force behind progress and creativity.
+`;
+
+const CONTENT_BLOG10 = `
+Edge Computing vs. Cloud Computing: Which One Will Dominate?
+
+As the demand for real-time data processing grows, edge computing is emerging as a complement to cloud computing. While cloud computing centralizes data storage and processing in remote data centers, edge computing brings computation closer to the source of data generation, such as IoT devices and sensors.
+
+Edge computing offers several advantages, including reduced latency, improved reliability, and enhanced privacy. For applications like autonomous vehicles, smart cities, and industrial automation, real-time decision-making is critical, making edge computing an ideal solution.
+
+However, cloud computing remains indispensable for tasks requiring massive computational power and scalability, such as big data analytics and machine learning. The future of computing will likely involve a hybrid approach, where edge and cloud technologies work together to deliver optimal performance and efficiency.
+
+The debate between edge and cloud computing is not about which will dominate, but how they will coexist to meet the diverse needs of modern technology. By leveraging the strengths of both, organizations can create robust, flexible, and innovative solutions.
+`;
 class Blog {
-  constructor(title, content, id) {
+  static id = 0;
+
+  constructor(title, content) {
     this.title = title;
     this.content = content;
-    this.id = id;
+    this.id = Blog.id++;
   }
 }
 
-let id = 0;
+const blog1 = new Blog('AI vs programming', CONTENT_BLOG1);
+const blog2 = new Blog('AI in Everyday Life', CONTENT_BLOG2);
+const blog3 = new Blog('Ethical Dilemmas in AI', CONTENT_BLOG3);
+const blog4 = new Blog('Can AI Be Creative?', CONTENT_BLOG4);
+const blog5 = new Blog('The Future of Work with AI', CONTENT_BLOG5);
+const blog6 = new Blog('The Rise of Quantum Computing', CONTENT_BLOG6);
+const blog7 = new Blog('Cybersecurity in the Age of AI', CONTENT_BLOG7);
+const blog8 = new Blog('The Evolution of Programming Languages', CONTENT_BLOG8);
+const blog9 = new Blog(
+  'The Role of Open Source in Driving Innovation',
+  CONTENT_BLOG9
+);
+const blog10 = new Blog('Edge Computing vs. Cloud Computing', CONTENT_BLOG10);
 
-const blog1 = new Blog('AI vs programming', CONTENT_BLOG1, id);
-const blog2 = new Blog('AI in Everyday Life', CONTENT_BLOG2, ++id);
-const blog3 = new Blog('Ethical Dilemmas in AI', CONTENT_BLOG3, ++id);
-const blog4 = new Blog('Can AI Be Creative?', CONTENT_BLOG4, ++id);
-const blog5 = new Blog('The Future of Work with AI', CONTENT_BLOG5, ++id);
-
-export const blogs = [blog1, blog2, blog3, blog4, blog5];
+export const blogs = [
+  blog1,
+  blog2,
+  blog3,
+  blog4,
+  blog5,
+  blog6,
+  blog7,
+  blog8,
+  blog9,
+  blog10,
+];

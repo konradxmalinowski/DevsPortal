@@ -44,12 +44,18 @@ const Quiz = ({ url }) => {
   const checkCorrectness = (key) => {
     if (key === correctAnswers) {
       if (key === 'a') {
-        setAnswerAStyle({ backgroundColor: '#006A67' });
+        setAnswerAStyle({ backgroundColor: 'var(--color1)' });
       }
-      if (key === 'b') setAnswerBStyle({ backgroundColor: '#006A67' });
+      if (key === 'b') {
+        setAnswerBStyle({ backgroundColor: 'var(--color1)' });
+      }
     } else {
-      if (key === 'a') setAnswerAStyle({ backgroundColor: 'rgb(201, 57, 32)' });
-      if (key === 'b') setAnswerBStyle({ backgroundColor: 'rgb(201, 57, 32)' });
+      if (key === 'a') {
+        setAnswerAStyle({ backgroundColor: 'var(--color2)' });
+      }
+      if (key === 'b') {
+        setAnswerBStyle({ backgroundColor: 'var(--color2)' });
+      }
     }
   };
 
@@ -68,7 +74,11 @@ const Quiz = ({ url }) => {
           ? `Question ${idxRandomNumber} / ${questionsData.length}`
           : ''}
       </span>
-      <button id="generateButton" onClick={createQuestion}>
+      <button
+        id="generateButton"
+        className="purple-button"
+        onClick={createQuestion}
+      >
         Generate Question
       </button>
       {randomQuestion && (

@@ -35,6 +35,10 @@
   row-gap: 30px;
 }
 
+.apps-wrapper > section > h1 {
+  text-align: center;
+}
+
 .apps-wrapper > section > div:nth-of-type(1) {
   display: flex;
   align-items: center;

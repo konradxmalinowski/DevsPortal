@@ -2,22 +2,7 @@ import pfp from '../../../assets/Author images/pfp.jpg';
 import githubLogo from '../../../assets/Author images/github-icon2.png';
 import linkedInLogo from '../../../assets/Author images/linkedin.png';
 
-const AuthorButton = ({ logo, link, name }) => {
-  return (
-    <button
-      className={`${name}-button author-button`}
-      onClick={() => window.open(link)}
-    >
-      <img
-        src={logo}
-        alt={name}
-        loading="lazy"
-        className={`${name.toLowerCase()}-icon author-icon`}
-      />
-      <p className={`${name.toLowerCase()}-text author-text`}>Click me</p>
-    </button>
-  );
-};
+import AuthorButton from './AuthorButton';
 
 const Author = () => {
   return (

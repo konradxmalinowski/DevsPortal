@@ -75,7 +75,7 @@ const Login = () => {
 
   const handleLogout = () => {
     localStorage.removeItem('token');
-    setDialogContent(<DialogContentHTML content="Logout..." />);
+    setDialogContent(<DialogContentHTML content="Logout" />);
     dialogRef.current.open();
 
     setTimeout(() => {

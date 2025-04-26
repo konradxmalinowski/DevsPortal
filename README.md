@@ -1,43 +1,116 @@
-### Użyte technologie
+# Developers Portal
 
-1. **React**: Aplikacja została zbudowana przy użyciu Reacta, popularnej biblioteki JavaScript do tworzenia interfejsów użytkownika. Wykorzystuje funkcjonalne komponenty i składnię JSX do renderowania dynamicznej zawartości.
-2. **JavaScript (ES6+)**: Kod korzysta z nowoczesnych funkcji JavaScript, takich jak funkcje strzałkowe, destrukturyzacja i operator rozproszenia (spread).
-3. **CSS**: Stylizacja jest realizowana za pomocą oddzielnych plików CSS (np. `AdminPanel.css`, `Blog.css`), importowanych do każdego komponentu dla stylów o ograniczonym zasięgu.
-4. **HTML**: Używany pośrednio przez JSX, który kompiluje się do elementów HTML w przeglądarce.
-5. **Importowanie plików**: Aplikacja wykorzystuje moduły ES6 do zarządzania zależnościami, takimi jak komponenty, zasoby (obrazy) i arkusze stylów.
+## Opis projektu
 
-### Struktura i komponenty
+Developers Portal to kompleksowa platforma stworzona z myślą o programistach. Łączy w sobie różnorodne funkcjonalności, takie jak quizy, generatory kodu, blogi, wyzwania programistyczne oraz portfolio autora. Celem projektu jest wspieranie nauki, rozwój umiejętności oraz dostarczanie narzędzi ułatwiających codzienną pracę programistów.
 
-Aplikacja składa się z wielokrotnie używanych, modułowych komponentów, zorganizowanych w przejrzystą strukturę katalogów. Oto główne sekcje i ich cele:
+---
 
-1. **Wspólne komponenty**:
+## Użyte technologie
 
-   - **`Header.jsx`**: Wielokrotnie używany nagłówek, importowany na różne strony (np. `AdminPanel`, `Blog`, `App`).
-   - **`Footer.jsx`**: Wielokrotnie używana stopka, podobnie obecna na wielu stronach.
-   - **`Button.jsx`**: Dostosowalny komponent przycisku, wykorzystywany np. w `CodeGenerator` do linków pobierania.
+Projekt został zbudowany przy użyciu nowoczesnych technologii, które zapewniają wydajność, skalowalność i łatwość utrzymania:
 
-2. **Strony**:
-   - **`AdminPanel`**: Prosta strona wyświetlająca tekst "AdminPanel" między nagłówkiem a stopką.
-   - **`Blog`**: Podstawowa strona blogowa z treścią "Blog", również otoczona nagłówkiem i stopką.
-   - **`Challenges`**: Strona pokazująca treść "Challenges" w tej samej strukturze nagłówek-stopka.
-   - **`CodeGenerators`**: Bardziej złożona strona oferująca listę pobieralnych fragmentów kodu (np. "Clean React Project", "Vanilla JS Project", "Basic Clock") prezentowanych jako komponenty `CodeGenerator`. Każdy fragment zawiera etykietę, link do pliku ZIP i stylizowany przycisk.
-   - **`App`**: Główna strona aplikacji, pełniąca rolę strony startowej. Zawiera sekcje `About`, `Partners` i `Applications`, wraz z nagłówkiem i stopką.
+- **Frontend**:
 
-### Funkcje i zawartość
+  - **React**: Dynamiczne komponenty i zarządzanie stanem aplikacji.
+  - **JavaScript (ES6+)**: Nowoczesne funkcje języka, takie jak destrukturyzacja, funkcje strzałkowe i operatory rozproszenia.
+  - **CSS**: Dedykowane pliki CSS dla każdego komponentu, zapewniające modularność i spójność stylów.
+  - **HTML**: JSX kompilowany do HTML dla dynamicznych interfejsów użytkownika.
 
-- **Modułowa konstrukcja**: Aplikacja kładzie nacisk na ponowne wykorzystanie komponentów, takich jak `Header`, `Footer`, `Button` i `Partner`, dzielonych między strony.
-- **Dynamiczne renderowanie**: Komponenty `Partners` i `CodeGenerators` używają tablic i mapowania do dynamicznego generowania zawartości (np. logo partnerów, pobieralne fragmenty kodu).
-- **Elementy interaktywne**: Przyciski pobierania w `CodeGenerators` linkują do plików ZIP, a komponent `AppOption` sugeruje klikalne opcje z dostosowalnymi stylami.
-- **Układ responsywny**: Klasy CSS, takie jak `wrapper`, `snippets-wrapper` czy `partners-wrapper`, wskazują na fokus na układ i stylizację, być może z myślą o responsywności (choć pliki CSS nie zostały podane).
-- **Tematyka treści**: Strona zdaje się być skierowana do programistów lub entuzjastów technologii, oferując fragmenty kodu, blog, wyzwania i prezentację znanych partnerów technologicznych (np. OpenAI, Microsoft, Apple).
+- **Backend**:
 
-### Przeznaczenie
+  - **PHP**: Obsługa logiki serwera i komunikacji z bazą danych.
+  - **MySQL**: Przechowywanie danych użytkowników, quizów i innych zasobów.
 
-Strona internetowa wydaje się być portfolio, platformą edukacyjną lub centrum zasobów dla programistów. Oferuje:
+- **Inne**:
+  - **React Router**: Nawigacja między podstronami.
+  - **Webpack - Vite**: Bundling i optymalizacja zasobów.
+  - **Font Inter**: Nowoczesna i czytelna czcionka.
+  - **Zdjęcia i obrazki**: pochodzą ze stron: [link1](https://icons8.com/), [link2](https://www.flaticon.com/), [link3](https://chatgpt.com/) i kilka innych
 
-- Pobieralne szablony kodu (`CodeGenerators`).
-- Informacje o partnerstwach z wiodącymi firmami technologicznymi (`Partners`).
-- Dodatkowe sekcje, takie jak blog i wyzwania do tutoriali lub angażowania społeczności.
+---
+
+## Podstrony
+
+Portal składa się z wielu podstron, które oferują różnorodne funkcjonalności:
+
+1. **Strona główna (Home Page)**:
+
+   - Sekcja "About" z opisem platformy.
+   - Lista partnerów technologicznych, takich jak OpenAI, Microsoft i Apple.
+   - Prezentacja aplikacji, takich jak Quiz, Timer, Shop i Todo App.
+
+2. **Blog**:
+
+   - Artykuły na tematy związane z programowaniem, AI i nowoczesnymi technologiami.
+   - Funkcja "Read More" umożliwiająca rozwinięcie treści.
+
+3. **Quizy**:
+
+   - Quizy tematyczne, np. INF.02, INF.03, INF.04, oraz językowe (angielski, niemiecki).
+   - Interaktywne pytania z natychmiastową informacją zwrotną.
+
+4. **Generatory kodu**:
+
+   - Pobieranie gotowych szablonów projektów, takich jak "Clean React Project" czy "Vanilla JS Project".
+
+5. **Portfolio autora**:
+
+   - Projekty autora, takie jak sklep internetowy, aplikacja Todo i test egzaminacyjny.
+   - Sekcja "Skills" z listą technologii i poziomem zaawansowania.
+   - Możliwość oceny strony przez użytkowników.
+
+6. **Wyzwania (Challenges)**:
+
+   - Sekcja z zadaniami programistycznymi do rozwiązania.
+
+7. **Logowanie i rejestracja**:
+
+   - Wieloetapowy proces rejestracji z walidacją danych.
+   - Logowanie z obsługą tokenów.
+
+8. **Panel administratora**:
+
+   - Prosta strona administracyjna z dostępem do zarządzania treścią.
+
+9. **Strona 404**:
+   - Przyjazny komunikat o błędzie z animacjami i przyciskiem powrotu na stronę główną.
+
+---
+
+## Kolory
+
+Portal wykorzystuje nowoczesną i spójną paletę kolorów, która nadaje mu profesjonalny i estetyczny wygląd. Oto główne kolory używane w aplikacji:
+
+### Kolory tła:
+
+- **Ciemny szary**: `#08090a` – główny kolor tła aplikacji.
+- **Grafitowy**: `#0e0f10` – dodatkowe tło dla sekcji.
+- **Antracytowy**: `#0a0b0c` – tło dla elementów interaktywnych.
+
+### Kolory elementów interaktywnych:
+
+- **Biały**: `#ffffff` – kolor przycisków i tekstu na ciemnym tle.
+- **Zielony jasny**: `#05b263` – kolor akcentów, np. przycisków akcji.
+- **Zielony ciemny**: `#18361e` – tło dla sekcji z zielonymi akcentami.
+
+### Kolory dodatkowe:
+
+- **Szary**: `#828790` – kolor tekstu pomocniczego i ikon.
+- **Fioletowy jasny**: `#644dff` – kolor przycisków pobierania.
+- **Fioletowy ciemny**: `#4836bb` – kolor hover dla przycisków pobierania.
+
+### Przykładowa wizualizacja palety:
+
+| Kolor               | Kod HEX   | Zastosowanie                    |
+| ------------------- | --------- | ------------------------------- |
+| **Ciemny szary**    | `#08090a` | Główne tło aplikacji            |
+| **Grafitowy**       | `#0e0f10` | Dodatkowe tło sekcji            |
+| **Zielony jasny**   | `#05b263` | Akcenty, np. przyciski akcji    |
+| **Fioletowy jasny** | `#644dff` | Przycisk pobierania             |
+| **Biały**           | `#ffffff` | Tekst na ciemnym tle, przyciski |
+
+---
 
 ### Zapytania AI
 
@@ -188,3 +261,7 @@ export const blogs = [];
 > Teraz (samą treść) opisz 4 tematy związane z AI też po angielsku i też w tej formie
 
 ---
+
+### Zapytanie 17
+
+> Napisz od nowa plik readme.md. Nowy plik ma zawierać:, uzyte technologie, strony (główne pliki .jsx zawarte w header i footer i inne), kolory, czcionki/czcionkę, treść w skrócie, skąd pomysł na aplikacje.

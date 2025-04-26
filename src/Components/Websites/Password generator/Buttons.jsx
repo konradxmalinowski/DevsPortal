@@ -26,15 +26,15 @@ function Buttons({
     <section id="buttons">
       <Button
         id="generateBtn"
-        className="green-button"
+        className="purple-button"
         onClick={handleGenerate}
       >
         Generate
       </Button>
-      <Button id="copyBtn" className="green-button" onClick={handleCopy}>
+      <Button id="copyBtn" className="purple-button" onClick={handleCopy}>
         Copy
       </Button>
-      <Button className="green-button" onClick={handleClear}>
+      <Button className="purple-button" onClick={handleClear}>
         Clear
       </Button>
     </section>

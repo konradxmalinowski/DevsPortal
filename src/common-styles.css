@@ -4,23 +4,42 @@
 }
 
 :root {
+  /* Background colors */
   --background-clr: #08090a;
   --background-clr2: #0e0f10;
   --background-clr3: #0a0b0c;
 
+  /* Input and button colors */
   --inputs-clr: #1a1c1d;
   --buttons-clr: #ffffff;
   --header-clr: #09090a;
   --menu-clr: #18191a;
   --grey-clr: #828790;
 
-  --clr-green-50: #05b263;
-  --clr-green-100: #18361e;
-  --clr-green-200: #112a16;
-
+  /* Download button colors */
   --clr-1-download: #644dff;
   --clr-2-download: #4836bb;
   --clr-3-download: #654dff63;
+
+  /* Additional colors */
+  --clr-grey: #c5c5c6;
+  --clr-black: #181717;
+  --clr-white: #ffffff;
+  --clr-gradient-start: #a78bfa;
+  --clr-gradient-end: #e2e8f0;
+  --clr-shadow: #181717;
+  --clr-blue-hover: rgb(0, 25, 138);
+
+  --clr-light-black: #26282e;
+  --clr-hr: #1b1d1f;
+
+  --clr-terminal-border: #ffffff3e;
+  --clr-terminal-bg: #1c1c1c;
+  --clr-terminal-header: #343434;
+
+  --clr-partners-border: #1b1d1f;
+  --clr-partners-text: #956afa;
+  --clr-words: #956afa;
 }
 
 * {

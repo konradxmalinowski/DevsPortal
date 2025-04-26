@@ -60,7 +60,7 @@ main {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-color: #26282e;
+  background-color: var(--clr-light-black);
   padding: 10px;
   border-radius: 10px;
   font-weight: bold;
@@ -78,7 +78,7 @@ main {
 
 .answer {
   width: 100%;
-  background-color: #26282e;
+  background-color: var(--clr-light-black);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -91,7 +91,7 @@ main {
 }
 
 .answer:hover {
-  background-color: rgb(0, 25, 138);
+  background-color: var(--clr-blue-hover);
 }
 
 #question-number {

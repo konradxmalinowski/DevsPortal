@@ -22,8 +22,8 @@
 .apps-wrapper hr {
   width: 100%;
   height: 1px;
-  background-color: #1b1d1f;
-  border: 1px solid #1b1d1f;
+  background-color: var(--clr-hr);
+  border: 1px solid var(--clr-hr);
   margin-top: 50px;
 }
 

@@ -1,10 +1,10 @@
 function Checkbox({ name, checked, content, onChange }) {
   return (
     <section>
-      <label className="cyberpunk-checkbox-label">
+      <label className="custom-checkbox-label">
         <input
           type="checkbox"
-          className="cyberpunk-checkbox"
+          className="custom-checkbox"
           name={name}
           id={name}
           checked={checked}

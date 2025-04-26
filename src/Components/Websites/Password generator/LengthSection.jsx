@@ -20,6 +20,10 @@ function LengthSection({ passwordLength, setPasswordLength }) {
     }
   };
 
+  const handleSetToZero = () => {
+    setPasswordLength(0);
+  };
+
   return (
     <section id="length-section">
       <label>
@@ -37,15 +41,21 @@ function LengthSection({ passwordLength, setPasswordLength }) {
       <section>
         <Button
           id="decrease-button"
-          type="dark"
+          className="purple-button"
           label="-"
           onClick={handleDecrease}
         />
         <Button
           id="increase-button"
-          type="dark"
+          className="purple-button"
           label="+"
           onClick={handleIncrease}
+        />
+        <Button
+          id="set-0-button"
+          className="purple-button"
+          label="0"
+          onClick={handleSetToZero}
         />
       </section>
     </section>

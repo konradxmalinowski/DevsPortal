@@ -6,7 +6,6 @@ import wordpressImg from '../../../assets/Languages/wordpress-icon.png';
 import sqlImg from '../../../assets/Languages/sql-icon.png';
 import mysqlImg from '../../../assets/Languages/mysql-icon.png';
 import pythonImg from '../../../assets/Languages/python-icon.png';
-import cSzarpImg from '../../../assets/Languages/c-hasz-icon.png';
 
 import Language from './Language/Language';
 
@@ -19,7 +18,6 @@ const names = [
   'SQL',
   'MySQL',
   'Python',
-  'C#',
 ];
 
 const images = [
@@ -31,7 +29,6 @@ const images = [
   sqlImg,
   mysqlImg,
   pythonImg,
-  cSzarpImg,
 ];
 
 const levels = [
@@ -40,7 +37,6 @@ const levels = [
   'Experienced',
   'Experienced',
   'Experienced',
-  'Basics',
   'Basics',
   'Basics',
   'Basics',
@@ -55,7 +51,6 @@ const IDs = [
   'sql-img',
   'mysql-img',
   'python-img',
-  'c-hasz-img',
 ];
 
 const Skills = () => {

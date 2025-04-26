@@ -9,7 +9,7 @@ const Rates = () => {
         work in creating this website.
       </p>
       <a href="mailto:konradmalinowski@zsezdwola.com" target="_blank">
-        <Button label="Rate website" />
+        <Button label="Rate website" className="purple-button" />
       </a>
     </div>
   );

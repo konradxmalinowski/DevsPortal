@@ -1,10 +1,5 @@
-/* author */
-:root {
-  --clr-grey: #c5c5c6;
-}
-
 .author-wrapper {
-  min-height: calc(100svh - 63px);
+  min-height: calc(100svh - 100px);
   display: flex;
   flex-wrap: wrap-reverse;
 }
@@ -70,15 +65,15 @@
   align-items: center;
   padding: 10px 15px;
   gap: 15px;
-  background-color: #181717;
-  outline: 3px #181717 solid;
+  background-color: var(--clr-black);
+  outline: 3px var(--clr-black) solid;
   border-radius: 5px;
   border: none;
   margin-right: 10px;
 }
 
 .author-button .author-text {
-  color: white;
+  color: var(--clr-white);
   font-size: 17px;
   transition: 400ms;
   margin: 0;
@@ -92,7 +87,7 @@
 }
 
 .author-button:hover {
-  box-shadow: 0 0 10px #181717;
+  box-shadow: 0 0 10px var(--clr-shadow);
 }
 
 @media (width <= 600px) {
@@ -107,10 +102,22 @@
     text-align: center;
     max-width: none;
   }
+
+  .intro {
+    text-align: center;
+  }
+
+  .job-type {
+    text-align: center;
+  }
 }
 
 .special {
-  background: linear-gradient(30deg, #a78bfa 35%, #e2e8f0);
+  background: linear-gradient(
+    30deg,
+    var(--clr-gradient-start) 35%,
+    var(--clr-gradient-end)
+  );
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -197,20 +204,4 @@
   gap: 30px;
   margin-top: 150px;
   padding: 70px 20px;
-}
-
-.rates-wrapper button {
-  padding: 13px 23px;
-  background-color: var(--clr-2-download);
-  color: var(--buttons-clr);
-  font-weight: bold;
-  border: 1px solid var(--clr-1-download);
-  border-radius: 8px;
-  transition: background-color 0.3s ease-in-out;
-  font-size: 16px;
-
-  &:hover {
-    background-color: var(--clr-3-download);
-    transition: background-color 0.3s ease-in-out;
-  }
 }

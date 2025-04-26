@@ -46,15 +46,17 @@ span img {
 }
 
 .terminal-loader {
+  --box-shadow: rgba(0, 0, 0, 0.4);
+
   width: 100%;
   max-width: 300px;
   height: 200px;
-  background: #1c1c1c;
-  border: 1px solid #ffffff3e;
+  background: var(--clr-terminal-bg);
+  border: 1px solid var(--clr-terminal-border);
   border-radius: 10px;
   overflow: hidden;
   margin: 20px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 15px var(--box-shadow);
 }
 
 .terminal-header {
@@ -62,7 +64,7 @@ span img {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #343434;
+  background-color: var(--clr-terminal-header);
   padding: 6px;
 }
 

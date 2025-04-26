@@ -3,6 +3,7 @@ import Footer from '../../Common components/Footer/Footer.jsx';
 import About from './About/About.jsx';
 import Partners from './Partners/Partners.jsx';
 import Applications from './Applications/Applications.jsx';
+import Cookies from '../../Common components/Cookies/Cookies.jsx';
 
 import './App.css';
 
@@ -14,6 +15,7 @@ export default function App() {
       <Partners />
       <Applications />
       <Footer />
+      <Cookies />
     </>
   );
 }

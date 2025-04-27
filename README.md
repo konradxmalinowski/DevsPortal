@@ -265,3 +265,11 @@ export const blogs = [];
 ### Zapytanie 17
 
 > Napisz od nowa plik readme.md. Nowy plik ma zawierać:, uzyte technologie, strony (główne pliki .jsx zawarte w header i footer i inne), kolory, czcionki/czcionkę, treść w skrócie, skąd pomysł na aplikacje.
+
+---
+
+### Zapytanie 18
+
+> Jak zrobić efekt na stronie, że jeśli dojadę do pewnego elementu to on lekko z dołu się pojawia? Wiesz o co chodzi? Można samy js bez biblioteki?
+
+---

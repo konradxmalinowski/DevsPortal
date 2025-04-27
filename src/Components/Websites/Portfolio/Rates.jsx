@@ -1,8 +1,20 @@
+import { useEffect, useRef } from 'react';
+
 import Button from '../../Common components/Button/Button.jsx';
 
-const Rates = () => {
+const Rates = ({ handleScrollIntoView }) => {
+  const ref = useRef();
+
+  useEffect(() => {
+    const [element, observer] = handleScrollIntoView(ref);
+
+    return () => {
+      if (element) observer.unobserve(element);
+    };
+  }, [handleScrollIntoView]);
+
   return (
-    <div className="rates-wrapper wrapper">
+    <div className="rates-wrapper wrapper reveal" ref={ref}>
       <h1>Do you want to rate this website?</h1>
       <p>
         I encourage you to click the button below and share your feedback on my

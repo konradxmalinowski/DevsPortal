@@ -1,3 +1,5 @@
+import { useEffect, useRef } from 'react';
+
 import htmlImg from '../../../assets/Languages/html-icon.png';
 import cssImg from '../../../assets/Languages/css-icon.png';
 import jsImg from '../../../assets/Languages/javascript-icon.png';
@@ -7,7 +9,7 @@ import sqlImg from '../../../assets/Languages/sql-icon.png';
 import mysqlImg from '../../../assets/Languages/mysql-icon.png';
 import pythonImg from '../../../assets/Languages/python-icon.png';
 
-import Language from './Language/Language';
+import Language from './Language/Language.jsx';
 
 const names = [
   'HTML',
@@ -53,7 +55,17 @@ const IDs = [
   'python-img',
 ];
 
-const Skills = () => {
+const Skills = ({ handleScrollIntoView }) => {
+  const ref = useRef();
+
+  useEffect(() => {
+    const [element, observer] = handleScrollIntoView(ref);
+
+    return () => {
+      if (element) observer.unobserve(element);
+    };
+  }, [handleScrollIntoView]);
+
   const skills = names.map((name, idx) => (
     <Language
       name={name}
@@ -65,7 +77,7 @@ const Skills = () => {
   ));
 
   return (
-    <div className="skills-wrapper wrapper">
+    <div className="skills-wrapper wrapper reveal" ref={ref}>
       <h1>My skills</h1>
       <div id="skills-content">{skills}</div>
     </div>

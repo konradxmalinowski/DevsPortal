@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 import AppOption from '../AppOption/AppOption.jsx';
 import Application from './Application.jsx';
@@ -20,9 +20,19 @@ const infoDescriptions = [
   'Example of website on which you can note your taks to do.',
 ];
 
-const Applications = () => {
+const Applications = ({ handleScrollIntoView }) => {
   const [selectedApp, setSelectedApp] = useState(0);
   const [classNames, setClassNames] = useState([...defaultArrayOfClassNames]);
+
+  const ref = useRef();
+
+  useEffect(() => {
+    const [element, observer] = handleScrollIntoView(ref);
+
+    return () => {
+      if (element) observer.unobserve(element);
+    };
+  }, [handleScrollIntoView]);
 
   const applications = [
     <Application
@@ -87,7 +97,7 @@ const Applications = () => {
   }
 
   return (
-    <div className="apps-wrapper wrapper" id="apps-wrapper">
+    <div className="apps-wrapper wrapper reveal" id="apps-wrapper" ref={ref}>
       <section>
         <h1>Choose the best app for you </h1>
         <p className="grey">Click on the image to open website</p>

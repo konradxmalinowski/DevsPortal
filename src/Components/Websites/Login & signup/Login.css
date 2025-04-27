@@ -57,6 +57,30 @@
   }
 }
 
+.login-wrapper button.continue-with {
+  background-color: transparent;
+  position: relative;
+
+  &:hover {
+    background-color: var(--clr-1-download);
+  }
+}
+
+.login-wrapper button.continue-with::before {
+  position: absolute;
+  top: 50%;
+  left: 3%;
+  transform: translateY(-50%);
+}
+
+.login-wrapper button.continue-with-google::before {
+  content: url('./../../../assets/google-icon.png');
+}
+
+.login-wrapper button.continue-with-apple::before {
+  content: url('./../../../assets/apple-icon.png');
+}
+
 .group {
   width: 100%;
   display: flex;

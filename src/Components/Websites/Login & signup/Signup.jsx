@@ -176,7 +176,7 @@ const Signup = () => {
           </p>
         </div>
       </section>
-      <Modal className="login-and-signup" ref={dialogRef}>
+      <Modal className="login-and-signup" ref={dialogRef} isFormShown={false}>
         {DialogContent}
       </Modal>
       <Footer />

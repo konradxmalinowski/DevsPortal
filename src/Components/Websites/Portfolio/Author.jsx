@@ -2,11 +2,23 @@ import pfp from '../../../assets/Author images/pfp.jpg';
 import githubLogo from '../../../assets/Author images/github-icon2.png';
 import linkedInLogo from '../../../assets/Author images/linkedin.png';
 
-import AuthorButton from './AuthorButton';
+import AuthorButton from './AuthorButton.jsx';
 
-const Author = () => {
+import { useEffect, useRef } from 'react';
+
+const Author = ({ handleScrollIntoView }) => {
+  const ref = useRef();
+
+  useEffect(() => {
+    const [element, observer] = handleScrollIntoView(ref);
+
+    return () => {
+      if (element) observer.unobserve(element);
+    };
+  }, [handleScrollIntoView]);
+
   return (
-    <section className="author-wrapper wrapper">
+    <section className="author-wrapper wrapper reveal" ref={ref}>
       <section className="image-wrapper">
         <img src={pfp} alt="pfp" />
       </section>

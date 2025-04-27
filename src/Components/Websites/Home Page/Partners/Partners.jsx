@@ -1,3 +1,5 @@
+import { useEffect, useRef } from 'react';
+
 import openAILogo from '../../../../assets/Partners logo/openai-logo.png';
 import perplexityLogo from '../../../../assets/Partners logo/perplexity-logo.png';
 import arcBrowserLogo from '../../../../assets/Partners logo/arc-browser-logo.png';
@@ -5,7 +7,7 @@ import appleLogo from '../../../../assets/Partners logo/apple-logo.png';
 import microsoftLogo from '../../../../assets/Partners logo/microsoft-logo.png';
 import dellLogo from '../../../../assets/Partners logo/dell-logo.png';
 
-import Partner from './Partner';
+import Partner from './Partner.jsx';
 
 import './Partners.css';
 
@@ -38,9 +40,19 @@ const homepageLinks = [
 
 const indexes = [0, 1, 2, 3, 4, 5];
 
-export default function Partners() {
+export default function Partners({ handleScrollIntoView }) {
+  const ref = useRef();
+
+  useEffect(() => {
+    const [element, observer] = handleScrollIntoView(ref);
+
+    return () => {
+      if (element) observer.unobserve(element);
+    };
+  }, [handleScrollIntoView]);
+
   return (
-    <div className="wrapper partners-wrapper">
+    <div className="wrapper partners-wrapper reveal" ref={ref}>
       <section>
         <h2>Powering the world’s best product teams.</h2>
         <div className="card">

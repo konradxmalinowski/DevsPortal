@@ -4,7 +4,7 @@ import { createPortal } from 'react-dom';
 import './Modal.css';
 import Button from '../Button/Button';
 
-const Modal = ({ children, ref, ...props }) => {
+const Modal = ({ children, ref, isFormShown = true, ...props }) => {
   const dialog = useRef();
 
   function handleClose() {
@@ -35,15 +35,17 @@ const Modal = ({ children, ref, ...props }) => {
       {...props}
     >
       {children}
-      <form method="dialog">
-        <div className="button-container">
-          <Button
-            className="purple-button"
-            label="Close"
-            onClick={handleClose}
-          />
-        </div>
-      </form>
+      {isFormShown && (
+        <form method="dialog">
+          <div className="button-container">
+            <Button
+              className="purple-button"
+              label="Close"
+              onClick={handleClose}
+            />
+          </div>
+        </form>
+      )}
     </dialog>,
     document.body
   );

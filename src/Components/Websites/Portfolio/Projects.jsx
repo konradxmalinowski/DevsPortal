@@ -1,5 +1,6 @@
-import React from 'react';
-import Project from './Project/Project';
+import { useEffect, useRef } from 'react';
+
+import Project from './Project/Project.jsx';
 
 const labels = ['Shop', 'To do list', 'Exam'];
 const descriptions = [
@@ -13,7 +14,17 @@ const links = [
   'https://portfolio-website.ct8.pl/websites/exam-test/',
 ];
 
-const Projects = () => {
+const Projects = ({ handleScrollIntoView }) => {
+  const ref = useRef();
+
+  useEffect(() => {
+    const [element, observer] = handleScrollIntoView(ref);
+
+    return () => {
+      if (element) observer.unobserve(element);
+    };
+  }, [handleScrollIntoView]);
+
   const projects = labels.map((label, idx) => (
     <Project
       name={label}
@@ -24,7 +35,7 @@ const Projects = () => {
   ));
 
   return (
-    <div className="projects-wrapper wrapper">
+    <div className="projects-wrapper wrapper reveal" ref={ref}>
       <section>
         <h1>Let's check out my projects</h1>
         <p>All other interesting projects can be found on my github!</p>

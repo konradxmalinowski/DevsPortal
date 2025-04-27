@@ -1,11 +1,23 @@
 import { Link } from 'react-router-dom';
-import Button from '../../../Common components/Button/Button';
+import { useEffect, useRef } from 'react';
+
+import Button from '../../../Common components/Button/Button.jsx';
 
 import './About.css';
 
-export default function About() {
+export default function About({ handleScrollIntoView }) {
+  const ref = useRef();
+
+  useEffect(() => {
+    const [element, observer] = handleScrollIntoView(ref);
+
+    return () => {
+      if (element) observer.unobserve(element);
+    };
+  }, [handleScrollIntoView]);
+
   return (
-    <div className="wrapper about-wrapper">
+    <div className="wrapper about-wrapper reveal" ref={ref}>
       <section>
         <h1>DevsPortal is a purpose-built platform for every developer.</h1>
         <p className="grey">

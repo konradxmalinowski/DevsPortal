@@ -123,6 +123,14 @@ const Login = () => {
                 />
 
                 <Button label="Login" onClick={handleLogin} />
+                <Button
+                  label="Continue with Google"
+                  className="continue-with-google continue-with"
+                />
+                <Button
+                  label="Continue with Apple"
+                  className="continue-with-apple continue-with"
+                />
               </form>
               <p className="login-details">
                 Forgot Password? <Link to="/resetPassword">Reset it</Link>
@@ -136,7 +144,7 @@ const Login = () => {
           )}
         </div>
       </section>
-      <Modal ref={dialogRef} className="login-and-signup">
+      <Modal ref={dialogRef} className="login-and-signup" isFormShown={false}>
         {dialogContent}
       </Modal>
       <Footer />

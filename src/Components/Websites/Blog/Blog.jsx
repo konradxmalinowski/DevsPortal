@@ -12,6 +12,31 @@ const Blog = () => {
   const [selectedTopic, setSelectedTopic] = useState(null);
   const modalRef = useRef(null);
 
+  const handleScrollIntoView = (ref) => {
+    const element = ref.current;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            element.classList.add('active');
+            observer.unobserve(element);
+          }
+        });
+      },
+      {
+        rootMargin: '0px 0px -100px 0px',
+        threshold: 0.2,
+      }
+    );
+
+    if (element) {
+      observer.observe(element);
+    }
+
+    return [element, observer];
+  };
+
   const blogsItems = blogs.map((blog) => (
     <BlogItem
       title={blog.title}
@@ -19,6 +44,7 @@ const Blog = () => {
       seenLength={50}
       onClick={() => handleShowMore(blog.id)}
       key={blog.id}
+      handleScrollIntoView={handleScrollIntoView}
     />
   ));
 

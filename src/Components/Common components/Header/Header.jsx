@@ -2,17 +2,14 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
 import './Header.css';
-import Button from '../Button/Button';
-import ListItem from '../ListItem';
+import Button from '../Button/Button.jsx';
+import ListItem from '../ListItem.jsx';
 
-const labels = [
-  'Blog',
-  'Password',
-  'Challenges',
-  'Quiz',
-  'Admin Panel',
-  'Snippets',
-];
+import igIcon from './../../../assets/Author images/ig-icon.png';
+import linkedinIcon from './../../../assets/Author images/linkedin.png';
+import githubIcon from './../../../assets/Author images/github-icon2.png';
+
+const labels = ['Blog', 'Password', 'Challenges', 'Quiz', 'Snippets'];
 
 export default function Header() {
   const [isExtended, setIsExtended] = useState(false);
@@ -83,13 +80,39 @@ export default function Header() {
       >
         <ul>{headerItems}</ul>
 
-        <Link to="/login">
-          <Button type="dark" label="Log in" />
-        </Link>
+        <div className="header-buttons-wrapper">
+          <Link to="/login">
+            <Button type="dark" label="Log in" />
+          </Link>
+          <Link to="/signup">
+            <Button type="light" label="Sign up" />
+          </Link>
+        </div>
 
-        <Link to="/signup">
-          <Button type="light" label="Sign up" />
-        </Link>
+        <ul className="header-socials">
+          <li>
+            <a
+              href="https://www.instagram.com/konradxmalinowski/"
+              target="_blank"
+            >
+              <img src={igIcon} alt="instagram icon" loading="lazy" />
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="https://www.linkedin.com/in/konrad-malinowski-894a36323/"
+              target="_blank"
+            >
+              <img src={linkedinIcon} alt="linkedin icon" loading="lazy" />
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/konradxmalinowski" target="_blank">
+              <img src={githubIcon} alt="github icon" loading="lazy" />
+            </a>
+          </li>
+        </ul>
       </section>
     </>
   );

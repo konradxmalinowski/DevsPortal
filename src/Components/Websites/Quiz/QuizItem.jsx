@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-
-import Button from '../../Common components/Button/Button';
 import { useEffect, useRef } from 'react';
+
+import Button from '../../Common components/Button/Button.jsx';
 
 const QuizItem = ({ label, description, to, handleScrollIntoView }) => {
   const ref = useRef();
@@ -19,7 +19,7 @@ const QuizItem = ({ label, description, to, handleScrollIntoView }) => {
       <h2>{label}</h2>
       <p>{description}</p>
       <Link to={to}>
-        <Button label="Check" type="dark" className="purple-button" />
+        <Button label="Check" className="purple-button" />
       </Link>
     </div>
   );

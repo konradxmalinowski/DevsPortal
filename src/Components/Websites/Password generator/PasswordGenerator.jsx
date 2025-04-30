@@ -1,14 +1,16 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import './PasswordGenerator.css';
 
 import Header from '../../Common components/Header/Header.jsx';
 import Footer from '../../Common components/Footer/Footer.jsx';
-import ResultSection from './ResultSection';
-import Buttons from './Buttons';
-import LengthSection from './LengthSection';
-import AdditionalOptions from './AdditionalOptions';
+import ResultSection from './ResultSection.jsx';
+import Buttons from './Buttons.jsx';
+import LengthSection from './LengthSection.jsx';
+import AdditionalOptions from './AdditionalOptions.jsx';
 import Modal from '../../Common components/Modal/Modal.jsx';
+
+import { handleScrollIntoView } from '../../../utils/handleScrollIntoView.js';
 
 const PasswordGenerator = () => {
   const [password, setPassword] = useState('');
@@ -22,6 +24,16 @@ const PasswordGenerator = () => {
   const [message, setMessage] = useState('');
   const modalRef = useRef(null);
 
+  const ref = useRef();
+
+  useEffect(() => {
+    const [element, observer] = handleScrollIntoView(ref);
+
+    return () => {
+      if (element) observer.unobserve(element);
+    };
+  }, []);
+
   const createMessage = (content) => {
     setMessage(content);
     modalRef.current.open();
@@ -30,7 +42,7 @@ const PasswordGenerator = () => {
   return (
     <>
       <Header />
-      <section className="password-generator-wrapper wrapper">
+      <section className="password-generator-wrapper wrapper reveal" ref={ref}>
         <div>
           <ResultSection password={password} />
           <Buttons

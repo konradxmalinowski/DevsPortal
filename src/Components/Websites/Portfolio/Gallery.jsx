@@ -19,6 +19,7 @@ const Image = ({
   setIsOpen,
   currentIndex,
   setModalContent,
+  ...props
 }) => {
   return (
     <img
@@ -30,6 +31,7 @@ const Image = ({
         setModalContent(imagesData[currentIndex]);
         modalRef.current.open();
       }}
+      {...props}
     />
   );
 };
@@ -47,7 +49,6 @@ const Gallery = ({ handleScrollIntoView }) => {
       src={src}
       alt={`Gallery image ${index + 1}`}
       modalRef={modalRef}
-      isOpen={isOpen}
       setIsOpen={setIsOpen}
       currentIndex={index}
       setModalContent={setModalContent}
@@ -101,39 +102,47 @@ const Gallery = ({ handleScrollIntoView }) => {
         }}
       >
         <div className="gallery-modal-wrapper">
-          {<Image src={modalContent} alt="Modal content" />}
-          {isOpen && (
+          {
             <>
-              <div
-                className="arrow-left"
-                onClick={() => {
-                  setCurrentIndex((prevIndex) => prevIndex - 1);
-                  setModalContent(imagesData[currentIndex]);
-                }}
-              >
-                <img src={arrow} alt="arrow-left" />
-              </div>
-              <div
-                className="arrow-right"
-                onClick={() => {
-                  setCurrentIndex((prevIndex) => prevIndex + 1);
-                  setModalContent(imagesData[currentIndex]);
-                }}
-              >
-                <img src={arrow} alt="arrow-right" />
-              </div>
+              <Image
+                src={modalContent}
+                alt="Modal content"
+                className="clicked-image"
+              />
 
-              <div
-                className="close-button"
-                onClick={() => {
-                  setIsOpen(false);
-                  modalRef.current.close();
-                }}
-              >
-                <img src={closeIcon} alt="close icon" />
-              </div>
+              {isOpen && (
+                <>
+                  <button
+                    className="arrow-left"
+                    onClick={() => {
+                      setCurrentIndex((prevIndex) => prevIndex - 1);
+                      setModalContent(imagesData[currentIndex]);
+                    }}
+                  >
+                    <img src={arrow} alt="arrow-left" />
+                  </button>
+                  <button
+                    className="arrow-right"
+                    onClick={() => {
+                      setCurrentIndex((prevIndex) => prevIndex + 1);
+                      setModalContent(imagesData[currentIndex]);
+                    }}
+                  >
+                    <img src={arrow} alt="arrow-right" />
+                  </button>
+                  <button
+                    className="close-button"
+                    onClick={() => {
+                      setIsOpen(false);
+                      modalRef.current.close();
+                    }}
+                  >
+                    <img src={closeIcon} alt="close icon" />
+                  </button>
+                </>
+              )}
             </>
-          )}
+          }
         </div>
       </Modal>
     </div>

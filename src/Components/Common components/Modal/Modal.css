@@ -36,6 +36,10 @@ dialog[open] {
   overflow: hidden !important;
 }
 
+.button-container button {
+  padding: 20px 35px;
+}
+
 @keyframes slide-in-from-top {
   0% {
     z-index: -2;

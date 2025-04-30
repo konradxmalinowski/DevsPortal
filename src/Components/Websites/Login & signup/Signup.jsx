@@ -1,9 +1,10 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 import './Signup.css';
 import './form.css';
 
+import DialogContentHTML from './DialogContentHTML.jsx';
 import Header from '../../Common components/Header/Header.jsx';
 import Footer from '../../Common components/Footer/Footer.jsx';
 import Modal from '../../Common components/Modal/Modal.jsx';
@@ -13,7 +14,7 @@ import Step3 from './Steps/Step3.jsx';
 import Step4 from './Steps/Step4.jsx';
 import Step5 from './Steps/Step5.jsx';
 
-import DialogContentHTML from './DialogContentHTML.jsx';
+import { handleScrollIntoView } from '../../../utils/handleScrollIntoView.js';
 
 const userDataBasic = {
   username: '',
@@ -29,7 +30,17 @@ const Signup = () => {
   const dialogRef = useRef(null);
   const navigate = useNavigate();
 
-  const handleClickNext = async (regEx, ref, type, additionalCheck = null) => {
+  const ref = useRef();
+
+  useEffect(() => {
+    const [element, observer] = handleScrollIntoView(ref);
+
+    return () => {
+      if (element) observer.unobserve(element);
+    };
+  }, []);
+
+  const validateData = (regEx, ref, type, additionalCheck = null) => {
     let inputValue;
 
     if (typeof ref.current.value === 'number') {
@@ -61,6 +72,57 @@ const Signup = () => {
       dialogRef.current?.open();
       return;
     }
+
+    return inputValue;
+  };
+
+  const handleEndStep = async (inputValue) => {
+    if (inputValue !== userData.password) {
+      setDialogContent('Passwords do not match');
+      dialogRef.current?.open();
+      return;
+    }
+    try {
+      const response = await fetch(
+        'http://localhost/Developers%20portal/api/signup.php',
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          credentials: 'include',
+          body: JSON.stringify(userData),
+        }
+      );
+      const data = await response.json();
+      if (response.ok) {
+        setDialogContent(<DialogContentHTML content="Success!" />);
+
+        dialogRef.current?.open();
+        setTimeout(() => {
+          navigate('/login');
+          dialogRef.current.close();
+        }, 4000);
+      } else {
+        setDialogContent(data.message || 'Signup failed');
+        dialogRef.current?.open();
+
+        setTimeout(() => {
+          dialogRef.current.close();
+        }, 1000);
+        return;
+      }
+    } catch (error) {
+      setDialogContent('Server error: ' + error.message);
+      dialogRef.current?.open();
+
+      setTimeout(() => {
+        dialogRef.current.close();
+      }, 1000);
+      return;
+    }
+  };
+
+  const handleClickNext = async (regEx, ref, type, additionalCheck = null) => {
+    let inputValue = validateData(regEx, ref, type, additionalCheck);
 
     if (type === 'username' || type === 'email' || type === 'phone') {
       try {
@@ -98,48 +160,8 @@ const Signup = () => {
     }
 
     if (step === 5) {
-      if (inputValue !== userData.password) {
-        setDialogContent('Passwords do not match');
-        dialogRef.current?.open();
-        return;
-      }
-      try {
-        const response = await fetch(
-          'http://localhost/Developers%20portal/api/signup.php',
-          {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            credentials: 'include',
-            body: JSON.stringify(userData),
-          }
-        );
-        const data = await response.json();
-        if (response.ok) {
-          setDialogContent(<DialogContentHTML content="Success!" />);
-
-          dialogRef.current?.open();
-          setTimeout(() => {
-            navigate('/login');
-            dialogRef.current.close();
-          }, 4000);
-        } else {
-          setDialogContent(data.message || 'Signup failed');
-          dialogRef.current?.open();
-
-          setTimeout(() => {
-            dialogRef.current.close();
-          }, 1000);
-          return;
-        }
-      } catch (error) {
-        setDialogContent('Server error: ' + error.message);
-        dialogRef.current?.open();
-
-        setTimeout(() => {
-          dialogRef.current.close();
-        }, 1000);
-        return;
-      }
+      handleEndStep(inputValue);
+      return;
     }
 
     setUserData((prev) => ({ ...prev, [type]: inputValue }));
@@ -164,7 +186,7 @@ const Signup = () => {
   return (
     <>
       <Header />
-      <section className="signup-wrapper">
+      <section className="signup-wrapper reveal" ref={ref}>
         <div>
           <div>
             Step <span className="bold">{step}</span> of 5

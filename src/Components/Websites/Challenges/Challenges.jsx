@@ -1,9 +1,10 @@
 import Header from '../../Common components/Header/Header.jsx';
 import Footer from '../../Common components/Footer/Footer.jsx';
-
-import './Challenges.css';
 import Challenge from './Challenge.jsx';
 
+import { handleScrollIntoView } from '../../../utils/handleScrollIntoView.js';
+
+import './Challenges.css';
 import programmizIcon from '../../../assets/Challenges images/programmiz.jpg';
 import frontendMentorIcon from '../../../assets/Challenges images/frontend-mentor.png';
 
@@ -59,31 +60,6 @@ const challengesData = [
 ];
 
 const Challenges = () => {
-  const handleScrollIntoView = (ref) => {
-    const element = ref.current;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            element.classList.add('active');
-            observer.unobserve(element);
-          }
-        });
-      },
-      {
-        rootMargin: '0px 0px -100px 0px',
-        threshold: 0.2,
-      }
-    );
-
-    if (element) {
-      observer.observe(element);
-    }
-
-    return [element, observer];
-  };
-
   const challenges = challengesData.map(
     ({ title, logo, description, link }) => (
       <Challenge

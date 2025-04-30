@@ -59,11 +59,11 @@ export default function Partners({ handleScrollIntoView }) {
           <div className="loader">
             <p>We offer the best</p>
             <div className="words">
-              <span className="word">Quiz</span>
-              <span className="word">Apps</span>
-              <span className="word">Blogs</span>
-              <span className="word">Challenges</span>
-              <span className="word">Tools</span>
+              <span className="word special">Quiz</span>
+              <span className="word special">Apps</span>
+              <span className="word special">Blogs</span>
+              <span className="word special">Challenges</span>
+              <span className="word special">Tools</span>
             </div>
           </div>
         </div>

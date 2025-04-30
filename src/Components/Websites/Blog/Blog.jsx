@@ -7,35 +7,11 @@ import Modal from './../../Common components/Modal/Modal.jsx';
 
 import './Blog.css';
 import { blogs } from './blogs.js';
+import { handleScrollIntoView } from '../../../utils/handleScrollIntoView.js';
 
 const Blog = () => {
   const [selectedTopic, setSelectedTopic] = useState(null);
   const modalRef = useRef(null);
-
-  const handleScrollIntoView = (ref) => {
-    const element = ref.current;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            element.classList.add('active');
-            observer.unobserve(element);
-          }
-        });
-      },
-      {
-        rootMargin: '0px 0px -100px 0px',
-        threshold: 0.2,
-      }
-    );
-
-    if (element) {
-      observer.observe(element);
-    }
-
-    return [element, observer];
-  };
 
   const blogsItems = blogs.map((blog) => (
     <BlogItem

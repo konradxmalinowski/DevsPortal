@@ -7,7 +7,7 @@ header {
   position: sticky;
   top: 0;
   left: 0;
-  z-index: 3;
+  z-index: 6;
 }
 
 header ul {
@@ -62,8 +62,7 @@ header li {
 }
 
 /* link animation */
-.wide-header,
-.navigation {
+.wide-header {
   li a {
     position: relative;
     text-decoration: none;
@@ -96,6 +95,7 @@ header li {
   background-color: transparent;
   border: none;
   display: none;
+  position: relative;
 }
 
 .hamburger__box {
@@ -103,6 +103,7 @@ header li {
   height: 24px;
   display: inline-block;
   position: relative;
+  z-index: 5;
 }
 
 .hamburger__inner {
@@ -149,18 +150,25 @@ header li {
 
 .navigation {
   height: 100svh;
-  width: 250px;
+  width: 100%;
   background-color: var(--background-clr2);
   position: fixed;
   top: 0;
   left: 0;
-  transform: translateX(-250px);
+  transform: translateX(-100%);
   transition: transform 0.3s ease-in-out 0.1s;
   z-index: 4;
-  padding-left: 70px;
   display: flex;
+  justify-content: center;
   flex-direction: column;
   row-gap: 20px;
+}
+
+.navigation > * {
+  max-width: 500px;
+  min-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .navigation--active {
@@ -174,14 +182,53 @@ header li {
 
 .navigation li {
   margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--buttons-clr);
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 18px;
 
   & a {
     color: var(--buttons-clr);
   }
 }
 
+.header-buttons-wrapper {
+  display: flex;
+  justify-content: center;
+  column-gap: 20px;
+  width: 100%;
+}
+
+.header-socials {
+  display: flex;
+  justify-content: center;
+  column-gap: 10px;
+  width: 100%;
+
+  & li {
+    border: none;
+  }
+}
+
+.header-socials img {
+  height: 35px;
+  transform: scale(1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.15);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 0 10px 3px var(--background-clr2);
+  }
+}
+
 /* TODO: oddzielny plik */
 @media (width <= 1200px) {
+  header {
+    background-color: var(--background-clr2);
+    border-bottom: none;
+  }
   .wide-header {
     display: none;
   }

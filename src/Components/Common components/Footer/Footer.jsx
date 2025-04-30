@@ -5,41 +5,65 @@ import { Link } from 'react-router-dom';
 
 import termsPDF from './../../../assets/Terms.pdf';
 import privacyPDF from './../../../assets/Privacy.pdf';
+import igIcon from './../../../assets/Author images/ig-icon.png';
+import linkedinIcon from './../../../assets/Author images/linkedin.png';
+import githubIcon from './../../../assets/Author images/github-icon2.png';
 
 const labels = ['Terms', 'Privacy', 'Contact'];
 
 export default function Footer() {
   return (
     <footer>
-      <ul>
+      <ul className="footer-left">
+        <li>
+          <a
+            href="https://www.instagram.com/konradxmalinowski/"
+            target="_blank"
+          >
+            <img src={igIcon} alt="instagram icon" loading="lazy" />
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="https://www.linkedin.com/in/konrad-malinowski-894a36323/"
+            target="_blank"
+          >
+            <img src={linkedinIcon} alt="linkedin icon" loading="lazy" />
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/konradxmalinowski" target="_blank">
+            <img src={githubIcon} alt="github icon" loading="lazy" />
+          </a>
+        </li>
+      </ul>
+
+      <ul className="footer-center">
         <Link to="/">
-          <ListItem>© {new Date().getFullYear()} DevsPortal, Inc.</ListItem>
+          <ListItem>© {new Date().getFullYear()} DevsPortal</ListItem>
         </Link>
+      </ul>
 
-        <Link to="/adminPanel">
-          <ListItem content="Admin Panel" />
-        </Link>
-
-        <ul>
-          <li className="grey">
-            <a href={termsPDF} target="_blank">
-              {labels[0]}
-            </a>
-          </li>
-          <li className="grey">
-            <a href={privacyPDF} target="_blank">
-              {labels[1]}
-            </a>
-          </li>
-          <li className="grey">
-            <a
-              href="mailto:konradmalinowski@zsezdw.onmicrosoft.com"
-              target="_blank"
-            >
-              {labels[2]}
-            </a>
-          </li>
-        </ul>
+      <ul className="footer-right">
+        <li className="grey">
+          <a href={termsPDF} target="_blank">
+            {labels[0]}
+          </a>
+        </li>
+        <li className="grey">
+          <a href={privacyPDF} target="_blank">
+            {labels[1]}
+          </a>
+        </li>
+        <li className="grey">
+          <a
+            href="mailto:konradmalinowski@zsezdw.onmicrosoft.com"
+            target="_blank"
+          >
+            {labels[2]}
+          </a>
+        </li>
       </ul>
     </footer>
   );

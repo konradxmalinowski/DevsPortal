@@ -14,6 +14,7 @@ import Input from './../../Common components/Input.jsx';
 import Modal from '../../Common components/Modal/Modal.jsx';
 
 import { emailRegEx, passwordRegEx } from '../../../RegEx.js';
+import { handleScrollIntoView } from '../../../utils/handleScrollIntoView.js';
 import DialogContentHTML from './DialogContentHTML.jsx';
 
 const Login = () => {
@@ -31,6 +32,16 @@ const Login = () => {
     }
   }, []);
 
+  const ref = useRef();
+
+  useEffect(() => {
+    const [element, observer] = handleScrollIntoView(ref);
+
+    return () => {
+      if (element) observer.unobserve(element);
+    };
+  }, []);
+
   const handleLogin = async () => {
     if (!emailRegEx.test(email)) {
       setDialogContent('Enter correct email format');
@@ -43,6 +54,10 @@ const Login = () => {
       return;
     }
 
+    await handleFetchData();
+  };
+
+  const handleFetchData = async () => {
     try {
       const response = await fetch(
         'http://localhost/Developers%20portal/api/login.php',
@@ -88,7 +103,7 @@ const Login = () => {
   return (
     <>
       <Header />
-      <section className="login-wrapper">
+      <section className="login-wrapper reveal" ref={ref}>
         <div>
           {isLoggedIn ? (
             <div>

@@ -223,10 +223,9 @@ header li {
   }
 }
 
-/* TODO: oddzielny plik */
 @media (width <= 1200px) {
   header {
-    background-color: var(--background-clr2);
+    background-color: var(--background-clr1);
     border-bottom: none;
   }
   .wide-header {

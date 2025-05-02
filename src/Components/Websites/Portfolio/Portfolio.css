@@ -226,7 +226,7 @@
 }
 
 dialog.gallery-modal {
-  width: max(90vw, 300px);
+  width: max(100vw, 300px);
   height: fit-content;
   min-height: 80svh;
   transform: translateY(-50%) translateX(-50%);
@@ -275,8 +275,13 @@ dialog.gallery-modal {
 }
 
 @media (width <= 1060px) {
-  .clicked-image,
   .gallery img {
     max-width: 90vw;
+  }
+}
+
+@media (width <= 1500px) {
+  .clicked-image {
+    width: 97vw;
   }
 }

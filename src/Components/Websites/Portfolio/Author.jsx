@@ -29,7 +29,7 @@ const Author = ({ handleScrollIntoView }) => {
           Building pixel-perfect <span className="special">Interactive </span>
           apps❤️‍🔥
         </h1>
-        <p className="job-type">Full-Stack Developer</p>
+        <p className="job-type">Frontend Developer</p>
         <div>
           <AuthorButton
             logo={githubLogo}

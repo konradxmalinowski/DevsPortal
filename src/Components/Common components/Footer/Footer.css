@@ -50,7 +50,7 @@ footer .footer-left img {
   }
 }
 
-@media (width <= 530px) {
+@media (width <= 600px) {
   footer {
     height: fit-content;
     padding: 20px 0;

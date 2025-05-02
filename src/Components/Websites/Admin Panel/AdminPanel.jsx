@@ -1,8 +1,10 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import Header from '../../Common components/Header/Header.jsx';
 import Footer from '../../Common components/Footer/Footer.jsx';
+
+import { handleScrollIntoView } from '../../../utils/handleScrollIntoView.js';
 
 import './AdminPanel.css';
 
@@ -15,13 +17,74 @@ const AdminPanel = () => {
       navigate('/login');
     }
   }, [navigate]);
+
+  useEffect(() => {
+    const canvas = document.getElementById('admin-canvas');
+    const ctx = canvas.getContext('2d');
+
+    canvas.width = 600;
+    canvas.height = 400;
+
+    const data = [120, 200, 150, 300, 250, 400, 350];
+    const labels = ['Pon', 'Wt', 'Śr', 'Czw', 'Pt', 'Sob', 'Nd'];
+
+    const barWidth = 50;
+    const gap = 20;
+    const maxData = Math.max(...data);
+    const chartHeight = canvas.height - 50;
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // Oś Y
+    ctx.beginPath();
+    ctx.moveTo(50, 10);
+    ctx.lineTo(50, chartHeight);
+    ctx.strokeStyle = '#ffffff';
+    ctx.lineWidth = 2;
+    ctx.stroke();
+
+    // Oś X
+    ctx.beginPath();
+    ctx.moveTo(50, chartHeight);
+    ctx.lineTo(canvas.width - 10, chartHeight);
+    ctx.stroke();
+
+    // Rysowanie słupków
+    data.forEach((value, index) => {
+      const x = 50 + gap + index * (barWidth + gap);
+      const y = chartHeight - (value / maxData) * (chartHeight - 20);
+      const height = (value / maxData) * (chartHeight - 20);
+
+      // Słupki
+      ctx.fillStyle = 'rgba(58, 110, 255, 0.8)';
+      ctx.fillRect(x, y, barWidth, height);
+
+      // Etykiety danych
+      ctx.fillStyle = '#ffffff';
+      ctx.font = '14px Inter';
+      ctx.fillText(value, x + barWidth / 4, y - 10);
+
+      // Etykiety osi X
+      ctx.fillText(labels[index], x + barWidth / 4, chartHeight + 20);
+    });
+  }, []);
+
+  const ref = useRef();
+
+  useEffect(() => {
+    const [element, observer] = handleScrollIntoView(ref);
+
+    return () => {
+      if (element) observer.unobserve(element);
+    };
+  }, []);
+
   return (
     <>
       <Header />
       <section className="admin-panel-wrapper wrapper">
-        <div>
-          <h1>Admin Panel</h1>
-        </div>
+        <h1>Statystyki odwiedzin</h1>
+        <canvas id="admin-canvas" className="reveal" ref={ref}></canvas>
       </section>
       <Footer />
     </>

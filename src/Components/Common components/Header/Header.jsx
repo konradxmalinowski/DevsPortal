@@ -9,7 +9,7 @@ import igIcon from './../../../assets/Author images/ig-icon.png';
 import linkedinIcon from './../../../assets/Author images/linkedin.png';
 import githubIcon from './../../../assets/Author images/github-icon2.png';
 
-const labels = ['Blog', 'Password', 'Challenges', 'Quiz', 'Snippets'];
+const labels = ['Blog', 'Password', 'Challenges', 'Quiz', 'Snippets', 'Admin'];
 
 export default function Header() {
   const [isExtended, setIsExtended] = useState(false);
@@ -31,11 +31,19 @@ export default function Header() {
           {label}
         </Link>
       )}
-      {label !== 'Quiz' && label !== 'Snippets' && label !== 'Password' && (
-        <Link to={`/${label.toLowerCase().replace(' ', '')}`} key={label}>
+      {label === 'Admin' && (
+        <Link to="/adminPanel" key={label}>
           {label}
         </Link>
       )}
+      {label !== 'Quiz' &&
+        label !== 'Snippets' &&
+        label !== 'Password' &&
+        label !== 'Admin' && (
+          <Link to={`/${label.toLowerCase().replace(' ', '')}`} key={label}>
+            {label}
+          </Link>
+        )}
     </ListItem>
   ));
 

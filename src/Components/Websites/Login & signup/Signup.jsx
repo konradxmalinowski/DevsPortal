@@ -186,19 +186,37 @@ const Signup = () => {
   return (
     <>
       <Header />
-      <section className="signup-wrapper reveal" ref={ref}>
+      <section
+        className="signup-wrapper reveal"
+        ref={ref}
+        aria-label="Signup Section"
+      >
         <div>
-          <div>
+          <div aria-label="Signup progress">
             Step <span className="bold">{step}</span> of 5
           </div>
-          <progress value={step} max={5}></progress>
-          <form onSubmit={(e) => e.preventDefault()}>{steps[step - 1]} </form>
+          <progress
+            value={step}
+            max={5}
+            aria-label="Signup progress bar"
+          ></progress>
+          <form onSubmit={(e) => e.preventDefault()} aria-label="Signup form">
+            {steps[step - 1]}
+          </form>
           <p>
-            Already have an account? <Link to="/login">Login</Link>
+            Already have an account?{' '}
+            <Link to="/login" aria-label="Go to login page">
+              Login
+            </Link>
           </p>
         </div>
       </section>
-      <Modal className="login-and-signup" ref={dialogRef} isFormShown={false}>
+      <Modal
+        className="login-and-signup"
+        ref={dialogRef}
+        isFormShown={false}
+        aria-label="Signup modal"
+      >
         {DialogContent}
       </Modal>
       <Footer />

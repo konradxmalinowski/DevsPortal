@@ -17,7 +17,11 @@ export default function About({ handleScrollIntoView }) {
   }, [handleScrollIntoView]);
 
   return (
-    <div className="wrapper about-wrapper reveal" ref={ref}>
+    <div
+      className="wrapper about-wrapper reveal"
+      ref={ref}
+      aria-label="About Section"
+    >
       <section>
         <h1>DevsPortal is a purpose-built platform for every developer.</h1>
         <p className="grey">

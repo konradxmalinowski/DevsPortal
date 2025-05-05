@@ -3,10 +3,11 @@ const AuthorButton = ({ logo, link, name }) => {
     <button
       className={`${name}-button author-button`}
       onClick={() => window.open(link)}
+      aria-label={`Open ${name} link`}
     >
       <img
         src={logo}
-        alt={name}
+        alt={`${name} logo`}
         loading="lazy"
         className={`${name.toLowerCase()}-icon author-icon`}
       />

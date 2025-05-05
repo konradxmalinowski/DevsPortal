@@ -32,9 +32,11 @@ const Modal = ({ children, ref, isFormShown = true, ...props }) => {
       ref={dialog}
       onClose={handleClose}
       onKeyDown={(event) => (event.key === 'Escape' ? handleClose : undefined)}
+      aria-labelledby="modal-title"
+      aria-describedby="modal-description"
       {...props}
     >
-      {children}
+      <div id="modal-description">{children}</div>
       {isFormShown && (
         <form method="dialog">
           <div className="button-container">
@@ -42,6 +44,7 @@ const Modal = ({ children, ref, isFormShown = true, ...props }) => {
               className="purple-button"
               label="Close"
               onClick={handleClose}
+              aria-label="Close modal"
             />
           </div>
         </form>

@@ -32,8 +32,10 @@ const Blog = () => {
   return (
     <>
       <Header />
-      <div className="blogs-wrapper wrapper">{blogsItems}</div>
-      <Modal ref={modalRef} id="blog-id">
+      <div className="blogs-wrapper wrapper" aria-label="Blog Section">
+        {blogsItems}
+      </div>
+      <Modal ref={modalRef} id="blog-id" aria-label="Blog Details Modal">
         {selectedTopic != null && (
           <div>
             <h1>{blogs[selectedTopic].title}</h1>

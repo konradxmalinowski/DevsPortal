@@ -12,9 +12,18 @@ const GhostImage = ({ handleScrollIntoView }) => {
       if (element) observer.unobserve(element);
     };
   }, [handleScrollIntoView]);
+
   return (
-    <div className="ghost-image reveal" ref={ref}>
-      <img src={ghostImage} alt="ghost image" className="ghost-image" />
+    <div
+      className="ghost-image reveal"
+      ref={ref}
+      aria-label="Ghost image section"
+    >
+      <img
+        src={ghostImage}
+        alt="A ghost illustration representing a 404 error"
+        className="ghost-image"
+      />
     </div>
   );
 };

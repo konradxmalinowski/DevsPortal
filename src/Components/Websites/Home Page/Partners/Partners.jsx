@@ -53,7 +53,7 @@ export default function Partners({ handleScrollIntoView }) {
 
   return (
     <div className="wrapper partners-wrapper reveal" ref={ref}>
-      <section>
+      <section aria-label="Partners Section">
         <h2>Powering the world’s best product teams.</h2>
         <div className="card">
           <div className="loader">

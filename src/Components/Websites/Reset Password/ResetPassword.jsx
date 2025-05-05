@@ -9,15 +9,27 @@ const ResetPassword = () => {
   return (
     <>
       <Header />
-      <section className="reset-password-wrapper">
+      <section
+        className="reset-password-wrapper"
+        aria-label="Reset Password Section"
+      >
         <div>
           <h2>Forgot password</h2>
-          <p className="grey">
+          <p className="grey" aria-label="Instruction to reset password">
             Enter your email address to receive a password reset link.
           </p>
 
-          <Input type="email" label="Email address" autoFocus />
-          <Button label="Send email" type="dark" />
+          <Input
+            type="email"
+            label="Email address"
+            autoFocus
+            aria-label="Enter your email address"
+          />
+          <Button
+            label="Send email"
+            type="dark"
+            aria-label="Send password reset email"
+          />
         </div>
       </section>
       <Footer />

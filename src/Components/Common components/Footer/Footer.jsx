@@ -19,6 +19,7 @@ export default function Footer() {
           <a
             href="https://www.instagram.com/konradxmalinowski/"
             target="_blank"
+            aria-label="Visit Instagram profile"
           >
             <img src={igIcon} alt="instagram icon" loading="lazy" />
           </a>
@@ -28,12 +29,17 @@ export default function Footer() {
           <a
             href="https://www.linkedin.com/in/konrad-malinowski-894a36323/"
             target="_blank"
+            aria-label="Visit Linkedin profile"
           >
             <img src={linkedinIcon} alt="linkedin icon" loading="lazy" />
           </a>
         </li>
         <li>
-          <a href="https://github.com/konradxmalinowski" target="_blank">
+          <a
+            href="https://github.com/konradxmalinowski"
+            target="_blank"
+            aria-label="Visit Github profile"
+          >
             <img src={githubIcon} alt="github icon" loading="lazy" />
           </a>
         </li>
@@ -47,12 +53,16 @@ export default function Footer() {
 
       <ul className="footer-right">
         <li className="grey">
-          <a href={termsPDF} target="_blank">
+          <a
+            href={termsPDF}
+            target="_blank"
+            aria-label="View terms and conditions"
+          >
             {labels[0]}
           </a>
         </li>
         <li className="grey">
-          <a href={privacyPDF} target="_blank">
+          <a href={privacyPDF} target="_blank" aria-label="View privacy policy">
             {labels[1]}
           </a>
         </li>
@@ -60,6 +70,7 @@ export default function Footer() {
           <a
             href="mailto:konradmalinowski@zsezdw.onmicrosoft.com"
             target="_blank"
+            aria-label="Contact via email"
           >
             {labels[2]}
           </a>

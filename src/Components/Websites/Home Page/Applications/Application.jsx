@@ -1,6 +1,6 @@
 const Application = ({ img, alt, onClick }) => {
   return (
-    <div onClick={onClick}>
+    <div onClick={onClick} aria-label={`Open ${alt}`}>
       <img src={img} alt={alt} title="To open website click image" />
     </div>
   );

@@ -36,21 +36,18 @@ const challengesData = [
     'A platform for practicing coding problems and participating in coding competitions.',
     'https://programiz.pro/community-challenges/javascript'
   ),
-
   new ChallengeClass(
     'CSS Challenges',
     'https://css-challenges.com/favicon.ico',
     'A platform that offers CSS challenges to improve your skills.',
     'https://css-challenges.com/'
   ),
-
   new ChallengeClass(
     'Frontend Mentor',
     `${frontendMentorIcon}`,
     'A platform that offers real-world frontend challenges to improve your skills.',
     'https://www.frontendmentor.io/challenges'
   ),
-
   new ChallengeClass(
     'Scribda',
     'https://css-challenges.com/favicon.ico',
@@ -76,7 +73,7 @@ const Challenges = () => {
     <>
       <Header />
       <div className="challenges-wrapper wrapper">
-        <section>
+        <section aria-label="Coding Challenges Section">
           <h1 className="challenges-title">Challenges</h1>
           <p className="challenges-description">
             Here are some challenges where you can improve your skills and learn

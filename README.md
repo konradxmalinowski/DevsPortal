@@ -318,6 +318,12 @@ export const blogs = [];
 
 > Jak zrobić efekt na stronie, że jeśli dojadę do pewnego elementu to on lekko z dołu się pojawia? Wiesz o co chodzi? Można samy js bez biblioteki?
 
+---
+
+### Query 19
+
+> Popraw accessibility tych komponentów, tzn. pododawaj aria labels
+
 <br>
 
 ### Polska wersja
@@ -638,5 +644,11 @@ export const blogs = [];
 ### Zapytanie 18
 
 > Jak zrobić efekt na stronie, że jeśli dojadę do pewnego elementu to on lekko z dołu się pojawia? Wiesz o co chodzi? Można samy js bez biblioteki?
+
+---
+
+### Zapytanie 19
+
+> Popraw accessibility tych komponentów, tzn. pododawaj aria labels
 
 ---

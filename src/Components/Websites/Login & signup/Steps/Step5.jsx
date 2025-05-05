@@ -18,14 +18,15 @@ const Step5 = ({ stepFunctions, userData }) => {
     <>
       <h2>Repeat Password</h2>
       <Input
-        label="Password"
+        label="Repeat Password"
         type="password"
         ref={passwordRepeatedRef}
         autoFocus
         showIcon={showPasswordIcon}
         hideIcon={hidePasswordIcon}
         onChange={(event) => handleClickEnter(event)}
-        onKeyChange={(event) => handleClickEnter(event)}
+        onKeyDown={(event) => handleClickEnter(event)}
+        aria-label="Repeat your password"
       />
       <div className="buttons-wrapper">
         <Button
@@ -33,6 +34,7 @@ const Step5 = ({ stepFunctions, userData }) => {
           onClick={() => stepFunctions.setStep((prevStep) => prevStep - 1)}
           className="come-back-button"
           type="dark"
+          aria-label="Go back to the previous step"
         />
         <Button
           label="Sign Up"
@@ -45,6 +47,7 @@ const Step5 = ({ stepFunctions, userData }) => {
           }
           className="email-button green-button"
           type="dark"
+          aria-label="Complete the signup process"
         />
       </div>
     </>

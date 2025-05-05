@@ -2,7 +2,7 @@ import './AppOption.css';
 
 const AppOption = ({ label, className, ...props }) => {
   return (
-    <button className="option" {...props}>
+    <button className="option" aria-label={`Select ${label}`} {...props}>
       <section
         className={[
           'rectangle',

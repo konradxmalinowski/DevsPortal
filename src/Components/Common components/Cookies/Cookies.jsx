@@ -28,11 +28,13 @@ const Cookies = () => {
               label="Allow"
               className="purple-button accept-button"
               onClick={handleAcceptDecline}
+              aria-label="Allow cookies"
             />
             <Button
               label="Decline"
               className="purple-button decline-button"
               onClick={handleAcceptDecline}
+              aria-label="Decline cookies"
             />
           </div>
         </div>

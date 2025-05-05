@@ -43,6 +43,7 @@ const Step4 = ({ stepFunctions }) => {
           list="country-number-list"
           ref={countryCodeRef}
           placeholder="Country Code"
+          aria-label="Enter country code"
           onChange={(event) => handleClickEnter(event)}
           onKeyDown={(event) => handleClickEnter(event)}
         />
@@ -52,6 +53,7 @@ const Step4 = ({ stepFunctions }) => {
           id="phone-number"
           ref={phoneNumberRef}
           placeholder="Phone Number"
+          aria-label="Enter phone number"
           onChange={(event) => handleClickEnter(event)}
           onKeyDown={(event) => handleClickEnter(event)}
         />
@@ -82,6 +84,7 @@ const Step4 = ({ stepFunctions }) => {
           onClick={() => stepFunctions.setStep((prevStep) => prevStep - 1)}
           className="come-back-button"
           type="dark"
+          aria-label="Go back to the previous step"
         />
 
         <Button
@@ -89,6 +92,7 @@ const Step4 = ({ stepFunctions }) => {
           onClick={handleNext}
           className="email-button green-button"
           type="dark"
+          aria-label="Proceed to the next step"
         />
       </div>
     </>

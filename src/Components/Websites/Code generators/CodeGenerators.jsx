@@ -11,7 +11,7 @@ const CodeGenerators = () => {
     <>
       <Header />
       <div className="snippets-wrapper">
-        <section>
+        <section aria-label="Code Generators Section">
           <CodeGenerator
             label="Clean React Project"
             src="/Clean-react-project.7z"

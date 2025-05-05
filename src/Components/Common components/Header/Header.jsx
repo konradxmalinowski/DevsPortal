@@ -75,6 +75,9 @@ export default function Header() {
           <button
             className={`hamburger ${isExtended ? 'hamburger--active' : ''}`}
             onClick={() => setIsExtended((isExtended) => !isExtended)}
+            aria-label={
+              isExtended ? 'Close navigation menu' : 'Open navigation menu'
+            }
           >
             <span className="hamburger__box">
               <span className="hamburger__inner"></span>
@@ -102,6 +105,7 @@ export default function Header() {
             <a
               href="https://www.instagram.com/konradxmalinowski/"
               target="_blank"
+              aria-label="Visit Instagram profile"
             >
               <img src={igIcon} alt="instagram icon" loading="lazy" />
             </a>
@@ -111,12 +115,17 @@ export default function Header() {
             <a
               href="https://www.linkedin.com/in/konrad-malinowski-894a36323/"
               target="_blank"
+              aria-label="Visit Linkedin profile"
             >
               <img src={linkedinIcon} alt="linkedin icon" loading="lazy" />
             </a>
           </li>
           <li>
-            <a href="https://github.com/konradxmalinowski" target="_blank">
+            <a
+              href="https://github.com/konradxmalinowski"
+              target="_blank"
+              aria-label="Visit Github profile"
+            >
               <img src={githubIcon} alt="github icon" loading="lazy" />
             </a>
           </li>

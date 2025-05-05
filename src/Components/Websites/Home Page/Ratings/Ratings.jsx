@@ -34,7 +34,7 @@ const Ratings = ({ handleScrollIntoView }) => {
 
   return (
     <div className="ratings-wrapper wrapper reveal" ref={ref}>
-      <section>
+      <section aria-label="User Ratings Section">
         <div className="marquee-container">
           <div className="marquee-content">
             {ratings1}

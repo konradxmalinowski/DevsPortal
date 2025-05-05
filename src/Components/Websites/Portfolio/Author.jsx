@@ -18,19 +18,27 @@ const Author = ({ handleScrollIntoView }) => {
   }, [handleScrollIntoView]);
 
   return (
-    <section className="author-wrapper wrapper reveal" ref={ref}>
-      <section className="image-wrapper">
-        <img src={pfp} alt="pfp" />
+    <section
+      className="author-wrapper wrapper reveal"
+      ref={ref}
+      aria-label="Author Section"
+    >
+      <section className="image-wrapper" aria-label="Author profile picture">
+        <img src={pfp} alt="Profile picture of Konrad Malinowski" />
       </section>
 
-      <section className="description-wrapper">
-        <p className="intro">I'm Konrad Malinowski, and I enjoy</p>
-        <h1>
+      <section className="description-wrapper" aria-label="Author description">
+        <p className="intro" aria-label="Author introduction">
+          I'm Konrad Malinowski, and I enjoy
+        </p>
+        <h1 aria-label="Author's passion">
           Building pixel-perfect <span className="special">Interactive </span>
           apps❤️‍🔥
         </h1>
-        <p className="job-type">Frontend Developer</p>
-        <div>
+        <p className="job-type" aria-label="Author's job title">
+          Frontend Developer
+        </p>
+        <div aria-label="Author's social media links">
           <AuthorButton
             logo={githubLogo}
             link="https://github.com/konradxmalinowski"

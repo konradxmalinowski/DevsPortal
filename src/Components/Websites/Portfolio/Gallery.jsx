@@ -31,6 +31,7 @@ const Image = ({
         setModalContent(imagesData[currentIndex]);
         modalRef.current.open();
       }}
+      aria-label={`Open image ${currentIndex + 1} in modal`}
       {...props}
     />
   );
@@ -74,16 +75,23 @@ const Gallery = ({ handleScrollIntoView }) => {
   }, [handleScrollIntoView]);
 
   return (
-    <div className="gallery-wrapper wrapper reveal" ref={ref}>
-      <section>
-        <h1>Gallery</h1>
-        <div className="gallery">{images}</div>
+    <div
+      className="gallery-wrapper wrapper reveal"
+      ref={ref}
+      aria-label="Gallery Section"
+    >
+      <section aria-label="Gallery heading and images">
+        <h1 aria-label="Gallery heading">Gallery</h1>
+        <div className="gallery" aria-label="Gallery images">
+          {images}
+        </div>
       </section>
 
       <Modal
         ref={modalRef}
         className="gallery-modal"
         isFormShown={false}
+        aria-label="Image modal"
         onKeyDown={(event) => {
           if (event.key === 'Escape') {
             setIsOpen(false);
@@ -101,48 +109,47 @@ const Gallery = ({ handleScrollIntoView }) => {
           }
         }}
       >
-        <div className="gallery-modal-wrapper">
-          {
-            <>
-              <Image
-                src={modalContent}
-                alt="Modal content"
-                className="clicked-image"
-              />
+        <div className="gallery-modal-wrapper" aria-label="Modal content">
+          <Image
+            src={modalContent}
+            alt="Modal content"
+            className="clicked-image"
+          />
 
-              {isOpen && (
-                <>
-                  <button
-                    className="arrow-left"
-                    onClick={() => {
-                      setCurrentIndex((prevIndex) => prevIndex - 1);
-                      setModalContent(imagesData[currentIndex]);
-                    }}
-                  >
-                    <img src={arrow} alt="arrow-left" />
-                  </button>
-                  <button
-                    className="arrow-right"
-                    onClick={() => {
-                      setCurrentIndex((prevIndex) => prevIndex + 1);
-                      setModalContent(imagesData[currentIndex]);
-                    }}
-                  >
-                    <img src={arrow} alt="arrow-right" />
-                  </button>
-                  <button
-                    className="close-button"
-                    onClick={() => {
-                      setIsOpen(false);
-                      modalRef.current.close();
-                    }}
-                  >
-                    <img src={closeIcon} alt="close icon" />
-                  </button>
-                </>
-              )}
+          {isOpen && (
+            <>
+              <button
+                className="arrow-left"
+                onClick={() => {
+                  setCurrentIndex((prevIndex) => prevIndex - 1);
+                  setModalContent(imagesData[currentIndex]);
+                }}
+                aria-label="Previous image"
+              >
+                <img src={arrow} alt="arrow-left" />
+              </button>
+              <button
+                className="arrow-right"
+                onClick={() => {
+                  setCurrentIndex((prevIndex) => prevIndex + 1);
+                  setModalContent(imagesData[currentIndex]);
+                }}
+                aria-label="Next image"
+              >
+                <img src={arrow} alt="arrow-right" />
+              </button>
+              <button
+                className="close-button"
+                onClick={() => {
+                  setIsOpen(false);
+                  modalRef.current.close();
+                }}
+                aria-label="Close modal"
+              >
+                <img src={closeIcon} alt="close icon" />
+              </button>
             </>
-          }
+          )}
         </div>
       </Modal>
     </div>

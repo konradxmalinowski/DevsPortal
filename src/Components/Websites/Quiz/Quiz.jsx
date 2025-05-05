@@ -24,7 +24,7 @@ const Quiz = ({ url }) => {
     Math.floor(Math.random() * (max - min + 1) + min);
 
   const createQuestion = () => {
-    setIsExpanded((prevExpanded) => true);
+    setIsExpanded(true);
     if (questionsData.length === 0) return;
 
     const questions = questionsData.map((q) => q.name);
@@ -60,37 +60,42 @@ const Quiz = ({ url }) => {
   };
 
   return (
-    <section className="quiz-wrapper-question">
+    <section
+      className="quiz-wrapper-question"
+      aria-label="Quiz Question Section"
+    >
       {isExpanded && (
-        <Link to="/quizPanel">
+        <Link to="/quizPanel" aria-label="Go back to the quiz panel">
           <Button className="arrow-back">
-            <img src={comeBackImg} alt="come back arrow" />
+            <img src={comeBackImg} alt="Go back arrow" />
           </Button>
         </Link>
       )}
 
-      <span id="question-number">
+      <span id="question-number" aria-label="Question number">
         {randomQuestion
-          ? `Question ${idxRandomNumber} / ${questionsData.length}`
+          ? `Question ${idxRandomNumber + 1} / ${questionsData.length}`
           : ''}
       </span>
       <button
         id="generateButton"
         className="purple-button"
         onClick={createQuestion}
+        aria-label="Generate a new question"
       >
         Generate Question
       </button>
       {randomQuestion && (
         <main>
-          <section id="ui-question">
+          <section id="ui-question" aria-label="Current question">
             <p>{randomQuestion}</p>
           </section>
-          <section id="ui-answers">
+          <section id="ui-answers" aria-label="Answer options">
             <section
               className="answer answerA"
               style={answerAStyle}
               onClick={() => checkCorrectness('a')}
+              aria-label={`Answer A: ${answersRandomQuestion[0]}`}
             >
               <p>{answersRandomQuestion[0]}</p>
             </section>
@@ -98,6 +103,7 @@ const Quiz = ({ url }) => {
               className="answer answerB"
               style={answerBStyle}
               onClick={() => checkCorrectness('b')}
+              aria-label={`Answer B: ${answersRandomQuestion[1]}`}
             >
               <p>{answersRandomQuestion[1]}</p>
             </section>

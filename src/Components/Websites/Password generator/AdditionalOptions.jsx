@@ -1,7 +1,11 @@
 function Checkbox({ name, checked, content, onChange }) {
   return (
     <section>
-      <label className="custom-checkbox-label">
+      <label
+        className="custom-checkbox-label"
+        htmlFor={name}
+        aria-label={`Toggle ${content} option`}
+      >
         <input
           type="checkbox"
           className="custom-checkbox"
@@ -9,6 +13,7 @@ function Checkbox({ name, checked, content, onChange }) {
           id={name}
           checked={checked}
           onChange={onChange}
+          aria-checked={checked}
         />
         {content}
       </label>
@@ -23,7 +28,7 @@ function AdditionalOptions({ options, setOptions }) {
   };
 
   return (
-    <section id="additional-options">
+    <section id="additional-options" aria-label="Additional password options">
       <p>Additional Options</p>
 
       <Checkbox

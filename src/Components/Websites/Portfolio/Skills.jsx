@@ -77,9 +77,15 @@ const Skills = ({ handleScrollIntoView }) => {
   ));
 
   return (
-    <div className="skills-wrapper wrapper reveal" ref={ref}>
-      <h1>My skills</h1>
-      <div id="skills-content">{skills}</div>
+    <div
+      className="skills-wrapper wrapper reveal"
+      ref={ref}
+      aria-label="Skills Section"
+    >
+      <h1 aria-label="My skills heading">My skills</h1>
+      <div id="skills-content" aria-label="List of skills">
+        {skills}
+      </div>
     </div>
   );
 };

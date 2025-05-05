@@ -15,9 +15,14 @@ const CodeGenerator = ({ label, src, handleScrollIntoView }) => {
   return (
     <div className="snippet reveal" ref={ref}>
       <h2>{label}</h2>
-      <img src={zipImg} alt={label} />
+      <img src={zipImg} alt={`${label} zip file`} />
       <a href={src}>
-        <button className="download-button purple-button">Download</button>
+        <button
+          className="download-button purple-button"
+          aria-label={`Download ${label}`}
+        >
+          Download
+        </button>
       </a>
     </div>
   );

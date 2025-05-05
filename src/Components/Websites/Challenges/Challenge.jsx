@@ -19,13 +19,14 @@ const Challenge = ({
   }, [handleScrollIntoView]);
   return (
     <div className="challenge reveal" ref={ref}>
-      <img src={logo} alt={title} />
+      <img src={logo} alt={`${title} logo`} />
       <h2>{title}</h2>
       <p>{description}</p>
       <Button
         label="Open"
         className="purple-button"
         onClick={() => window.open(link, '_blank')}
+        aria-label={`Open ${title} challenge`}
       />
     </div>
   );

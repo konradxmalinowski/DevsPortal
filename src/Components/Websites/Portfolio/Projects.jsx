@@ -35,12 +35,18 @@ const Projects = ({ handleScrollIntoView }) => {
   ));
 
   return (
-    <div className="projects-wrapper wrapper reveal" ref={ref}>
-      <section>
-        <h1>Let's check out my projects</h1>
-        <p>All other interesting projects can be found on my github!</p>
+    <div
+      className="projects-wrapper wrapper reveal"
+      ref={ref}
+      aria-label="Projects Section"
+    >
+      <section aria-label="Projects introduction">
+        <h1 aria-label="Projects heading">Let's check out my projects</h1>
+        <p aria-label="GitHub projects note">
+          All other interesting projects can be found on my GitHub!
+        </p>
       </section>
-      <div>{projects}</div>
+      <div aria-label="List of projects">{projects}</div>
     </div>
   );
 };

@@ -10,8 +10,8 @@ const QuizPanel = () => {
   return (
     <>
       <Header />
-      <div className="quiz-wrapper">
-        <section>
+      <div className="quiz-wrapper" aria-label="Quiz Panel Section">
+        <section aria-label="Available quizzes">
           <QuizItem
             label="INF.02"
             description="Test your knowledge of computer system administration and peripheral device operation. Prepare for practical vocational tasks!"
@@ -50,7 +50,6 @@ const QuizPanel = () => {
           />
         </section>
       </div>
-
       <Footer />
     </>
   );

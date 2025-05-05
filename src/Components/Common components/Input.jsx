@@ -13,14 +13,20 @@ const Input = ({ type, label, hideIcon = null, showIcon = null, ...props }) => {
           type={type === 'password' && !isPasswordShown ? 'password' : 'text'}
           id={lowerCaseLabel}
           name={lowerCaseLabel}
+          aria-label={label}
           {...props}
         />
         {type === 'password' && (
-          <span onClick={() => setIsPasswordShown(!isPasswordShown)}>
+          <span
+            onClick={() => setIsPasswordShown(!isPasswordShown)}
+            role="button"
+            aria-label={isPasswordShown ? 'Hide password' : 'Show password'}
+            tabIndex={0}
+          >
             <img
               src={isPasswordShown ? hideIcon : showIcon}
               alt={
-                isPasswordShown ? 'show password icon' : 'hide password icon'
+                isPasswordShown ? 'Hide password icon' : 'Show password icon'
               }
             />
           </span>

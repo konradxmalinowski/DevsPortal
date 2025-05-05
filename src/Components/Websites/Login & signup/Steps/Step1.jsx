@@ -11,7 +11,13 @@ const Step1 = ({ stepFunctions }) => {
   return (
     <>
       <h2>Choose a Username</h2>
-      <Input type="text" label="Username" ref={usernameRef} autoFocus />
+      <Input
+        type="text"
+        label="Username"
+        ref={usernameRef}
+        autoFocus
+        aria-label="Enter your desired username"
+      />
 
       <p id="requirements-p">Requirements:</p>
       <ul>
@@ -26,6 +32,7 @@ const Step1 = ({ stepFunctions }) => {
           stepFunctions.handleClickNext(usernameRegEx, usernameRef, 'username');
         }}
         className="green-button"
+        aria-label="Proceed to the next step"
       />
     </>
   );

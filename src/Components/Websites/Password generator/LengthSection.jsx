@@ -25,8 +25,8 @@ function LengthSection({ passwordLength, setPasswordLength }) {
   };
 
   return (
-    <section id="length-section">
-      <label>
+    <section id="length-section" aria-label="Password length controls">
+      <label htmlFor="password-length-value" aria-label="Set password length">
         Characters:{' '}
         <input
           type="number"
@@ -36,26 +36,32 @@ function LengthSection({ passwordLength, setPasswordLength }) {
           max="200"
           value={passwordLength}
           onChange={handleChange}
+          aria-valuemin="0"
+          aria-valuemax="200"
+          aria-valuenow={passwordLength}
         />
       </label>
-      <section>
+      <section aria-label="Length adjustment buttons">
         <Button
           id="decrease-button"
           className="purple-button"
           label="-"
           onClick={handleDecrease}
+          aria-label="Decrease password length"
         />
         <Button
           id="increase-button"
           className="purple-button"
           label="+"
           onClick={handleIncrease}
+          aria-label="Increase password length"
         />
         <Button
           id="set-0-button"
           className="purple-button"
           label="0"
           onClick={handleSetToZero}
+          aria-label="Set password length to zero"
         />
       </section>
     </section>

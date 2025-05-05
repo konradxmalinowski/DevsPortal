@@ -14,10 +14,10 @@ import './Applications.css';
 const defaultArrayOfClassNames = ['buttons-clr', 'grey', 'grey', 'grey'];
 const appOptionsLabels = ['Shop', 'Timer', 'Quiz', 'Todo App'];
 const infoDescriptions = [
-  'Example of website on which you can buy sth',
-  'Example of website on which you can use timer or stopwatch',
-  'Example of website on which you can take part in difference quiz',
-  'Example of website on which you can note your taks to do.',
+  'Example of website on which you can buy something.',
+  'Example of website on which you can use a timer or stopwatch.',
+  'Example of website on which you can take part in different quizzes.',
+  'Example of website on which you can note your tasks to do.',
 ];
 
 const Applications = ({ handleScrollIntoView }) => {
@@ -70,6 +70,7 @@ const Applications = ({ handleScrollIntoView }) => {
         label={label}
         onClick={() => handleClick(idx)}
         className={classNames[idx]}
+        aria-label={`Select ${label} application`}
       />
     );
   });
@@ -79,6 +80,7 @@ const Applications = ({ handleScrollIntoView }) => {
       title={label}
       description={infoDescriptions[appOptionsLabels.indexOf(label)]}
       key={label}
+      aria-label={`Details about ${label} application`}
     />
   ));
 
@@ -97,21 +99,31 @@ const Applications = ({ handleScrollIntoView }) => {
   }
 
   return (
-    <div className="apps-wrapper wrapper reveal" id="apps-wrapper" ref={ref}>
+    <div
+      className="apps-wrapper wrapper reveal"
+      id="apps-wrapper"
+      ref={ref}
+      aria-label="Applications Section"
+    >
       <section>
-        <h1>Choose the best app for you </h1>
-        <p className="grey">Click on the image to open website</p>
+        <h1>Choose the best app for you</h1>
+        <p className="grey">Click on the image to open the website</p>
         <div>
-          <section className="apps-left apps">
+          <section className="apps-left apps" aria-label="Application Options">
             <div>{appOptions}</div>
           </section>
-          <section className="apps-right apps">
+          <section
+            className="apps-right apps"
+            aria-label="Selected Application Preview"
+          >
             {applications[selectedApp]}
           </section>
         </div>
 
         <hr />
-        <div className="app-details">{appDetails}</div>
+        <div className="app-details" aria-label="Application Details">
+          {appDetails}
+        </div>
       </section>
     </div>
   );

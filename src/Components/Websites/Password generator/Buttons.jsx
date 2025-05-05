@@ -23,18 +23,28 @@ function Buttons({
   };
 
   return (
-    <section id="buttons">
+    <section id="buttons" aria-label="Password generator controls">
       <Button
         id="generateBtn"
         className="purple-button"
         onClick={handleGenerate}
+        aria-label="Generate a new password"
       >
         Generate
       </Button>
-      <Button id="copyBtn" className="purple-button" onClick={handleCopy}>
+      <Button
+        id="copyBtn"
+        className="purple-button"
+        onClick={handleCopy}
+        aria-label="Copy the generated password to clipboard"
+      >
         Copy
       </Button>
-      <Button className="purple-button" onClick={handleClear}>
+      <Button
+        className="purple-button"
+        onClick={handleClear}
+        aria-label="Clear the generated password"
+      >
         Clear
       </Button>
     </section>

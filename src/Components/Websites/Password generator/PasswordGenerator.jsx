@@ -42,7 +42,11 @@ const PasswordGenerator = () => {
   return (
     <>
       <Header />
-      <section className="password-generator-wrapper wrapper reveal" ref={ref}>
+      <section
+        className="password-generator-wrapper wrapper reveal"
+        ref={ref}
+        aria-label="Password Generator Section"
+      >
         <div>
           <ResultSection password={password} />
           <Buttons
@@ -61,7 +65,9 @@ const PasswordGenerator = () => {
       </section>
       <Footer />
 
-      <Modal ref={modalRef}>{message}</Modal>
+      <Modal ref={modalRef} aria-label="Password generator message modal">
+        {message}
+      </Modal>
     </>
   );
 };

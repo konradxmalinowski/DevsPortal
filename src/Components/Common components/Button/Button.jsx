@@ -9,6 +9,7 @@ export default function Button({ label, type, children, className, ...props }) {
         type === 'light' ? 'custom-button-light' : 'custom-button-dark',
         className ? className : '',
       ].join(' ')}
+      aria-label={label || undefined}
     >
       {label}
       {children}

@@ -33,8 +33,9 @@ const Step3 = ({ stepFunctions }) => {
         showIcon={showPasswordIcon}
         hideIcon={hidePasswordIcon}
         autoFocus
+        aria-label="Enter your password"
       />
-      <ul>
+      <ul aria-label="Password requirements">
         {passwordRequirements.map((requirement) => (
           <ListItem content={requirement} key={requirement} />
         ))}
@@ -45,6 +46,7 @@ const Step3 = ({ stepFunctions }) => {
           onClick={() => stepFunctions.setStep((prevStep) => prevStep - 1)}
           className="come-back-button"
           type="dark"
+          aria-label="Go back to the previous step"
         />
         <Button
           label="Next"
@@ -57,6 +59,7 @@ const Step3 = ({ stepFunctions }) => {
           }
           className="email-button green-button"
           type="dark"
+          aria-label="Proceed to the next step"
         />
       </div>
     </>

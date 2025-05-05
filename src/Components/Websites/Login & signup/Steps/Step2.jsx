@@ -22,6 +22,7 @@ const Step2 = ({ stepFunctions }) => {
         type="email"
         ref={emailRef}
         autoFocus
+        aria-label="Enter your email address"
         onKeyDown={(event) => handleClickEnter(event)}
         onChange={(event) => handleClickEnter(event)}
       />
@@ -31,6 +32,7 @@ const Step2 = ({ stepFunctions }) => {
           onClick={() => stepFunctions.setStep((prevStep) => prevStep - 1)}
           className="come-back-button"
           type="dark"
+          aria-label="Go back to the previous step"
         />
         <Button
           label="Next"
@@ -39,6 +41,7 @@ const Step2 = ({ stepFunctions }) => {
           }
           className="email-button green-button"
           type="dark"
+          aria-label="Proceed to the next step"
         />
       </div>
     </>

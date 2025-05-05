@@ -82,9 +82,17 @@ const AdminPanel = () => {
   return (
     <>
       <Header />
-      <section className="admin-panel-wrapper wrapper">
+      <section
+        className="admin-panel-wrapper wrapper"
+        aria-label="Admin Panel Section"
+      >
         <h1>Statystyki odwiedzin</h1>
-        <canvas id="admin-canvas" className="reveal" ref={ref}></canvas>
+        <canvas
+          id="admin-canvas"
+          className="reveal"
+          ref={ref}
+          aria-label="Visit statistics chart"
+        ></canvas>
       </section>
       <Footer />
     </>

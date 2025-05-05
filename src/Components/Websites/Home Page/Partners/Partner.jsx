@@ -1,6 +1,10 @@
 export default function Partner({ name, logo, className, link, ...props }) {
   return (
-    <div className="partner" onClick={() => window.open(link)}>
+    <div
+      className="partner"
+      onClick={() => window.open(link)}
+      aria-label={`Visit ${name}`}
+    >
       <img
         src={logo}
         alt={name}

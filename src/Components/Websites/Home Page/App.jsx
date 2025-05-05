@@ -4,6 +4,7 @@ import About from './About/About.jsx';
 import Partners from './Partners/Partners.jsx';
 import Applications from './Applications/Applications.jsx';
 import Cookies from '../../Common components/Cookies/Cookies.jsx';
+import Ratings from './Ratings/Ratings.jsx';
 
 import './App.css';
 
@@ -16,6 +17,7 @@ export default function App() {
       <About handleScrollIntoView={handleScrollIntoView} />
       <Partners handleScrollIntoView={handleScrollIntoView} />
       <Applications handleScrollIntoView={handleScrollIntoView} />
+      <Ratings handleScrollIntoView={handleScrollIntoView} />
       <Footer />
       <Cookies />
     </>

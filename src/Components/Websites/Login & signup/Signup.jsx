@@ -27,6 +27,7 @@ const Signup = () => {
   const [step, setStep] = useState(1);
   const [userData, setUserData] = useState({ ...userDataBasic });
   const [DialogContent, setDialogContent] = useState('');
+  const [isFormShown, setIsFormShown] = useState(false);
   const dialogRef = useRef(null);
   const navigate = useNavigate();
 
@@ -54,6 +55,7 @@ const Signup = () => {
       !regEx.test(inputValue) ||
       (additionalCheck && !additionalCheck(inputValue))
     ) {
+      setIsFormShown(true);
       setDialogContent(
         `Please enter a valid ${type} (e.g., ${
           type === 'email'
@@ -68,20 +70,26 @@ const Signup = () => {
     }
 
     if (type === 'phone' && !regEx.test(inputValue)) {
+      setIsFormShown(true);
       setDialogContent('Please enter a valid phone number');
       dialogRef.current?.open();
       return;
     }
+
+    setIsFormShown(false);
 
     return inputValue;
   };
 
   const handleEndStep = async (inputValue) => {
     if (inputValue !== userData.password) {
+      setIsFormShown(true);
       setDialogContent('Passwords do not match');
       dialogRef.current?.open();
       return;
     }
+
+    setIsFormShown(false);
     try {
       const response = await fetch(
         'http://localhost/Developers%20portal/api/signup.php',
@@ -94,6 +102,7 @@ const Signup = () => {
       );
       const data = await response.json();
       if (response.ok) {
+        setIsFormShown(false);
         setDialogContent(<DialogContentHTML content="Success!" />);
 
         dialogRef.current?.open();
@@ -102,6 +111,7 @@ const Signup = () => {
           dialogRef.current.close();
         }, 4000);
       } else {
+        setIsFormShown(true);
         setDialogContent(data.message || 'Signup failed');
         dialogRef.current?.open();
 
@@ -110,13 +120,18 @@ const Signup = () => {
         }, 1000);
         return;
       }
+
+      setIsFormShown(false);
     } catch (error) {
+      setIsFormShown(true);
       setDialogContent('Server error: ' + error.message);
       dialogRef.current?.open();
 
       setTimeout(() => {
         dialogRef.current.close();
       }, 1000);
+
+      setIsFormShown(false);
       return;
     }
   };
@@ -140,6 +155,7 @@ const Signup = () => {
         const data = await response.json();
 
         if (!data.available) {
+          setIsFormShown(true);
           setDialogContent(
             `${
               type === 'username'
@@ -152,11 +168,15 @@ const Signup = () => {
           dialogRef.current?.open();
           return;
         }
+
+        setIsFormShown(false);
       } catch (error) {
+        setIsFormShown(true);
         setDialogContent('Server error: ' + error.message);
         dialogRef.current?.open();
         return;
       }
+      setIsFormShown(false);
     }
 
     if (step === 5) {
@@ -214,7 +234,7 @@ const Signup = () => {
       <Modal
         className="login-and-signup"
         ref={dialogRef}
-        isFormShown={false}
+        isFormShown={isFormShown}
         aria-label="Signup modal"
       >
         {DialogContent}

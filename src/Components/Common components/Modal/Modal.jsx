@@ -36,7 +36,7 @@ const Modal = ({ children, ref, isFormShown = true, ...props }) => {
       aria-describedby="modal-description"
       {...props}
     >
-      <div id="modal-description">{children}</div>
+      {children}
       {isFormShown && (
         <form method="dialog">
           <div className="button-container">

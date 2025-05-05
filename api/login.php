@@ -10,10 +10,12 @@ try {
         throw new Exception("Missing required fields: email or password");
     }
 
-    $stmt = $conn->prepare("SELECT * FROM users WHERE email = :email");
-    $stmt->execute([':email' => $email]);
+    $stmt = $conn->prepare("SELECT * FROM users WHERE email = ?");
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+    $user = $result->fetch_assoc();
     if (!$user || !password_verify($password, $user['password'])) {
         throw new Exception("Invalid email or password");
     }
@@ -27,6 +29,8 @@ try {
         ]
     ]);
     http_response_code(200);
+
+    $stmt->close();
 } catch (Exception $e) {
     http_response_code(400);
     echo json_encode(["error" => $e->getMessage()]);

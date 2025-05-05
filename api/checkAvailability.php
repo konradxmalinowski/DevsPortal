@@ -15,11 +15,17 @@ try {
         throw new Exception("Invalid or missing fields: type or value");
     }
 
-    $stmt = $conn->prepare("SELECT COUNT(*) FROM users WHERE $type = :value");
-    $stmt->execute([':value' => $value]);
+    $query = "SELECT COUNT(*) FROM users WHERE $type = ?";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param("s", $value);
+    $stmt->execute();
+    $stmt->bind_result($count);
+    $stmt->fetch();
 
-    echo json_encode(["available" => $stmt->fetchColumn() == 0]);
+    echo json_encode(["available" => $count == 0]);
     http_response_code(200);
+
+    $stmt->close();
 } catch (Exception $e) {
     http_response_code(400);
     echo json_encode(["error" => $e->getMessage()]);

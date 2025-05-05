@@ -15,15 +15,14 @@ try {
 
     $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
 
-    $stmt = $conn->prepare("INSERT INTO users (username, email, password, phone) VALUES (:username, :email, :password, :phone)");
-    $stmt->bindParam(':username', $username);
-    $stmt->bindParam(':email', $email);
-    $stmt->bindParam(':password', $hashedPassword);
-    $stmt->bindParam(':phone', $phone);
+    $stmt = $conn->prepare("INSERT INTO users (username, email, password, phone) VALUES (?, ?, ?, ?)");
+    $stmt->bind_param("ssss", $username, $email, $hashedPassword, $phone);
     $stmt->execute();
 
     echo json_encode(["message" => "User registered successfully"]);
     http_response_code(201);
+
+    $stmt->close();
 } catch (Exception $e) {
     echo json_encode(["error" => $e->getMessage()]);
     http_response_code(400);

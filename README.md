@@ -1,114 +1,481 @@
-# Developers Portal
+# 🌐 Developers Portal
 
-## Opis projektu
-
-Developers Portal to kompleksowa platforma stworzona z myślą o programistach. Łączy w sobie różnorodne funkcjonalności, takie jak quizy, generatory kodu, blogi, wyzwania programistyczne oraz portfolio autora. Celem projektu jest wspieranie nauki, rozwój umiejętności oraz dostarczanie narzędzi ułatwiających codzienną pracę programistów.
-
----
-
-## Użyte technologie
-
-Projekt został zbudowany przy użyciu nowoczesnych technologii, które zapewniają wydajność, skalowalność i łatwość utrzymania:
-
-- **Frontend**:
-
-  - **React**: Dynamiczne komponenty i zarządzanie stanem aplikacji.
-  - **JavaScript (ES6+)**: Nowoczesne funkcje języka, takie jak destrukturyzacja, funkcje strzałkowe i operatory rozproszenia.
-  - **CSS**: Dedykowane pliki CSS dla każdego komponentu, zapewniające modularność i spójność stylów.
-  - **HTML**: JSX kompilowany do HTML dla dynamicznych interfejsów użytkownika.
-
-- **Backend**:
-
-  - **PHP**: Obsługa logiki serwera i komunikacji z bazą danych.
-  - **MySQL**: Przechowywanie danych użytkowników, quizów i innych zasobów.
-
-- **Inne**:
-  - **React Router**: Nawigacja między podstronami.
-  - **Webpack - Vite**: Bundling i optymalizacja zasobów.
-  - **Font Inter**: Nowoczesna i czytelna czcionka.
-  - **Zdjęcia i obrazki**: pochodzą ze stron: [link1](https://icons8.com/), [link2](https://www.flaticon.com/), [link3](https://chatgpt.com/) i kilka innych
+[English version](#-table-of-contents) 🇬🇧  
+[Polska wersja](#-spis-treści) 🇵🇱
 
 ---
 
-## Podstrony
+### English version
 
-Portal składa się z wielu podstron, które oferują różnorodne funkcjonalności:
+## 📖 Table of Contents
 
-1. **Strona główna (Home Page)**:
-
-   - Sekcja "About" z opisem platformy.
-   - Lista partnerów technologicznych, takich jak OpenAI, Microsoft i Apple.
-   - Prezentacja aplikacji, takich jak Quiz, Timer, Shop i Todo App.
-
-2. **Blog**:
-
-   - Artykuły na tematy związane z programowaniem, AI i nowoczesnymi technologiami.
-   - Funkcja "Read More" umożliwiająca rozwinięcie treści.
-
-3. **Quizy**:
-
-   - Quizy tematyczne, np. INF.02, INF.03, INF.04, oraz językowe (angielski, niemiecki).
-   - Interaktywne pytania z natychmiastową informacją zwrotną.
-
-4. **Generatory kodu**:
-
-   - Pobieranie gotowych szablonów projektów, takich jak "Clean React Project" czy "Vanilla JS Project".
-
-5. **Portfolio autora**:
-
-   - Projekty autora, takie jak sklep internetowy, aplikacja Todo i test egzaminacyjny.
-   - Sekcja "Skills" z listą technologii i poziomem zaawansowania.
-   - Możliwość oceny strony przez użytkowników.
-
-6. **Wyzwania (Challenges)**:
-
-   - Sekcja z zadaniami programistycznymi do rozwiązania.
-
-7. **Logowanie i rejestracja**:
-
-   - Wieloetapowy proces rejestracji z walidacją danych.
-   - Logowanie z obsługą tokenów.
-
-8. **Panel administratora**:
-
-   - Prosta strona administracyjna z dostępem do zarządzania treścią.
-
-9. **Strona 404**:
-   - Przyjazny komunikat o błędzie z animacjami i przyciskiem powrotu na stronę główną.
+- [📚 About the Project](#-about-the-project)
+- [✨ Features](#-features)
+- [🛠️ Technologies Used](#-technologies-used)
+- [⚙️ Installation](#-installation)
+- [🚀 Usage](#-usage)
+- [📄 Pages Overview](#-pages-overview)
+- [🎨 Design](#-design)
+  - [🎨 Colors](#-colors)
+  - [🔤 Typography](#-typography)
+- [🤝 Contributing](#-contributing)
+- [📬 Contact](#-contact)
 
 ---
 
-## Kolory
+## 📚 About the Project
 
-Portal wykorzystuje nowoczesną i spójną paletę kolorów, która nadaje mu profesjonalny i estetyczny wygląd. Oto główne kolory używane w aplikacji:
+Developers Portal is a comprehensive platform designed for developers. It combines various functionalities such as quizzes, code generators, blogs, programming challenges, and the author's portfolio. The goal of the project is to support learning, skill development, and provide tools to simplify daily programming tasks.
 
-### Kolory tła:
+---
 
-- **Ciemny szary**: `#08090a` – główny kolor tła aplikacji.
-- **Grafitowy**: `#0e0f10` – dodatkowe tło dla sekcji.
-- **Antracytowy**: `#0a0b0c` – tło dla elementów interaktywnych.
+## ✨ Features
 
-### Kolory elementów interaktywnych:
+- 🧠 **Interactive Quizzes**: Test your knowledge in programming and languages.
+- 🛠️ **Code Generators**: Download ready-to-use project templates.
+- 📝 **Blogs**: Read articles on programming, AI, and modern technologies.
+- 🏆 **Challenges**: Solve programming tasks to improve your skills.
+- 💼 **Portfolio**: Explore the author's projects and skills.
+- 🔒 **Admin Panel**: Manage content with ease.
+- 📱 **Responsive Design**: Optimized for all devices.
 
-- **Biały**: `#ffffff` – kolor przycisków i tekstu na ciemnym tle.
-- **Zielony jasny**: `#05b263` – kolor akcentów, np. przycisków akcji.
-- **Zielony ciemny**: `#18361e` – tło dla sekcji z zielonymi akcentami.
+---
 
-### Kolory dodatkowe:
+## 🛠️ Technologies Used
 
-- **Szary**: `#828790` – kolor tekstu pomocniczego i ikon.
-- **Fioletowy jasny**: `#644dff` – kolor przycisków pobierania.
-- **Fioletowy ciemny**: `#4836bb` – kolor hover dla przycisków pobierania.
+### Frontend
 
-### Przykładowa wizualizacja palety:
+- ⚛️ **React**: For building dynamic components and managing application state.
+- 🟨 **JavaScript (ES6+)**: Modern language features like destructuring, arrow functions, and spread operators.
+- 🎨 **CSS**: Modular and consistent styles for each component.
+- 🖼️ **HTML**: JSX compiled to HTML for dynamic user interfaces.
 
-| Kolor               | Kod HEX   | Zastosowanie                    |
-| ------------------- | --------- | ------------------------------- |
-| **Ciemny szary**    | `#08090a` | Główne tło aplikacji            |
-| **Grafitowy**       | `#0e0f10` | Dodatkowe tło sekcji            |
-| **Zielony jasny**   | `#05b263` | Akcenty, np. przyciski akcji    |
-| **Fioletowy jasny** | `#644dff` | Przycisk pobierania             |
-| **Biały**           | `#ffffff` | Tekst na ciemnym tle, przyciski |
+### Backend
+
+- 🐘 **PHP**: Server-side logic and database communication.
+- 🗄️ **MySQL**: Storing user data, quizzes, and other resources.
+
+### Other Tools
+
+- 🧭 **React Router**: Navigation between pages.
+- ⚡ **Vite**: Fast bundling and resource optimization.
+- 🔤 **Font Inter**: Clean and modern typography.
+
+---
+
+## ⚙️ Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/developers-portal.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd developers-portal
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+---
+
+## 🚀 Usage
+
+1. Open your browser and navigate to `http://localhost:5173/`.
+2. Explore the features like quizzes, blogs, and code generators.
+3. Log in or register to access personalized features.
+
+---
+
+## 📄 Pages Overview
+
+### Main Pages
+
+- 🏠 **Home Page**: Introduction to the platform and its features.
+- 📝 **Blog**: Articles on programming and AI.
+- ❓ **Quizzes**: Thematic quizzes with instant feedback.
+- 🛠️ **Code Generators**: Downloadable project templates.
+- 💼 **Portfolio**: Author's projects and skills.
+- 🏆 **Challenges**: Programming tasks for practice.
+- 🔒 **Admin Panel**: Content management for administrators.
+
+### Utility Pages
+
+- 🔑 **Login/Registration**: Secure authentication with data validation.
+- 🚫 **404 Page**: Friendly error message with animations.
+
+---
+
+## 🎨 Design
+
+### Colors
+
+| Color            | Hex Code  | Usage                         |
+| ---------------- | --------- | ----------------------------- |
+| **Dark Gray**    | `#08090a` | Main background color         |
+| **Graphite**     | `#0e0f10` | Section backgrounds           |
+| **Light Green**  | `#05b263` | Accent buttons and highlights |
+| **White**        | `#ffffff` | Text on dark backgrounds      |
+| **Light Purple** | `#644dff` | Download buttons              |
+
+### Typography
+
+- **Primary Font**: [Inter](https://fonts.google.com/specimen/Inter)
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! To contribute:
+
+1. Fork the repository.
+2. Create a new branch:
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+3. Commit your changes:
+   ```bash
+   git commit -m "Add your message here"
+   ```
+4. Push to the branch:
+   ```bash
+   git push origin feature/your-feature-name
+   ```
+5. Open a pull request.
+
+---
+
+## 📬 Contact
+
+- **Author**: Konrad Malinowski
+- **Email**: malinowski.konrad45@gmail.com
+- **LinkedIn**: [Konrad Malinowski](https://www.linkedin.com/in/konrad-malinowski-894a36323/)
+
+---
+
+### Queries AI
+
+- [Query1](#query-1)
+- [Query2](#query-2)
+- [Query3](#query-3)
+- [Query4](#query-4)
+- [Query5](#query-5)
+- [Query6](#query-6)
+- [Query7](#query-7)
+- [Query8](#query-8)
+- [Query9](#query-9)
+- [Query10](#query-10)
+- [Query11](#query-11)
+- [Query12](#query-12)
+- [Query13](#query-13)
+- [Query14](#query-14)
+- [Query15](#query-15)
+- [Query16](#query-16)
+- [Query17](#query-17)
+- [Query18](#query-18)
+- [Query19](#query-19)
+- [Query20](#query-20)
+
+#### Query 1
+
+> Stwórz mi taki plik (wraz takim samym formatem i układem treści) dla Inf.02.
+
+---
+
+#### Query 2
+
+> Poprawne mają być różnie (raz a raz b tyle nie cały czas to samo)
+
+---
+
+#### Query 3
+
+> Stwórz mi taki plik (wraz takim samym formatem i układem treści) dla Inf.04
+
+---
+
+#### Query 4
+
+> Poprawne mają być różnie (raz a raz b tyle nie cały czas to samo)
+
+---
+
+#### Query 5
+
+> Stwórz mi taki plik (wraz takim samym formatem i układem treści) dla Angielskiego B2
+
+---
+
+#### Query 6
+
+> Poprawne mają być różnie (raz a raz b tyle nie cały czas to samo)
+
+---
+
+#### Query 7
+
+> Stwórz mi taki plik (wraz takim samym formatem i układem treści) dla Niemieckiego B1
+
+---
+
+#### Query 8
+
+> Poprawne mają być różnie (raz a raz b tyle nie cały czas to samo)
+
+---
+
+#### Query 9
+
+> Stwórz mi taki plik (wraz takim samym formatem i układem treści) dla It (podstaw)
+
+---
+
+#### Query 10
+
+> Poprawne mają być różnie (raz a raz b tyle nie cały czas to samo)
+
+---
+
+#### Query 11
+
+> Wygeneruj ikonkę dla mojej strony (portal deweloperów). Kolory strony:
+
+```css
+:root {
+  --background-clr: #08090a;
+  --background-clr2: #0e0f10;
+  --background-clr3: #0a0b0c;
+  --inputs-clr: #141516;
+  --buttons-clr: #ffffff;
+  --header-clr: #09090a;
+  --menu-clr: #18191a;
+  --grey-clr: #828790;
+  --clr-green-50: #05b263;
+  --clr-green-100: #18361e;
+  --clr-green-200: #112a16;
+}
+```
+
+---
+
+#### Query 12
+
+> Opisz tę stronę po angielsku (jakie technologie, co wykorzystuje, co zawiera, itp)
+
+---
+
+#### Query 13
+
+> A teraz dla tej strony stwórz plik terms.pdf w języku angielskim
+
+---
+
+#### Query 14
+
+> Teraz privacy po angielsku
+
+---
+
+#### Query 15
+
+> Napisz mi treść takiego bloga nr 1 (po angielsku):
+
+```js
+const CONTENT_BLOG1 = ``;
+
+class Blog {
+  constructor(title, content) {
+    this.title = title;
+    this.content = content;
+  }
+}
+
+const blog1 = new Blog('AI vs programming');
+
+export const blogs = [];
+```
+
+---
+
+#### Query 16
+
+> Teraz (samą treść) opisz 4 tematy związane z AI też po angielsku i też w tej formie
+
+---
+
+### Query 17
+
+> Napisz od nowa plik readme.md. Nowy plik ma zawierać:, uzyte technologie, strony (główne pliki .jsx zawarte w header i footer i inne), kolory, czcionki/czcionkę, treść w skrócie, skąd pomysł na aplikacje.
+
+---
+
+### Query 18
+
+> Jak zrobić efekt na stronie, że jeśli dojadę do pewnego elementu to on lekko z dołu się pojawia? Wiesz o co chodzi? Można samy js bez biblioteki?
+
+<br>
+
+### Polska wersja
+
+## 📖 Spis Treści
+
+- [📚 O Projekcie](#-o-projekcie)
+- [✨ Funkcje](#-funkcje)
+- [🛠️ Technologie](#️-technologie)
+- [⚙️ Instalacja](#️-instalacja)
+- [🚀 Użytkowanie](#-użytkowanie)
+- [📄 Przegląd Stron](#-przegląd-stron)
+- [🎨 Projekt Graficzny](#-projekt-graficzny)
+  - [🎨 Kolory](#-kolory)
+  - [🔤 Typografia](#-typografia)
+- [🤝 Współpraca](#-współpraca)
+- [📬 Kontakt](#-kontakt)
+
+---
+
+## 📚 O Projekcie
+
+Portal Deweloperów to kompleksowa platforma stworzona z myślą o programistach. Łączy różne funkcjonalności, takie jak quizy, generatory kodu, blogi, wyzwania programistyczne oraz portfolio autora. Celem projektu jest wspieranie nauki, rozwijania umiejętności oraz dostarczanie narzędzi upraszczających codzienne zadania programistyczne.
+
+---
+
+## ✨ Funkcje
+
+- 🧠 **Interaktywne Quizy**: Sprawdzaj swoją wiedzę z zakresu programowania i języków.
+- 🛠️ **Generatory Kodów**: Pobieraj gotowe szablony projektów.
+- 📝 **Blogi**: Czytaj artykuły o programowaniu, AI i nowoczesnych technologiach.
+- 🏆 **Wyzwania**: Rozwiązuj zadania programistyczne i rozwijaj umiejętności.
+- 💼 **Portfolio**: Przeglądaj projekty i umiejętności autora.
+- 🔒 **Panel Administratora**: Łatwe zarządzanie treścią.
+- 📱 **Responsywny Design**: Dostosowany do wszystkich urządzeń.
+
+---
+
+## 🛠️ Technologie
+
+### Frontend
+
+- ⚛️ **React**: Tworzenie dynamicznych komponentów i zarządzanie stanem aplikacji.
+- 🟨 **JavaScript (ES6+)**: Nowoczesne funkcje języka jak destrukturyzacja, funkcje strzałkowe i operatory spread.
+- 🎨 **CSS**: Modułowe i spójne style dla każdego komponentu.
+- 🖼️ **HTML**: JSX kompilowany do HTML dla dynamicznych interfejsów.
+
+### Backend
+
+- 🐘 **PHP**: Logika po stronie serwera i komunikacja z bazą danych.
+- 🗄️ **MySQL**: Przechowywanie danych użytkowników, quizów i innych zasobów.
+
+### Inne Narzędzia
+
+- 🧭 **React Router**: Nawigacja między stronami.
+- ⚡ **Vite**: Szybkie bundlowanie i optymalizacja zasobów.
+- 🔤 **Font Inter**: Czysta i nowoczesna typografia.
+
+---
+
+## ⚙️ Instalacja
+
+1. Sklonuj repozytorium:
+   ```bash
+   git clone https://github.com/your-username/developers-portal.git
+   ```
+2. Przejdź do katalogu projektu:
+   ```bash
+   cd developers-portal
+   ```
+3. Zainstaluj zależności:
+   ```bash
+   npm install
+   ```
+4. Uruchom serwer developerski:
+   ```bash
+   npm run dev
+   ```
+
+---
+
+## 🚀 Użytkowanie
+
+1. Otwórz przeglądarkę i przejdź do `http://localhost:5173/`.
+2. Odkrywaj funkcje takie jak quizy, blogi i generatory kodu.
+3. Zaloguj się lub zarejestruj, aby uzyskać dostęp do funkcji spersonalizowanych.
+
+---
+
+## 📄 Przegląd Stron
+
+### Strony Główne
+
+- 🏠 **Strona Główna**: Wprowadzenie do platformy i jej funkcji.
+- 📝 **Blog**: Artykuły o programowaniu i sztucznej inteligencji.
+- ❓ **Quizy**: Tematyczne quizy z natychmiastową informacją zwrotną.
+- 🛠️ **Generatory Kodów**: Gotowe szablony do pobrania.
+- 💼 **Portfolio**: Projekty i umiejętności autora.
+- 🏆 **Wyzwania**: Zadania programistyczne do ćwiczenia.
+- 🔒 **Panel Administratora**: Zarządzanie treścią dla administratorów.
+
+### Strony Pomocnicze
+
+- 🔑 **Logowanie/Rejestracja**: Bezpieczna autoryzacja i walidacja danych.
+- 🚫 **Strona 404**: Przyjazna wiadomość o błędzie z animacjami.
+
+---
+
+## 🎨 Projekt Graficzny
+
+### Kolory
+
+| Kolor             | Kod HEX   | Zastosowanie                      |
+| ----------------- | --------- | --------------------------------- |
+| **Ciemny Szary**  | `#08090a` | Główny kolor tła                  |
+| **Grafitowy**     | `#0e0f10` | Tło sekcji                        |
+| **Jasny Zielony** | `#05b263` | Przycisk akcentowy, podświetlenia |
+| **Biały**         | `#ffffff` | Tekst na ciemnym tle              |
+| **Jasny Fiolet**  | `#644dff` | Przycisk pobierania               |
+
+### Typografia
+
+- **Główna Czcionka**: [Inter](https://fonts.google.com/specimen/Inter)
+
+---
+
+## 🤝 Współpraca
+
+Wkład w projekt jest mile widziany! Aby współtworzyć:
+
+1. Forkuj repozytorium.
+2. Stwórz nową gałąź:
+   ```bash
+   git checkout -b feature/nazwa-funkcji
+   ```
+3. Zatwierdź zmiany:
+   ```bash
+   git commit -m "Dodano nową funkcjonalność"
+   ```
+4. Wypchnij zmiany:
+   ```bash
+   git push origin feature/nazwa-funkcji
+   ```
+5. Otwórz pull request.
+
+---
+
+## 📜 Licencja
+
+Ten projekt jest objęty licencją MIT.
+
+---
+
+## 📬 Kontakt
+
+- **Autor**: Konrad Malinowski
+- **Email**: malinowski.konrad45@gmail.com
+- **LinkedIn**: [Konrad Malinowski](https://www.linkedin.com/in/konrad-malinowski-894a36323/)
 
 ---
 

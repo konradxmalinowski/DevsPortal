@@ -3,6 +3,10 @@
   overflow: hidden;
 }
 
+.ratings-wrapper > h1 {
+  margin-bottom: 40px;
+}
+
 .rating {
   width: 500px;
   background-color: var(--background-clr2);

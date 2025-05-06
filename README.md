@@ -187,27 +187,6 @@ SOFTWARE.
 
 ### Queries AI
 
-- [Query1](#query-1)
-- [Query2](#query-2)
-- [Query3](#query-3)
-- [Query4](#query-4)
-- [Query5](#query-5)
-- [Query6](#query-6)
-- [Query7](#query-7)
-- [Query8](#query-8)
-- [Query9](#query-9)
-- [Query10](#query-10)
-- [Query11](#query-11)
-- [Query12](#query-12)
-- [Query13](#query-13)
-- [Query14](#query-14)
-- [Query15](#query-15)
-- [Query16](#query-16)
-- [Query17](#query-17)
-- [Query18](#query-18)
-- [Query19](#query-19)
-- [Query20](#query-20)
-
 #### Query 1
 
 > Stwórz mi taki plik (wraz takim samym formatem i układem treści) dla Inf.02.
@@ -540,27 +519,6 @@ SOFTWARE.
 ---
 
 ### Zapytania AI
-
-- [Zapytanie1](#zapytanie-1)
-- [Zapytanie2](#zapytanie-2)
-- [Zapytanie3](#zapytanie-3)
-- [Zapytanie4](#zapytanie-4)
-- [Zapytanie5](#zapytanie-5)
-- [Zapytanie6](#zapytanie-6)
-- [Zapytanie7](#zapytanie-7)
-- [Zapytanie8](#zapytanie-8)
-- [Zapytanie9](#zapytanie-9)
-- [Zapytanie10](#zapytanie-10)
-- [Zapytanie11](#zapytanie-11)
-- [Zapytanie12](#zapytanie-12)
-- [Zapytanie13](#zapytanie-13)
-- [Zapytanie14](#zapytanie-14)
-- [Zapytanie15](#zapytanie-15)
-- [Zapytanie16](#zapytanie-16)
-- [Zapytanie17](#zapytanie-17)
-- [Zapytanie18](#zapytanie-18)
-- [Zapytanie19](#zapytanie-19)
-- [Zapytanie20](#zapytanie-20)
 
 #### Zapytanie 1
 

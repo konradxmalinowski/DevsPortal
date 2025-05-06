@@ -477,12 +477,6 @@ Wkład w projekt jest mile widziany! Aby współtworzyć:
 
 ---
 
-## 📜 Licencja
-
-Ten projekt jest objęty licencją MIT.
-
----
-
 ## 📬 Kontakt
 
 - **Autor**: Konrad Malinowski

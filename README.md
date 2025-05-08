@@ -158,28 +158,34 @@ Contributions are welcome! To contribute:
 
 ---
 
-### Queries AI
+## License
 
-- [Query1](#query-1)
-- [Query2](#query-2)
-- [Query3](#query-3)
-- [Query4](#query-4)
-- [Query5](#query-5)
-- [Query6](#query-6)
-- [Query7](#query-7)
-- [Query8](#query-8)
-- [Query9](#query-9)
-- [Query10](#query-10)
-- [Query11](#query-11)
-- [Query12](#query-12)
-- [Query13](#query-13)
-- [Query14](#query-14)
-- [Query15](#query-15)
-- [Query16](#query-16)
-- [Query17](#query-17)
-- [Query18](#query-18)
-- [Query19](#query-19)
-- [Query20](#query-20)
+```
+MIT License
+Copyright (c) 2025 Konrad Malinowski
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+---
+
+### Queries AI
 
 #### Query 1
 
@@ -471,12 +477,6 @@ Wkład w projekt jest mile widziany! Aby współtworzyć:
 
 ---
 
-## 📜 Licencja
-
-Ten projekt jest objęty licencją MIT.
-
----
-
 ## 📬 Kontakt
 
 - **Autor**: Konrad Malinowski
@@ -485,28 +485,22 @@ Ten projekt jest objęty licencją MIT.
 
 ---
 
-### Zapytania AI
+## Licencja
 
-- [Zapytanie1](#zapytanie-1)
-- [Zapytanie2](#zapytanie-2)
-- [Zapytanie3](#zapytanie-3)
-- [Zapytanie4](#zapytanie-4)
-- [Zapytanie5](#zapytanie-5)
-- [Zapytanie6](#zapytanie-6)
-- [Zapytanie7](#zapytanie-7)
-- [Zapytanie8](#zapytanie-8)
-- [Zapytanie9](#zapytanie-9)
-- [Zapytanie10](#zapytanie-10)
-- [Zapytanie11](#zapytanie-11)
-- [Zapytanie12](#zapytanie-12)
-- [Zapytanie13](#zapytanie-13)
-- [Zapytanie14](#zapytanie-14)
-- [Zapytanie15](#zapytanie-15)
-- [Zapytanie16](#zapytanie-16)
-- [Zapytanie17](#zapytanie-17)
-- [Zapytanie18](#zapytanie-18)
-- [Zapytanie19](#zapytanie-19)
-- [Zapytanie20](#zapytanie-20)
+```
+Licencja MIT  
+Copyright (c) 2025 Konrad Malinowski  
+
+Niniejszym udziela się każdej osobie, która uzyska kopię tego oprogramowania i powiązanej dokumentacji (dalej "Oprogramowanie"), pozwolenia na używanie Oprogramowania bez ograniczeń, w tym bez ograniczeń do praw do używania, kopiowania, modyfikowania, łączenia, publikowania, dystrybuowania, sublicencjonowania i/lub sprzedawania kopii Oprogramowania, a także na zezwalanie osobom, którym Oprogramowanie jest dostarczane, na to samo, z zastrzeżeniem następujących warunków:
+
+Powyższa informacja o prawach autorskich oraz niniejsza informacja o pozwoleniu muszą zostać zawarte we wszystkich kopiach lub istotnych częściach Oprogramowania.
+
+Oprogramowanie jest dostarczane "tak jak jest", bez jakiejkolwiek gwarancji, wyraźnej lub dorozumianej, w tym bez gwarancji przydatności handlowej, przydatności do określonego celu oraz nienaruszalności praw. W żadnym wypadku autorzy lub posiadacze praw autorskich nie będą odpowiedzialni za jakiekolwiek roszczenia, szkody lub inne zobowiązania, wynikające z umowy, czynu niedozwolonego lub innej podstawy prawnej, związane z Oprogramowaniem lub jego użyciem bądź innymi działaniami związanymi z Oprogramowaniem.
+```
+
+---
+
+### Zapytania AI
 
 #### Zapytanie 1
 

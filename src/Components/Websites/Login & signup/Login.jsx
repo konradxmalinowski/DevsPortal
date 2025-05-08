@@ -1,8 +1,8 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useRef, useState, useEffect } from 'react';
 
-import './Login.css';
-import './form.css';
+import './styles/Login.css';
+import './styles/form.css';
 
 import hidePasswordIcon from './../../../assets/Password Icons/hide_password.png';
 import showPasswordIcon from './../../../assets/Password Icons/show_password.png';
@@ -12,10 +12,10 @@ import Footer from '../../Common components/Footer/Footer.jsx';
 import Button from '../../Common components/Button/Button.jsx';
 import Input from './../../Common components/Input.jsx';
 import Modal from '../../Common components/Modal/Modal.jsx';
+import DialogContentHTML from './DialogContentHTML.jsx';
 
 import { emailRegEx, passwordRegEx } from '../../../RegEx.js';
 import { handleScrollIntoView } from '../../../utils/handleScrollIntoView.js';
-import DialogContentHTML from './DialogContentHTML.jsx';
 
 const Login = () => {
   const [email, setEmail] = useState('');

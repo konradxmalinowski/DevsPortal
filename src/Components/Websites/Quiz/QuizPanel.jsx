@@ -2,7 +2,7 @@ import Header from '../../Common components/Header/Header.jsx';
 import Footer from '../../Common components/Footer/Footer.jsx';
 import QuizItem from './QuizItem.jsx';
 
-import './Quiz.css';
+import './styles/Quiz.css';
 
 import { handleScrollIntoView } from '../../../utils/handleScrollIntoView.js';
 

@@ -1,12 +1,13 @@
 import { useEffect, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import Header from '../../Common components/Header/Header.jsx';
 import Footer from '../../Common components/Footer/Footer.jsx';
+import Button from '../../Common components/Button/Button.jsx';
 
 import { handleScrollIntoView } from '../../../utils/handleScrollIntoView.js';
 
-import './AdminPanel.css';
+import './styles/AdminPanel.css';
 
 const AdminPanel = () => {
   const navigate = useNavigate();
@@ -82,18 +83,35 @@ const AdminPanel = () => {
   return (
     <>
       <Header />
-      <section
+      <div
         className="admin-panel-wrapper wrapper"
         aria-label="Admin Panel Section"
       >
-        <h1>Statystyki odwiedzin</h1>
-        <canvas
-          id="admin-canvas"
-          className="reveal"
-          ref={ref}
-          aria-label="Visit statistics chart"
-        ></canvas>
-      </section>
+        <section>
+          <div className="canvas">
+            <h2>Statystyki odwiedzin</h2>
+            <canvas
+              id="admin-canvas"
+              className="reveal"
+              ref={ref}
+              aria-label="Visit statistics chart"
+            ></canvas>
+          </div>
+
+          <div className="control-buttons">
+            <h2>Control buttons</h2>
+            <Link to="/resetPassword">
+              <Button label="Reset" className="purple-button" />
+            </Link>
+            <Link to="/login">
+              <Button label="Login" className="purple-button" />
+            </Link>
+            <Link to="/signup">
+              <Button label="Signup" className="purple-button" />
+            </Link>
+          </div>
+        </section>
+      </div>
       <Footer />
     </>
   );

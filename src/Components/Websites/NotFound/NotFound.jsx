@@ -1,4 +1,4 @@
-import './NotFound.css';
+import './styles/NotFound.css';
 
 import GhostText from './GhostText.jsx';
 import GhostImage from './GhostImage.jsx';

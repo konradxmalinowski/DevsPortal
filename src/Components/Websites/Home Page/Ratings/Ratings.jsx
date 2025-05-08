@@ -1,6 +1,6 @@
-import './Ratings.css';
-import Rating from './Rating';
 import { useEffect, useRef } from 'react';
+import Rating from './Rating.jsx';
+import './styles/Ratings.css';
 
 const NAMES = [
   'Alicja',

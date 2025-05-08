@@ -1,4 +1,4 @@
-import './AppOption.css';
+import './styles/AppOption.css';
 
 const AppOption = ({ label, className, ...props }) => {
   return (

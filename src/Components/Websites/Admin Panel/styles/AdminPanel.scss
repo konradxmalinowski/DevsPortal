@@ -1,0 +1,47 @@
+@import '../../../../Global\ styles/variables/variables.scss';
+
+.admin-panel-wrapper {
+  position: relative;
+  overflow: hidden;
+  @include basicFlexBox(column);
+  gap: 20px;
+}
+
+#admin-canvas {
+  background-color: $background-clr2;
+  border: {
+    color: $clr-grey;
+    style: solid;
+    width: 1px;
+    radius: 8px;
+  }
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+  box-sizing: content-box;
+}
+
+.admin-panel-wrapper h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+@media (width <= 670px) {
+  #admin-canvas {
+    width: 95vw;
+  }
+}
+
+.control-buttons {
+  margin-top: 30px;
+}
+
+.control-buttons h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.control-buttons button {
+  display: inline-block;
+  margin: 10px 10px 0 0;
+}

@@ -1,4 +1,5 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+
 import Input from './../../../Common components/Input.jsx';
 import ListItem from '../../../Common components/ListItem.jsx';
 import Button from '../../../Common components/Button/Button.jsx';
@@ -7,10 +8,21 @@ import hidePasswordIcon from './../../../../assets/Password Icons/hide_password.
 import showPasswordIcon from './../../../../assets/Password Icons/show_password.png';
 
 import { passwordRegEx, passwordRequirements } from '../../../../RegEx';
+import { handleScrollIntoView } from '../../../../utils/handleScrollIntoView.js';
 
 const Step3 = ({ stepFunctions }) => {
   const passwordRef = useRef();
   const [password, setPassword] = useState('');
+
+  const ref = useRef();
+
+  useEffect(() => {
+    const [element, observer] = handleScrollIntoView(ref);
+
+    return () => {
+      if (element) observer.unobserve(element);
+    };
+  }, []);
 
   function handleClickEnter(event) {
     if (event.key === 'Enter') {
@@ -22,7 +34,7 @@ const Step3 = ({ stepFunctions }) => {
   }
 
   return (
-    <>
+    <div ref={ref} className="reveal">
       <h2>Choose Password</h2>
       <Input
         label="Password"
@@ -62,7 +74,7 @@ const Step3 = ({ stepFunctions }) => {
           aria-label="Proceed to the next step"
         />
       </div>
-    </>
+    </div>
   );
 };
 

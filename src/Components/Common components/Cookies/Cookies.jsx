@@ -1,40 +1,44 @@
 import Button from '../Button/Button.jsx';
 
 import './Cookies.css';
-import cookiesImg from '../../../assets/cookies.png';
 import { useState } from 'react';
 
 const Cookies = () => {
   const [cookies, setCookies] = useState(() => localStorage.getItem('cookies'));
 
-  const handleAcceptDecline = () => {
+  const handleAcceptAll = () => {
     localStorage.setItem('cookies', 'true');
+    setCookies(true);
+  };
+
+  const handleAcceptRequired = () => {
+    localStorage.setItem('cookies', 'required');
     setCookies(true);
   };
 
   return (
     <>
       {cookies == null ? (
-        <div class="card-cookies">
-          <img src={cookiesImg} alt="cookies image" />
-          <p class="cookie-heading">We use cookies.</p>
-          <p class="cookie-description">
-            This website uses cookies to ensure you get the best experience on
-            our site.
+        <div className="card-cookies">
+          <h4 className="cookie-heading">Polityka cookies 🍪</h4>
+          <p className="cookie-description">
+            Klikając „Akceptuję wszystkie”, zgadzasz się, aby nasza strona
+            internetowa przechowywała pliki cookies na Twoim urządzeniu i
+            ujawniała informacje zgodnie z naszą Polityką cookies.
           </p>
 
-          <div class="button-container">
+          <div className="button-container">
             <Button
-              label="Allow"
+              label="Akceptuję wszystkie"
               className="purple-button accept-button"
-              onClick={handleAcceptDecline}
-              aria-label="Allow cookies"
+              onClick={handleAcceptAll}
+              aria-label="Akceptuję wszystkie"
             />
             <Button
-              label="Decline"
+              label="Akceptuj tylko wymagane"
               className="purple-button decline-button"
-              onClick={handleAcceptDecline}
-              aria-label="Decline cookies"
+              onClick={handleAcceptRequired}
+              aria-label="Akceptuj tylko wymagane"
             />
           </div>
         </div>

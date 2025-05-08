@@ -1,0 +1,46 @@
+@import '../../../../../Global\ styles/variables/variables.scss';
+
+.apps-left {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  align-items: center;
+}
+
+.apps-left > div {
+  flex-wrap: wrap;
+}
+
+.option {
+  background-color: transparent;
+  border: none;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 20px;
+  font: {
+    size: 17px;
+    weight: 600;
+  }
+  color: $grey-clr;
+  min-width: 100px;
+}
+
+.rectangle {
+  width: 5px;
+  height: 30px;
+  border-radius: 3px;
+}
+
+.purple-rectangle {
+  background-color: $clr-2-download;
+}
+
+.grey-rectangle {
+  background-color: $grey-clr;
+}
+
+.option section {
+  font-size: 20px;
+}

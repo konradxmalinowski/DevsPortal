@@ -4,7 +4,7 @@ import Challenge from './Challenge.jsx';
 
 import { handleScrollIntoView } from '../../../utils/handleScrollIntoView.js';
 
-import './Challenges.css';
+import './styles/Challenges.css';
 import programmizIcon from '../../../assets/Challenges images/programmiz.jpg';
 import frontendMentorIcon from '../../../assets/Challenges images/frontend-mentor.png';
 

@@ -1,4 +1,4 @@
-import Button from '../../Common components/Button/Button';
+import Button from '../../Common components/Button/Button.jsx';
 
 import { useRef, useEffect } from 'react';
 

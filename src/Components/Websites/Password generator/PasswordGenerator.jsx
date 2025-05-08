@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-import './PasswordGenerator.css';
+import './styles/PasswordGenerator.css';
 
 import Header from '../../Common components/Header/Header.jsx';
 import Footer from '../../Common components/Footer/Footer.jsx';

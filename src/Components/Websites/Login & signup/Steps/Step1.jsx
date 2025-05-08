@@ -1,15 +1,25 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import Button from '../../../Common components/Button/Button.jsx';
 import Input from './../../../Common components/Input.jsx';
 import ListItem from '../../../Common components/ListItem.jsx';
 
 import { usernameRegEx, usernameRequirements } from '../../../../RegEx.js';
-
+import { handleScrollIntoView } from '../../../../utils/handleScrollIntoView.js';
 const Step1 = ({ stepFunctions }) => {
   const usernameRef = useRef();
 
+  const ref = useRef();
+
+  useEffect(() => {
+    const [element, observer] = handleScrollIntoView(ref);
+
+    return () => {
+      if (element) observer.unobserve(element);
+    };
+  }, []);
+
   return (
-    <>
+    <div ref={ref} className="reveal">
       <h2>Choose a Username</h2>
       <Input
         type="text"
@@ -34,7 +44,7 @@ const Step1 = ({ stepFunctions }) => {
         className="green-button"
         aria-label="Proceed to the next step"
       />
-    </>
+    </div>
   );
 };
 

@@ -1,0 +1,49 @@
+@import '../../../common-styles.scss';
+
+dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-60%);
+  width: 200px;
+  height: 200px;
+  background-color: $background-clr2;
+  color: $buttons-clr;
+  @include basicFlexBox(column);
+  row-gap: 30px;
+  text-align: center;
+  padding: 20px;
+  box-sizing: content-box;
+  z-index: -2;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+  outline: none;
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+}
+
+dialog[open] {
+  animation: slide-in-from-top 0.35s ease-out forwards;
+  outline: none;
+}
+
+.no-scroll {
+  overflow: hidden !important;
+}
+
+.button-container button {
+  padding: 20px 35px;
+}
+
+@keyframes slide-in-from-top {
+  0% {
+    z-index: -2;
+  }
+  100% {
+    z-index: 3;
+  }
+}

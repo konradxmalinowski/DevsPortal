@@ -1,0 +1,24 @@
+.about-wrapper {
+  background-color: #08090a;
+  padding-bottom: 70px;
+}
+
+.about-wrapper h1 {
+  font-size: 50px;
+  font-weight: 600;
+}
+
+@media (width <= 600px) {
+  .about-wrapper h1 {
+    font-size: 35px;
+  }
+}
+.about-wrapper p {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.about-wrapper button {
+  font-family: 18px;
+}/*# sourceMappingURL=About.css.map */

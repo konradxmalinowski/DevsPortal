@@ -1,0 +1,262 @@
+@import '../../../common-styles.scss';
+
+header {
+  width: 100%;
+  height: 64px;
+  background-color: $background-clr;
+  border-bottom: 1px solid $clr-partners-border;
+  display: flex;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 6;
+}
+
+header ul {
+  width: 100%;
+  @include basicFlexBox;
+  column-gap: 30px;
+}
+
+header li {
+  list-style-type: none;
+  cursor: pointer;
+  font: {
+    weight: 600;
+    size: 16px;
+  }
+}
+
+.logo {
+  font: {
+    weight: 700;
+    size: 22px;
+  }
+}
+
+.narrow-header {
+  width: 25%;
+  height: 100%;
+  display: flex;
+  column-gap: 15px;
+  align-items: center;
+}
+
+.narrow-header:nth-of-type(1) {
+  justify-content: flex-end;
+}
+
+.narrow-header:nth-of-type(3) {
+  justify-content: flex-start;
+}
+
+.narrow-header:nth-of-type(4) {
+  justify-content: flex-end;
+  padding-right: 20px;
+  display: none;
+}
+
+.wide-header {
+  width: 50%;
+  height: 100%;
+  @include basicFlexBox;
+  column-gap: 5px;
+}
+
+/* link animation */
+.wide-header {
+  li a {
+    position: relative;
+    text-decoration: none;
+  }
+
+  li a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    border-radius: 4px;
+    background-color: $buttons-clr;
+    bottom: -30%;
+    left: 0;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform 0.5s ease-in-out;
+  }
+
+  li a:hover::before {
+    transform-origin: left;
+    transform: scaleX(1);
+  }
+}
+
+/* hamburger menu */
+
+.hamburger {
+  padding: 10px;
+  background-color: transparent;
+  border: none;
+  display: none;
+  position: relative;
+}
+
+.hamburger__box {
+  width: 40px;
+  height: 24px;
+  display: inline-block;
+  position: relative;
+  z-index: 5;
+}
+
+.hamburger__inner {
+  width: 100%;
+  height: 3px;
+  background-color: $buttons-clr;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: background-color 0.3s ease-in-out 0.1s;
+}
+
+.hamburger__inner::before,
+.hamburger__inner::after {
+  content: '';
+  width: 100%;
+  height: 3px;
+  background-color: $buttons-clr;
+  position: absolute;
+  left: 0;
+  transition: transform 0.3s ease-in-out 0.2s;
+}
+
+.hamburger__inner::before {
+  top: -10px;
+}
+
+.hamburger__inner::after {
+  top: 10px;
+}
+
+.hamburger--active .hamburger__inner {
+  background-color: transparent;
+}
+
+.hamburger--active .hamburger__inner::before {
+  transform: translateY(10px) rotate(45deg);
+}
+
+.hamburger--active .hamburger__inner::after {
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+.navigation {
+  height: 100svh;
+  width: 100%;
+  background-color: $background-clr2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out 0.1s;
+  z-index: 4;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.navigation > * {
+  max-width: 500px;
+  min-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.navigation--active {
+  transform: translateX(0px);
+}
+
+.navigation ul {
+  margin-top: 20px;
+  list-style-type: none;
+}
+
+.navigation li {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid $buttons-clr;
+  text-transform: uppercase;
+  font: {
+    weight: 500;
+    size: 18px;
+  }
+
+  & a {
+    color: $buttons-clr;
+  }
+}
+
+.header-buttons-wrapper {
+  display: flex;
+  justify-content: center;
+  column-gap: 20px;
+  width: 100%;
+}
+
+.header-socials {
+  display: flex;
+  justify-content: center;
+  column-gap: 10px;
+  width: 100%;
+
+  & li {
+    border: none;
+  }
+}
+
+.header-socials img {
+  height: 35px;
+  transform: scale(1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.15);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 0 10px 3px $background-clr2;
+  }
+}
+
+@media (width <= 1200px) {
+  header {
+    border-bottom: none;
+  }
+  .wide-header {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .narrow-header {
+    width: calc(100% / 3);
+    justify-content: center;
+  }
+
+  .narrow-header:nth-of-type(1) {
+    justify-content: flex-start;
+    width: 50%;
+    padding-left: 20px;
+  }
+
+  .narrow-header:nth-of-type(3) {
+    display: none;
+  }
+
+  .narrow-header:nth-of-type(4) {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+  }
+}

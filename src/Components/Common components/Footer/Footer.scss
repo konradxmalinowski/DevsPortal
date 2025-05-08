@@ -1,0 +1,58 @@
+@import '../../../common-styles.scss';
+
+footer {
+  width: 100%;
+  height: 64px;
+  background-color: $background-clr;
+  border-top: 1px solid $clr-hr;
+  @include basicFlexBox;
+  column-gap: 30px;
+  row-gap: 10px;
+  margin-top: 100px;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+footer ul {
+  height: 100%;
+  @include basicFlexBox;
+  column-gap: 19px;
+  row-gap: 10px;
+}
+
+footer li {
+  list-style-type: none;
+  cursor: pointer;
+  font: {
+    weight: 600;
+    size: 16px;
+  }
+}
+
+footer a {
+  color: $clr-grey !important;
+  text-align: center;
+}
+
+footer .footer-left {
+  gap: 10px;
+}
+
+footer .footer-left img {
+  height: 30px;
+  transform: scale(1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.15);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 0 10px 3px $background-clr2;
+  }
+}
+
+@media (width <= 600px) {
+  footer {
+    height: fit-content;
+    padding: 20px 0;
+  }
+}

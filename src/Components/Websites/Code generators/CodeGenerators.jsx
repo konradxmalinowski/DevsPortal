@@ -2,7 +2,7 @@ import Header from '../../Common components/Header/Header.jsx';
 import Footer from '../../Common components/Footer/Footer.jsx';
 import CodeGenerator from './CodeGenerator.jsx';
 
-import './CodeGenerators.css';
+import './styles/CodeGenerators.css';
 
 import { handleScrollIntoView } from '../../../utils/handleScrollIntoView.js';
 

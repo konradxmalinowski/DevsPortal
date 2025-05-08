@@ -1,38 +1,37 @@
 <?php
-require_once __DIR__ . '/database.php';
+require_once 'database.php';
 
-try {
-    $data = json_decode(file_get_contents("php://input"), true) ?? [];
-    $email = $data['email'] ?? null;
-    $password = $data['password'] ?? null;
+$data = json_decode(file_get_contents("php://input"), true);
 
-    if (!$email || !$password) {
-        throw new Exception("Missing required fields: email or password");
-    }
+$email = $data['email'] ?? null;
+$password = $data['password'] ?? null;
 
-    $stmt = $conn->prepare("SELECT * FROM users WHERE email = ?");
-    $stmt->bind_param("s", $email);
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    $user = $result->fetch_assoc();
-    if (!$user || !password_verify($password, $user['password'])) {
-        throw new Exception("Invalid email or password");
-    }
-
-    echo json_encode([
-        "message" => "Login successful",
-        "user" => [
-            "id" => $user['id'],
-            "username" => $user['username'],
-            "email" => $user['email']
-        ]
-    ]);
-    http_response_code(200);
-
-    $stmt->close();
-} catch (Exception $e) {
+if (!$email || !$password) {
+    echo json_encode(["error" => "Missing required fields"]);
     http_response_code(400);
-    echo json_encode(["error" => $e->getMessage()]);
+    exit;
+}
+
+$query = "SELECT * FROM users WHERE email = '$email'";
+$result = mysqli_query($conn, $query);
+
+if ($user = mysqli_fetch_assoc($result)) {
+    if (password_verify($password, $user['password'])) {
+        echo json_encode([
+            "message" => "Login successful",
+            "user" => [
+                "id" => $user['id'],
+                "username" => $user['username'],
+                "email" => $user['email']
+            ]
+        ]);
+        http_response_code(200);
+    } else {
+        echo json_encode(["error" => "Invalid email or password"]);
+        http_response_code(400);
+    }
+} else {
+    echo json_encode(["error" => "Invalid email or password"]);
+    http_response_code(400);
 }
 ?>

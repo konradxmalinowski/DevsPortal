@@ -1,0 +1,30 @@
+.project {
+  min-width: 300px;
+  max-width: 350px;
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #0e0f10;
+  padding: 20px;
+  border-radius: 10px;
+}
+.project:not(:hover) {
+  transition: transform 0.3s ease-in-out 0s;
+}
+.project:hover {
+  transform: scale(1.04);
+  transition: transform 0.3s ease-in-out 0s;
+}
+
+.project p {
+  text-align: center;
+}
+
+.project > div {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}/*# sourceMappingURL=Project.css.map */

@@ -1,8 +1,9 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import Input from './../../../Common components/Input.jsx';
 import Button from '../../../Common components/Button/Button.jsx';
 
 import { emailRegEx } from '../../../../RegEx.js';
+import { handleScrollIntoView } from '../../../../utils/handleScrollIntoView.js';
 
 const Step2 = ({ stepFunctions }) => {
   const emailRef = useRef();
@@ -14,8 +15,18 @@ const Step2 = ({ stepFunctions }) => {
     }
   }
 
+  const ref = useRef();
+
+  useEffect(() => {
+    const [element, observer] = handleScrollIntoView(ref);
+
+    return () => {
+      if (element) observer.unobserve(element);
+    };
+  }, []);
+
   return (
-    <>
+    <div ref={ref} className="reveal">
       <h2>Enter Your Email</h2>
       <Input
         label="Email address"
@@ -44,7 +55,7 @@ const Step2 = ({ stepFunctions }) => {
           aria-label="Proceed to the next step"
         />
       </div>
-    </>
+    </div>
   );
 };
 

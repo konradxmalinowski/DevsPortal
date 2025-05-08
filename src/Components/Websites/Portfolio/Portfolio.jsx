@@ -6,7 +6,7 @@ import Skills from './Skills.jsx';
 import Rates from './Rates.jsx';
 import Gallery from './Gallery.jsx';
 
-import './Portfolio.css';
+import './styles/Portfolio.css';
 
 import { handleScrollIntoView } from '../../../utils/handleScrollIntoView.js';
 

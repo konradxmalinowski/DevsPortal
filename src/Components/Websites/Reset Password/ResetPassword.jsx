@@ -1,9 +1,9 @@
-import './ResetPassword.css';
+import './styles/ResetPassword.css';
 
-import Header from '../../Common components/Header/Header';
-import Footer from '../../Common components/Footer/Footer';
-import Input from '../../Common components/Input';
-import Button from '../../Common components/Button/Button';
+import Header from '../../Common components/Header/Header.jsx';
+import Footer from '../../Common components/Footer/Footer.jsx';
+import Input from '../../Common components/Input.jsx';
+import Button from '../../Common components/Button/Button.jsx';
 
 const ResetPassword = () => {
   return (

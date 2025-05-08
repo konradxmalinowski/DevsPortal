@@ -24,7 +24,7 @@ import ResetPassword from './Components/Websites/Reset Password/ResetPassword.js
 import NotFound from './Components/Websites/NotFound/NotFound.jsx';
 import PasswordGenerator from './Components/Websites/Password generator/PasswordGenerator.jsx';
 
-import './common-styles.css';
+import './Global styles/common-styles/common-styles.css';
 //#endregion
 
 const router = createBrowserRouter([

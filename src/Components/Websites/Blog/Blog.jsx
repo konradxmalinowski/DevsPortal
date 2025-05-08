@@ -5,7 +5,7 @@ import Footer from '../../Common components/Footer/Footer.jsx';
 import BlogItem from './BlogItem.jsx';
 import Modal from './../../Common components/Modal/Modal.jsx';
 
-import './Blog.css';
+import './styles/Blog.css';
 import { blogs } from './blogs.js';
 import { handleScrollIntoView } from '../../../utils/handleScrollIntoView.js';
 

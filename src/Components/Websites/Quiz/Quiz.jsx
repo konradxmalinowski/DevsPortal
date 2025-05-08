@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import Button from '../../Common components/Button/Button.jsx';
 
-import './Quiz.css';
+import './styles/Quiz.css';
 import comeBackImg from '../../../assets/back.png';
 
 const Quiz = ({ url }) => {

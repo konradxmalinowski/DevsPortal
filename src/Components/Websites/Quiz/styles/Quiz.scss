@@ -1,0 +1,132 @@
+@import '../../../../Global\ styles/variables/variables.scss';
+@import '../../../../Global\ styles/functions/function.scss';
+
+$color1: #006a67;
+$color2: rgb(201, 57, 32);
+
+.quiz-wrapper {
+  width: 100%;
+  @include basicFlexBox;
+  padding: 80px 0;
+}
+
+.quiz-wrapper > section {
+  width: max(70%, 300px);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.quiz-item {
+  width: 300px;
+  height: 300px;
+  background-color: $background-clr2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  box-sizing: content-box;
+  padding: 20px;
+  border-radius: 10px;
+  transform: scale(1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 0 10px 3px $background-clr2;
+  }
+}
+
+.quiz-item > p {
+  color: $grey-clr;
+  text-align: center;
+}
+
+.quiz-item > button {
+  width: 50%;
+}
+
+main {
+  width: 500px;
+  height: auto;
+  min-height: 400px;
+  @include basicFlexBox;
+}
+
+#ui-question {
+  width: 100%;
+  min-height: 50px;
+  height: auto;
+  @include basicFlexBox;
+  text-align: center;
+  background-color: $clr-light-black;
+  padding: 10px;
+  border-radius: 10px;
+  font: {
+    weight: bold;
+    size: 18px;
+  }
+  line-height: 1.6;
+}
+
+#ui-answers {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.answer {
+  width: 100%;
+  background-color: $clr-light-black;
+  @include basicFlexBox;
+  text-align: center;
+  padding: 20px;
+  margin-top: 20px;
+  line-height: 1.5;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.answer:hover {
+  background-color: $clr-blue-hover;
+}
+
+#question-number {
+  margin-bottom: 20px;
+}
+
+#generateButton {
+  padding: 14px 10px;
+  margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 550px) {
+  main {
+    width: 350px;
+  }
+}
+
+.quiz-wrapper-question {
+  width: 100%;
+  min-height: 100svh;
+  @include basicFlexBox(column);
+  row-gap: 20px;
+}
+
+.arrow-back {
+  background-color: $background-clr2;
+  border: none;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+
+  img {
+    width: 30px;
+  }
+}

@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import Button from '../../../Common components/Button/Button.jsx';
 import Modal from '../../../Common components/Modal/Modal.jsx';
-import './Project.css';
+import './styles/Project.css';
 
 const Project = ({ name, description, link }) => {
   const modalRef = useRef(null);

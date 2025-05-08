@@ -9,7 +9,7 @@ import ShopImg from '../../../../assets/Apps images/shop.png';
 import TimerImg from '../../../../assets/Apps images/Timer.png';
 import TodoAppImg from '../../../../assets/Apps images/Todo list app.png';
 
-import './Applications.css';
+import './styles/Applications.css';
 
 const defaultArrayOfClassNames = ['buttons-clr', 'grey', 'grey', 'grey'];
 const appOptionsLabels = ['Shop', 'Timer', 'Quiz', 'Todo App'];

@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import Button from '../../Common components/Button/Button';
+import Button from '../../Common components/Button/Button.jsx';
 
 const Challenge = ({
   title,

@@ -1,0 +1,54 @@
+.challenges-wrapper section {
+  width: max(100%, 1200px);
+}
+
+.challenges-wrapper section > h1 {
+  font-size: 2rem;
+  margin-bottom: 16px;
+}
+
+.challenges-wrapper section > p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  text-align: center;
+  padding: 0 50px;
+}
+
+.challenges-list {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 50px;
+}
+
+.challenge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #0e0f10;
+  scale: 1;
+  transition: scale 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.challenge:hover {
+  scale: 1.05;
+  transition: scale 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  box-shadow: 0 0 10px 3px #0e0f10;
+}
+
+.challenge :is(img, h2) {
+  float: left;
+}
+
+.challenge img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.challenge p {
+  clear: both;
+}/*# sourceMappingURL=Challenges.css.map */

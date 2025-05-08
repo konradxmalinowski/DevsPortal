@@ -7,11 +7,11 @@ import reactImg from '../../../assets/Languages/react-icon.png';
 import wordpressImg from '../../../assets/Languages/wordpress-icon.png';
 import sqlImg from '../../../assets/Languages/sql-icon.png';
 import mysqlImg from '../../../assets/Languages/mysql-icon.png';
-import pythonImg from '../../../assets/Languages/python-icon.png';
+import gitImage from '../../../assets/Languages/git.svg';
 
 import Language from './Language/Language.jsx';
 
-const names = [
+const NAMES = [
   'HTML',
   'CSS',
   'JavaScript',
@@ -19,10 +19,10 @@ const names = [
   'Wordpress',
   'SQL',
   'MySQL',
-  'Python',
+  'Git',
 ];
 
-const images = [
+const IMAGES = [
   htmlImg,
   cssImg,
   jsImg,
@@ -30,10 +30,10 @@ const images = [
   wordpressImg,
   sqlImg,
   mysqlImg,
-  pythonImg,
+  gitImage,
 ];
 
-const levels = [
+const LEVELS = [
   'Experienced',
   'Experienced',
   'Experienced',
@@ -52,7 +52,18 @@ const IDs = [
   'wordpress-img',
   'sql-img',
   'mysql-img',
-  'python-img',
+  'git-img',
+];
+
+const LINKS = [
+  'https://developer.mozilla.org/en-US/docs/Web/HTML',
+  'https://developer.mozilla.org/en-US/docs/Web/CSS',
+  'https://www.javascript.com',
+  'https://reactjs.org',
+  'https://wordpress.org',
+  'https://www.microsoft.com/en-us/sql-server',
+  'https://www.mysql.com',
+  'https://git-scm.com',
 ];
 
 const Skills = ({ handleScrollIntoView }) => {
@@ -66,13 +77,14 @@ const Skills = ({ handleScrollIntoView }) => {
     };
   }, [handleScrollIntoView]);
 
-  const skills = names.map((name, idx) => (
+  const skills = NAMES.map((name, idx) => (
     <Language
       name={name}
-      logo={images[idx]}
-      level={levels[idx]}
+      logo={IMAGES[idx]}
+      level={LEVELS[idx]}
       key={idx}
       id={IDs[idx]}
+      onClick={() => window.open(LINKS[idx])}
     />
   ));
 

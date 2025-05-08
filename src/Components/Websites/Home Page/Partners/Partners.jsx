@@ -9,7 +9,7 @@ import dellLogo from '../../../../assets/Partners logo/dell-logo.png';
 
 import Partner from './Partner.jsx';
 
-import './Partners.css';
+import './styles/Partners.css';
 
 const logos = [
   openAILogo,

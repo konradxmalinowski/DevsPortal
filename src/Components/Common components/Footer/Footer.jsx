@@ -47,7 +47,7 @@ export default function Footer() {
 
       <ul className="footer-center">
         <Link to="/">
-          <ListItem>© {new Date().getFullYear()} DevsPortal</ListItem>
+          <ListItem>&copy; {new Date().getFullYear()} DevsPortal</ListItem>
         </Link>
       </ul>
 
@@ -68,7 +68,7 @@ export default function Footer() {
         </li>
         <li className="grey">
           <a
-            href="mailto:konradmalinowski@zsezdw.onmicrosoft.com"
+            href="mailto:malinowski.konrad45@gmail.com"
             target="_blank"
             aria-label="Contact via email"
           >

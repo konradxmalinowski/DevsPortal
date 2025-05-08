@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
-import './Signup.css';
-import './form.css';
+import './styles/Signup.css';
+import './styles/form.css';
 
 import DialogContentHTML from './DialogContentHTML.jsx';
 import Header from '../../Common components/Header/Header.jsx';
@@ -27,7 +27,7 @@ const Signup = () => {
   const [step, setStep] = useState(1);
   const [userData, setUserData] = useState({ ...userDataBasic });
   const [DialogContent, setDialogContent] = useState('');
-  const [isFormShown, setIsFormShown] = useState(false);
+  const [isFormShown, setIsFormShown] = useState(true);
   const dialogRef = useRef(null);
   const navigate = useNavigate();
 
@@ -43,6 +43,9 @@ const Signup = () => {
 
   const validateData = (regEx, ref, type, additionalCheck = null) => {
     let inputValue;
+    let isValid = true;
+
+    setIsFormShown(false);
 
     if (typeof ref.current.value === 'number') {
       inputValue = ref.current?.value.toString().trim() || '';
@@ -66,19 +69,17 @@ const Signup = () => {
         })`
       );
       dialogRef.current?.open();
-      return;
+      isValid = false;
     }
 
     if (type === 'phone' && !regEx.test(inputValue)) {
       setIsFormShown(true);
       setDialogContent('Please enter a valid phone number');
       dialogRef.current?.open();
-      return;
+      isValid = false;
     }
 
-    setIsFormShown(false);
-
-    return inputValue;
+    return { inputValue, isValid };
   };
 
   const handleEndStep = async (inputValue) => {
@@ -137,7 +138,16 @@ const Signup = () => {
   };
 
   const handleClickNext = async (regEx, ref, type, additionalCheck = null) => {
-    let inputValue = validateData(regEx, ref, type, additionalCheck);
+    let { inputValue = '', isValid } = validateData(
+      regEx,
+      ref,
+      type,
+      additionalCheck
+    );
+
+    console.log(inputValue, isValid);
+
+    if (!isValid) return;
 
     if (type === 'username' || type === 'email' || type === 'phone') {
       try {

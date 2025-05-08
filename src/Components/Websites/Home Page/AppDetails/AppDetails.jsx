@@ -1,4 +1,4 @@
-import './AppDetails.css';
+import './styles/AppDetails.css';
 
 const Info = ({ title, description }) => {
   return (

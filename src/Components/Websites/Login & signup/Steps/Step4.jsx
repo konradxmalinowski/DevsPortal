@@ -1,22 +1,28 @@
+import { useEffect, useRef } from 'react';
 import Button from '../../../Common components/Button/Button.jsx';
+
 import { numberRegEx } from '../../../../RegEx.js';
-import { useRef } from 'react';
+import { handleScrollIntoView } from '../../../../utils/handleScrollIntoView.js';
 
 const Step4 = ({ stepFunctions }) => {
   const phoneNumberRef = useRef();
   const countryCodeRef = useRef();
+
+  const ref = useRef();
+
+  useEffect(() => {
+    const [element, observer] = handleScrollIntoView(ref);
+
+    return () => {
+      if (element) observer.unobserve(element);
+    };
+  }, []);
 
   const handleNext = () => {
     const countryCode = countryCodeRef.current.value.trim();
     const phoneNumber = phoneNumberRef.current.value.trim();
 
     const fullPhoneNumber = `${countryCode}${phoneNumber}`;
-
-    if (!numberRegEx.test(phoneNumber)) {
-      stepFunctions.setDialogContent('Please enter a valid phone number');
-      stepFunctions.dialogRef.current?.open();
-      return;
-    }
 
     stepFunctions.handleClickNext(
       numberRegEx,
@@ -33,7 +39,7 @@ const Step4 = ({ stepFunctions }) => {
   }
 
   return (
-    <>
+    <div ref={ref} className="reveal">
       <h2>Phone number</h2>
       <label htmlFor="country-number">
         <input
@@ -95,7 +101,7 @@ const Step4 = ({ stepFunctions }) => {
           aria-label="Proceed to the next step"
         />
       </div>
-    </>
+    </div>
   );
 };
 

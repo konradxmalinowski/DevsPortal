@@ -1,30 +1,26 @@
 <?php
-require_once __DIR__ . '/database.php';
+require_once 'database.php';
 
-try {
-    $data = json_decode(file_get_contents("php://input"), true);
+$data = json_decode(file_get_contents("php://input"), true);
 
-    if (!isset($data['username'], $data['email'], $data['password'], $data['phone'])) {
-        throw new Exception("Missing required fields: username, email, password or phone");
-    }
+if (!isset($data['username'], $data['email'], $data['password'], $data['phone'])) {
+    echo json_encode(["error" => "Missing required fields"]);
+    http_response_code(400);
+    exit;
+}
 
-    $username = $data['username'];
-    $email = $data['email'];
-    $password = $data['password'];
-    $phone = $data['phone'];
+$username = $data['username'];
+$email = $data['email'];
+$password = password_hash($data['password'], PASSWORD_BCRYPT);
+$phone = $data['phone'];
 
-    $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+$query = "INSERT INTO users (username, email, password, phone) VALUES ('$username', '$email', '$password', '$phone')";
 
-    $stmt = $conn->prepare("INSERT INTO users (username, email, password, phone) VALUES (?, ?, ?, ?)");
-    $stmt->bind_param("ssss", $username, $email, $hashedPassword, $phone);
-    $stmt->execute();
-
+if (mysqli_query($conn, $query)) {
     echo json_encode(["message" => "User registered successfully"]);
     http_response_code(201);
-
-    $stmt->close();
-} catch (Exception $e) {
-    echo json_encode(["error" => $e->getMessage()]);
-    http_response_code(400);
+} else {
+    echo json_encode(["error" => "Failed to register user"]);
+    http_response_code(500);
 }
 ?>

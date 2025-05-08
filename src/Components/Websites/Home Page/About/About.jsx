@@ -3,7 +3,7 @@ import { useEffect, useRef } from 'react';
 
 import Button from '../../../Common components/Button/Button.jsx';
 
-import './About.css';
+import './styles/About.css';
 
 export default function About({ handleScrollIntoView }) {
   const ref = useRef();

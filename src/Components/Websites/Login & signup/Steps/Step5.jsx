@@ -1,12 +1,24 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import Input from '../../../Common components/Input.jsx';
 import Button from '../../../Common components/Button/Button.jsx';
 
 import hidePasswordIcon from './../../../../assets/Password Icons/hide_password.png';
 import showPasswordIcon from './../../../../assets/Password Icons/show_password.png';
 
+import { handleScrollIntoView } from '../../../../utils/handleScrollIntoView.js';
+
 const Step5 = ({ stepFunctions, userData }) => {
   const passwordRepeatedRef = useRef();
+
+  const ref = useRef();
+
+  useEffect(() => {
+    const [element, observer] = handleScrollIntoView(ref);
+
+    return () => {
+      if (element) observer.unobserve(element);
+    };
+  }, []);
 
   function handleClickEnter(event) {
     if (event.key === 'Enter') {
@@ -15,7 +27,7 @@ const Step5 = ({ stepFunctions, userData }) => {
   }
 
   return (
-    <>
+    <div ref={ref} className="reveal">
       <h2>Repeat Password</h2>
       <Input
         label="Repeat Password"
@@ -50,7 +62,7 @@ const Step5 = ({ stepFunctions, userData }) => {
           aria-label="Complete the signup process"
         />
       </div>
-    </>
+    </div>
   );
 };
 

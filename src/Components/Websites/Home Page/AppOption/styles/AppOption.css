@@ -1,0 +1,43 @@
+.apps-left {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  align-items: center;
+}
+
+.apps-left > div {
+  flex-wrap: wrap;
+}
+
+.option {
+  background-color: transparent;
+  border: none;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  font-size: 17px;
+  font-weight: 600;
+  color: #828790;
+  min-width: 100px;
+}
+
+.rectangle {
+  width: 5px;
+  height: 30px;
+  border-radius: 3px;
+}
+
+.purple-rectangle {
+  background-color: #2b52c2;
+}
+
+.grey-rectangle {
+  background-color: #828790;
+}
+
+.option section {
+  font-size: 20px;
+}/*# sourceMappingURL=AppOption.css.map */

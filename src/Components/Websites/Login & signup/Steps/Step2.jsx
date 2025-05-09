@@ -26,7 +26,7 @@ const Step2 = ({ stepFunctions }) => {
   }, []);
 
   return (
-    <div ref={ref} className="reveal">
+    <div className="reveal" ref={ref}>
       <h2>Enter Your Email</h2>
       <Input
         label="Email address"

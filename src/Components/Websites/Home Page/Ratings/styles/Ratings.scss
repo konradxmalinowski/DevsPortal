@@ -3,7 +3,7 @@
 
 .ratings-wrapper {
   display: flex;
-  flex-direction: column;
+  flex-direction: column !important;
   overflow: hidden;
 }
 

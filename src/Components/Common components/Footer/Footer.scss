@@ -1,4 +1,5 @@
-@import '../../../common-styles.scss';
+@import '../../../Global\ styles/functions/function.scss';
+@import '../../../Global\ styles/variables/variables.scss';
 
 footer {
   width: 100%;
@@ -29,8 +30,8 @@ footer li {
   }
 }
 
-footer a {
-  color: $clr-grey !important;
+footer * {
+  color: #828790 !important;
   text-align: center;
 }
 

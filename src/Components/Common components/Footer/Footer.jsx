@@ -52,7 +52,7 @@ export default function Footer() {
       </ul>
 
       <ul className="footer-right">
-        <li className="grey">
+        <li>
           <a
             href={termsPDF}
             target="_blank"
@@ -61,12 +61,12 @@ export default function Footer() {
             {labels[0]}
           </a>
         </li>
-        <li className="grey">
+        <li>
           <a href={privacyPDF} target="_blank" aria-label="View privacy policy">
             {labels[1]}
           </a>
         </li>
-        <li className="grey">
+        <li>
           <a
             href="mailto:malinowski.konrad45@gmail.com"
             target="_blank"

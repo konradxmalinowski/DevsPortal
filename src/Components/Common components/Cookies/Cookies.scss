@@ -1,9 +1,10 @@
-@import '../../../common-styles.scss';
+@import '../../../Global\ styles/variables/variables.scss';
+@import '../../../Global\ styles/functions/function.scss';
 
 .card-cookies {
   width: 400px;
   height: 300px;
-  background-color: $background-clr2;
+  background-color: $background-clr2; 
   @include basicFlexBox(column);
   padding: 20px 30px;
   gap: 16px;

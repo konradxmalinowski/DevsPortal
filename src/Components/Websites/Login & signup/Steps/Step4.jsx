@@ -52,6 +52,7 @@ const Step4 = ({ stepFunctions }) => {
           aria-label="Enter country code"
           onChange={(event) => handleClickEnter(event)}
           onKeyDown={(event) => handleClickEnter(event)}
+          autoComplete="true"
         />
         <input
           type="tel"
@@ -62,6 +63,7 @@ const Step4 = ({ stepFunctions }) => {
           aria-label="Enter phone number"
           onChange={(event) => handleClickEnter(event)}
           onKeyDown={(event) => handleClickEnter(event)}
+          autoComplete="true"
         />
 
         <datalist id="country-number-list">

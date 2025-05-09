@@ -144,6 +144,9 @@ const Login = () => {
                   handleLogin();
                 }}
                 aria-label="Login form"
+                name="login-form"
+                id="login-form"
+                autoComplete="true"
               >
                 <Input
                   type="email"
@@ -151,6 +154,7 @@ const Login = () => {
                   onChange={(event) => setEmail(event.target.value.trim())}
                   autoFocus
                   aria-label="Enter your email address"
+                  autoComplete="true"
                 />
                 <Input
                   type="password"
@@ -159,6 +163,7 @@ const Login = () => {
                   showIcon={showPasswordIcon}
                   hideIcon={hidePasswordIcon}
                   aria-label="Enter your password"
+                  autoComplete="true"
                 />
 
                 <Button

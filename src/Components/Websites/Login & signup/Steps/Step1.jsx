@@ -31,6 +31,7 @@ const Step1 = ({ stepFunctions }) => {
         ref={usernameRef}
         autoFocus
         aria-label="Enter your desired username"
+        autoComplete="true"
       />
 
       <p id="requirements-p">Requirements:</p>

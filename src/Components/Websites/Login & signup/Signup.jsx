@@ -230,7 +230,13 @@ const Signup = () => {
             max={5}
             aria-label="Signup progress bar"
           ></progress>
-          <form onSubmit={(e) => e.preventDefault()} aria-label="Signup form">
+          <form
+            onSubmit={(e) => e.preventDefault()}
+            aria-label="Signup form"
+            name="signup-form"
+            id="signup-form"
+            autoComplete="true"
+          >
             {steps[step - 1]}
           </form>
           <p>

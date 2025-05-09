@@ -39,6 +39,7 @@ const Step5 = ({ stepFunctions, userData }) => {
         onChange={(event) => handleClickEnter(event)}
         onKeyDown={(event) => handleClickEnter(event)}
         aria-label="Repeat your password"
+        autoComplete="true"
       />
       <div className="buttons-wrapper">
         <Button

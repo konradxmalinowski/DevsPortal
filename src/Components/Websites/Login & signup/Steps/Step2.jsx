@@ -36,6 +36,7 @@ const Step2 = ({ stepFunctions }) => {
         aria-label="Enter your email address"
         onKeyDown={(event) => handleClickEnter(event)}
         onChange={(event) => handleClickEnter(event)}
+        autoComplete="true"
       />
       <div className="buttons-wrapper">
         <Button

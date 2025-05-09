@@ -6,9 +6,9 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://localhost', // Adres serwera Apache
+        target: 'http://localhost',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, '/Developers%20portal/api'), // Dodaj poprawną ścieżkę
+        rewrite: (path) => path.replace(/^\/api/, '/Developers%20portal/api'),
       },
     },
   },

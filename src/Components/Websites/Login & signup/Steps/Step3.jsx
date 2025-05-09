@@ -49,6 +49,7 @@ const Step3 = ({ stepFunctions }) => {
         hideIcon={hidePasswordIcon}
         autoFocus
         aria-label="Enter your password"
+        autoComplete="true"
       />
       <ul aria-label="Password requirements">
         {passwordRequirements.map((requirement) => (

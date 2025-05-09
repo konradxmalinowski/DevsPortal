@@ -4,7 +4,6 @@
 }
 
 .challenges-wrapper section > p {
-  font-size: 18px;
   margin-bottom: 20px;
   text-align: center;
   padding: 0 50px;
@@ -28,6 +27,7 @@
   background-color: #0e0f10;
   scale: 1;
   transition: scale 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  text-align: center;
 }
 .challenge:hover {
   scale: 1.05;

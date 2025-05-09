@@ -8,6 +8,7 @@
   flex-direction: row;
 }
 
+
 .author-wrapper .image-wrapper {
   align-items: center;
   width: 30%;
@@ -168,6 +169,14 @@
 
 .projects-wrapper > section {
   width: max(70%, 400px);
+}
+
+
+@media (width <= 500px) {
+  .projects-wrapper > section {
+    max-width: 300px;
+    width: 95vw;
+  }
 }
 
 .projects-wrapper > div {

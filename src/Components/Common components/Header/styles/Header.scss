@@ -154,7 +154,7 @@ header li {
 .navigation {
   height: 100svh;
   width: 100%;
-  background-color: $background-clr2;
+  background-color: $background-clr;
   position: fixed;
   top: 0;
   left: 0;
@@ -177,6 +177,7 @@ header li {
 .navigation--active {
   transform: translateX(0px);
 }
+
 
 .navigation ul {
   margin-top: 20px;

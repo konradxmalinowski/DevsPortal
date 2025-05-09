@@ -44,17 +44,17 @@ const Quiz = ({ url }) => {
   const checkCorrectness = (key) => {
     if (key === correctAnswers) {
       if (key === 'a') {
-        setAnswerAStyle({ backgroundColor: 'var(--color1)' });
+        setAnswerAStyle({ backgroundColor: '#006a67' });
       }
       if (key === 'b') {
-        setAnswerBStyle({ backgroundColor: 'var(--color1)' });
+        setAnswerBStyle({ backgroundColor: '#006a67' });
       }
     } else {
       if (key === 'a') {
-        setAnswerAStyle({ backgroundColor: 'var(--color2)' });
+        setAnswerAStyle({ backgroundColor: 'rgb(201, 57, 32)' });
       }
       if (key === 'b') {
-        setAnswerBStyle({ backgroundColor: 'var(--color2)' });
+        setAnswerBStyle({ backgroundColor: 'rgb(201, 57, 32)' });
       }
     }
   };

@@ -45,4 +45,12 @@
   width: 90%;
   font-size: 15px;
   padding: 18px !important;
+}
+
+@media (width <= 500px) {
+  .card-cookies {
+    width: 95vw;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }/*# sourceMappingURL=Cookies.css.map */

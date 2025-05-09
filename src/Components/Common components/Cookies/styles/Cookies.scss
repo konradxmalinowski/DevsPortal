@@ -1,5 +1,5 @@
-@import '../../../Global\ styles/variables/variables.scss';
-@import '../../../Global\ styles/functions/function.scss';
+@import '../../../../Global\ styles/variables/variables.scss';
+@import '../../../../Global\ styles/functions/function.scss';
 
 .card-cookies {
   width: 400px;
@@ -16,6 +16,7 @@
   z-index: 5;
   border-radius: 10px;
 }
+
 
 .card-cookies img {
   width: 50px;
@@ -52,3 +53,11 @@
 }
 
 
+
+@media (width <= 500px) {
+  .card-cookies {
+    width: 95vw;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

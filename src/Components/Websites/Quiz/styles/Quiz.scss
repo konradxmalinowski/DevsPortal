@@ -50,7 +50,7 @@ $color2: rgb(201, 57, 32);
   width: 50%;
 }
 
-.quiz-wrapper-question main {
+main {
   width: 500px;
   height: auto;
   min-height: 400px;
@@ -106,9 +106,9 @@ $color2: rgb(201, 57, 32);
   margin-bottom: 20px;
 }
 
-@media only screen and (max-width: 550px) {
+@media (width <= 600px) {
   main {
-    width: 350px;
+    width: 90vw;
   }
 }
 

@@ -1,0 +1,7 @@
+.buttons-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
+}/*# sourceMappingURL=App.css.map */

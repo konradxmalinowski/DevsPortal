@@ -1,4 +1,4 @@
-import './Footer.css';
+import './styles/Footer.css';
 
 import ListItem from '../ListItem.jsx';
 import { Link } from 'react-router-dom';

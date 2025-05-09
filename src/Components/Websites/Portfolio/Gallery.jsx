@@ -27,8 +27,8 @@ const Image = ({
       alt={alt}
       loading="lazy"
       onClick={() => {
-        setIsOpen(true);
         setModalContent(imagesData[currentIndex]);
+        setIsOpen(true);
         modalRef.current.open();
       }}
       aria-label={`Open image ${currentIndex + 1} in modal`}

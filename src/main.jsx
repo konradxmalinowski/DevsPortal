@@ -3,12 +3,12 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-import quizInf03 from './Quiz questions/quiz-inf.03.json';
-import quizInf04 from './Quiz questions/quiz-inf.04.json';
-import quizInf02 from './Quiz questions/quiz-inf.02.json';
-import quizEnglish from './Quiz questions/quiz-english.json';
-import quizGerman from './Quiz questions/quiz-german.json';
-import quizIT from './Quiz questions/quiz-it.json';
+import quizInf03 from './utils/Quiz questions/quiz-inf.03.json';
+import quizInf04 from './utils/Quiz questions/quiz-inf.04.json';
+import quizInf02 from './utils/Quiz questions/quiz-inf.02.json';
+import quizEnglish from './utils/Quiz questions/quiz-english.json';
+import quizGerman from './utils/Quiz questions/quiz-german.json';
+import quizIT from './utils/Quiz questions/quiz-it.json';
 
 import App from './Components/Websites/Home Page/App.jsx';
 import Challenges from './Components/Websites/Challenges/Challenges.jsx';

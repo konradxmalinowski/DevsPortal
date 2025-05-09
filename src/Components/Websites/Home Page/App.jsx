@@ -6,7 +6,7 @@ import Applications from './Applications/Applications.jsx';
 import Cookies from '../../Common components/Cookies/Cookies.jsx';
 import Ratings from './Ratings/Ratings.jsx';
 
-import './App.css';
+import './styles/App.css';
 
 import { handleScrollIntoView } from '../../../utils/handleScrollIntoView.js';
 

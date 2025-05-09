@@ -1,7 +1,7 @@
 import { useImperativeHandle, useRef } from 'react';
 import { createPortal } from 'react-dom';
 
-import './Modal.css';
+import './styles/Modal.css';
 import Button from '../Button/Button.jsx';
 
 const Modal = ({ children, ref, isFormShown = true, ...props }) => {

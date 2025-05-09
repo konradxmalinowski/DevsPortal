@@ -89,7 +89,7 @@ const AdminPanel = () => {
       >
         <section>
           <div className="canvas">
-            <h2>Statystyki odwiedzin</h2>
+            <h2 id="canvas-h2">Statystyki odwiedzin</h2>
             <canvas
               id="admin-canvas"
               className="reveal"

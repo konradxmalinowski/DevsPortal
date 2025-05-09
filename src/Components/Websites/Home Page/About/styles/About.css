@@ -3,6 +3,10 @@
   padding-bottom: 70px;
 }
 
+.about-wrapper > section {
+  align-items: flex-start !important;
+}
+
 .about-wrapper h1 {
   font-size: 50px;
   font-weight: 600;

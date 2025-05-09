@@ -5,8 +5,7 @@
 .author-wrapper {
   min-height: calc(100svh - 100px);
   display: flex;
-  flex-wrap: wrap-reverse;
-  flex-direction: row !important;
+  flex-direction: row;
 }
 
 .author-wrapper .image-wrapper {
@@ -24,11 +23,6 @@
   min-width: 300px;
 }
 
-@media (width <= 850px) {
-  .author-wrapper {
-    flex-direction: column;
-  }
-}
 
 .author-wrapper .description-wrapper {
   padding: 30px;
@@ -97,6 +91,20 @@
   box-shadow: 0 0 10px $clr-shadow;
 }
 
+@media (width <= 900px) {
+  .author-wrapper {
+    flex-direction: column !important;
+  }
+
+  .author-wrapper :is(p, h1, .job-type) {
+    text-align: center;
+  }
+
+  .job-type {
+    width: 100%;
+  }
+}
+
 @media (width <= 600px) {
   .author-wrapper .description-wrapper {
     width: 80%;
@@ -108,14 +116,6 @@
     width: fit-content;
     text-align: center;
     max-width: none;
-  }
-
-  .intro {
-    text-align: center;
-  }
-
-  .job-type {
-    text-align: center;
   }
 }
 
@@ -156,7 +156,6 @@
 .projects-wrapper {
   min-height: calc(100svh - 63px);
   display: flex;
-  flex-direction: column;
 }
 
 .projects-wrapper :is(p, h1) {

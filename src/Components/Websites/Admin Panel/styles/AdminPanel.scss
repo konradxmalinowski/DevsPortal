@@ -1,4 +1,5 @@
 @import '../../../../Global\ styles/variables/variables.scss';
+@import '../../../../Global\ styles/functions/function.scss';
 
 .admin-panel-wrapper {
   position: relative;
@@ -8,28 +9,38 @@
 }
 
 #admin-canvas {
-  background-color: $background-clr2;
-  border: {
-    color: $clr-grey;
-    style: solid;
-    width: 1px;
-    radius: 8px;
+  display: none;
+}
+
+#canvas-h2 {
+  display: none;
+}
+
+@media (width >= 640px) {
+  #admin-canvas {
+    display: block;
+    background-color: $background-clr2;
+    border: {
+      color: $clr-grey;
+      style: solid;
+      width: 1px;
+      radius: 8px;
+    }
+    width: 100%;
+    max-width: 600px;
+    min-width: 300px;
+    padding: 20px;
+    box-sizing: content-box;
   }
-  width: 100%;
-  max-width: 600px;
-  padding: 20px;
-  box-sizing: content-box;
+
+  #canvas-h2 {
+    display: block;
+  }
 }
 
 .admin-panel-wrapper h2 {
   margin-bottom: 20px;
   text-align: center;
-}
-
-@media (width <= 670px) {
-  #admin-canvas {
-    width: 95vw;
-  }
 }
 
 .control-buttons {

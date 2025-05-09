@@ -1,6 +1,6 @@
 import Button from '../Button/Button.jsx';
 
-import './Cookies.css';
+import './styles/Cookies.css';
 import { useState } from 'react';
 
 const Cookies = () => {

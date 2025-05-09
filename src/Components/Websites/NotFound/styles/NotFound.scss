@@ -34,12 +34,12 @@
   width: 200px;
 }
 
-@media (width <= 850px) {
+@media (width <= 920px) {
   .ghost-text :is(p, h1) {
     text-align: center;
   }
 
   .ghost-text button {
-    align-self: center;
+    justify-self: center; 
   }
 }

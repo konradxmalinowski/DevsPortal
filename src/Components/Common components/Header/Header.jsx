@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
-import './Header.css';
+import './styles/Header.css';
 import Button from '../Button/Button.jsx';
 import ListItem from '../ListItem.jsx';
 

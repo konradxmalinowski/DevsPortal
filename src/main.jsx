@@ -1,6 +1,6 @@
-import { StrictMode, useEffect } from 'react';
+import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import quizInf03 from './utils/Quiz questions/quiz-inf.03.json';
 import quizInf04 from './utils/Quiz questions/quiz-inf.04.json';
@@ -22,15 +22,7 @@ import Blog from './Components/Websites/Blog/Blog';
 import ResetPassword from './Components/Websites/Reset Password/ResetPassword.jsx';
 import NotFound from './Components/Websites/NotFound/NotFound.jsx';
 import PasswordGenerator from './Components/Websites/Password generator/PasswordGenerator.jsx';
-
-// Scroll reset on route change
-function ScrollToTop() {
-  const { pathname } = useLocation();
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-  return null;
-}
+import ScrollToTop from './utils/ScrollToTop.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

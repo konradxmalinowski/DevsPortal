@@ -36,7 +36,6 @@ const AdminPanel = () => {
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    // Oś Y
     ctx.beginPath();
     ctx.moveTo(50, 10);
     ctx.lineTo(50, chartHeight);
@@ -44,28 +43,23 @@ const AdminPanel = () => {
     ctx.lineWidth = 2;
     ctx.stroke();
 
-    // Oś X
     ctx.beginPath();
     ctx.moveTo(50, chartHeight);
     ctx.lineTo(canvas.width - 10, chartHeight);
     ctx.stroke();
 
-    // Rysowanie słupków
     data.forEach((value, index) => {
       const x = 50 + gap + index * (barWidth + gap);
       const y = chartHeight - (value / maxData) * (chartHeight - 20);
       const height = (value / maxData) * (chartHeight - 20);
 
-      // Słupki
       ctx.fillStyle = 'rgba(58, 110, 255, 0.8)';
       ctx.fillRect(x, y, barWidth, height);
 
-      // Etykiety danych
       ctx.fillStyle = '#ffffff';
       ctx.font = '14px Inter';
       ctx.fillText(value, x + barWidth / 4, y - 10);
 
-      // Etykiety osi X
       ctx.fillText(labels[index], x + barWidth / 4, chartHeight + 20);
     });
   }, []);

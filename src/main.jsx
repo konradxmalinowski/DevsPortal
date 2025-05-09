@@ -1,7 +1,6 @@
-//#region imports
-import { StrictMode } from 'react';
+import { StrictMode, useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 
 import quizInf03 from './utils/Quiz questions/quiz-inf.03.json';
 import quizInf04 from './utils/Quiz questions/quiz-inf.04.json';
@@ -24,50 +23,39 @@ import ResetPassword from './Components/Websites/Reset Password/ResetPassword.js
 import NotFound from './Components/Websites/NotFound/NotFound.jsx';
 import PasswordGenerator from './Components/Websites/Password generator/PasswordGenerator.jsx';
 
-const router = createBrowserRouter([
-  { path: '/', element: <App /> },
-  { path: '/blog', element: <Blog /> },
-  { path: '/challenges', element: <Challenges /> },
-  {
-    path: '/codeGenerators',
-    element: <CodeGenerators />,
-  },
-  { path: '/portfolio', element: <Portfolio /> },
-  { path: '/quizPanel', element: <QuizPanel /> },
-  {
-    path: '/quiz-inf.02',
-    element: <Quiz url={quizInf02} />,
-  },
-  {
-    path: '/quiz-inf.03',
-    element: <Quiz url={quizInf03} />,
-  },
-  {
-    path: '/quiz-inf.04',
-    element: <Quiz url={quizInf04} />,
-  },
-  {
-    path: '/quiz-english',
-    element: <Quiz url={quizEnglish} />,
-  },
-  {
-    path: '/quiz-german',
-    element: <Quiz url={quizGerman} />,
-  },
-  {
-    path: '/quiz-it',
-    element: <Quiz url={quizIT} />,
-  },
-  { path: '/adminPanel', element: <AdminPanel /> },
-  { path: '/login', element: <Login /> },
-  { path: '/signup', element: <Signup /> },
-  { path: '/resetPassword', element: <ResetPassword /> },
-  { path: '/generate-password', element: <PasswordGenerator /> },
-  { path: '*', element: <NotFound /> },
-]);
+// Scroll reset on route change
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+}
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <BrowserRouter>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/challenges" element={<Challenges />} />
+        <Route path="/codeGenerators" element={<CodeGenerators />} />
+        <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/quizPanel" element={<QuizPanel />} />
+        <Route path="/quiz-inf.02" element={<Quiz url={quizInf02} />} />
+        <Route path="/quiz-inf.03" element={<Quiz url={quizInf03} />} />
+        <Route path="/quiz-inf.04" element={<Quiz url={quizInf04} />} />
+        <Route path="/quiz-english" element={<Quiz url={quizEnglish} />} />
+        <Route path="/quiz-german" element={<Quiz url={quizGerman} />} />
+        <Route path="/quiz-it" element={<Quiz url={quizIT} />} />
+        <Route path="/adminPanel" element={<AdminPanel />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/resetPassword" element={<ResetPassword />} />
+        <Route path="/generate-password" element={<PasswordGenerator />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </BrowserRouter>
   </StrictMode>
 );

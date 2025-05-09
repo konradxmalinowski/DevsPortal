@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import Button from '../../../Common components/Button/Button.jsx';
 
-import { numberRegEx } from '../../../../RegEx.js';
+import { numberRegEx } from '../../../../utils/RegEx.js';
 import { handleScrollIntoView } from '../../../../utils/handleScrollIntoView.js';
 
 const Step4 = ({ stepFunctions }) => {

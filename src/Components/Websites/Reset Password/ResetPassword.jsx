@@ -5,7 +5,16 @@ import Footer from '../../Common components/Footer/Footer.jsx';
 import Input from '../../Common components/Input.jsx';
 import Button from '../../Common components/Button/Button.jsx';
 
+import { useNavigate } from 'react-router-dom';
+
 const ResetPassword = () => {
+  const navigate = useNavigate();
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    navigate('/Page404');
+  };
+
   return (
     <>
       <Header />
@@ -13,7 +22,7 @@ const ResetPassword = () => {
         className="reset-password-wrapper"
         aria-label="Reset Password Section"
       >
-        <div>
+        <form onSubmit={handleSubmit}>
           <h2>Forgot password</h2>
           <p className="grey" aria-label="Instruction to reset password">
             Enter your email address to receive a password reset link.
@@ -30,7 +39,7 @@ const ResetPassword = () => {
             type="dark"
             aria-label="Send password reset email"
           />
-        </div>
+        </form>
       </section>
       <Footer />
     </>

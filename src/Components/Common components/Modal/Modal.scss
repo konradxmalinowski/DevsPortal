@@ -36,8 +36,14 @@ dialog[open] {
   overflow: hidden !important;
 }
 
-.button-container button {
+dialog .button-container button {
   padding: 20px 35px;
+  max-width: 100px;
+  margin-inline: auto;
+}
+
+dialog .button-container {
+  @include basicFlexBox;
 }
 
 @keyframes slide-in-from-top {

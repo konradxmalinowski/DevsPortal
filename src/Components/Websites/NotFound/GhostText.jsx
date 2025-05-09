@@ -26,9 +26,14 @@ const GhostText = ({ handleScrollIntoView }) => {
       <p className="ghost-bold-paragraph" aria-label="Description of the error">
         We can't seem to find the page you are looking for.
       </p>
-      <Button className="purple-button" aria-label="Go back to the homepage">
-        <Link to="/">Go home</Link>
-      </Button>
+
+      <Link to="/">
+        <Button
+          className="purple-button"
+          aria-label="Go back to the homepage"
+          label="Go home"
+        />
+      </Link>
     </div>
   );
 };

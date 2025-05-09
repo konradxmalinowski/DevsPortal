@@ -73,11 +73,11 @@
 }
 
 .login-wrapper button.continue-with-google::before {
-  content: url("./../../../assets/google-icon.png");
+  content: url("../../../../assets/google-icon.png");
 }
 
 .login-wrapper button.continue-with-apple::before {
-  content: url("./../../../assets/apple-icon.png");
+  content: url("../../../../assets/apple-icon.png");
 }
 
 .group {

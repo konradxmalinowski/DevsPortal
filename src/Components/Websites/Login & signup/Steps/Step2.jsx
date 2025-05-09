@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import Input from './../../../Common components/Input.jsx';
 import Button from '../../../Common components/Button/Button.jsx';
 
-import { emailRegEx } from '../../../../RegEx.js';
+import { emailRegEx } from '../../../../utils/RegEx.js';
 import { handleScrollIntoView } from '../../../../utils/handleScrollIntoView.js';
 
 const Step2 = ({ stepFunctions }) => {

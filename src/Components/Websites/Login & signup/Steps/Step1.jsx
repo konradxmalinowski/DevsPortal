@@ -3,8 +3,12 @@ import Button from '../../../Common components/Button/Button.jsx';
 import Input from './../../../Common components/Input.jsx';
 import ListItem from '../../../Common components/ListItem.jsx';
 
-import { usernameRegEx, usernameRequirements } from '../../../../RegEx.js';
+import {
+  usernameRegEx,
+  usernameRequirements,
+} from '../../../../utils/RegEx.js';
 import { handleScrollIntoView } from '../../../../utils/handleScrollIntoView.js';
+
 const Step1 = ({ stepFunctions }) => {
   const usernameRef = useRef();
 

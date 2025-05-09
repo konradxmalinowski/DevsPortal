@@ -14,7 +14,7 @@ import Input from './../../Common components/Input.jsx';
 import Modal from '../../Common components/Modal/Modal.jsx';
 import DialogContentHTML from './DialogContentHTML.jsx';
 
-import { emailRegEx, passwordRegEx } from '../../../RegEx.js';
+import { emailRegEx, passwordRegEx } from '../../../utils/RegEx.js';
 import { handleScrollIntoView } from '../../../utils/handleScrollIntoView.js';
 
 const Login = () => {

@@ -20,25 +20,25 @@ const Cookies = () => {
     <>
       {cookies == null ? (
         <div className="card-cookies">
-          <h4 className="cookie-heading">Polityka cookies 🍪</h4>
+          <h4 className="cookie-heading">Cookie Policy 🍪</h4>
           <p className="cookie-description">
-            Klikając „Akceptuję wszystkie”, zgadzasz się, aby nasza strona
-            internetowa przechowywała pliki cookies na Twoim urządzeniu i
-            ujawniała informacje zgodnie z naszą Polityką cookies.
+            By clicking "Accept all", you agree that our website may store
+            cookies on your device and disclose information in accordance with
+            our Cookie Policy.
           </p>
 
           <div className="button-container">
             <Button
-              label="Akceptuję wszystkie"
+              label="Accept all"
               className="purple-button accept-button"
               onClick={handleAcceptAll}
-              aria-label="Akceptuję wszystkie"
+              aria-label="Accept all"
             />
             <Button
-              label="Akceptuj tylko wymagane"
+              label="Accept only required"
               className="purple-button decline-button"
               onClick={handleAcceptRequired}
-              aria-label="Akceptuj tylko wymagane"
+              aria-label="Accept only required"
             />
           </div>
         </div>

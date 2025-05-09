@@ -133,4 +133,15 @@
 }
 .arrow-back img {
   width: 30px;
+}
+
+.quiz-item {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.6s ease;
+}
+
+.quiz-item.active {
+  opacity: 1;
+  transform: translateY(0);
 }/*# sourceMappingURL=Quiz.css.map */

@@ -47,4 +47,15 @@
 
 .snippet img {
   width: 50px;
+}
+
+.snippet {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.6s ease;
+}
+
+.snippet.active {
+  opacity: 1;
+  transform: translateY(0);
 }/*# sourceMappingURL=CodeGenerators.css.map */

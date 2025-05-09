@@ -13,7 +13,6 @@ const QuizItem = ({ label, description, to, handleScrollIntoView }) => {
       if (element) observer.unobserve(element);
     };
   }, [handleScrollIntoView]);
-
   return (
     <div
       className="quiz-item reveal"

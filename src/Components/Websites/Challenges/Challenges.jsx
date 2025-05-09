@@ -7,6 +7,8 @@ import { handleScrollIntoView } from '../../../utils/handleScrollIntoView.js';
 import './styles/Challenges.css';
 import programmizIcon from '../../../assets/Challenges images/programmiz.jpg';
 import frontendMentorIcon from '../../../assets/Challenges images/frontend-mentor.png';
+import wordpressIcon from '../../../assets/Challenges images/wordpress-icon.png';
+import cssBattlesIcon from '../../../assets/Challenges images/cssBattle-icon.ico';
 
 class ChallengeClass {
   constructor(title, logo, description, link) {
@@ -26,7 +28,7 @@ const challengesData = [
   ),
   new ChallengeClass(
     'CSS Battle',
-    'https://cssbattle.dev/favicon.ico',
+    cssBattlesIcon,
     'A fun and challenging platform to practice your CSS skills.',
     'https://cssbattle.dev/'
   ),
@@ -38,19 +40,19 @@ const challengesData = [
   ),
   new ChallengeClass(
     'CSS Challenges',
-    'https://css-challenges.com/favicon.ico',
+    wordpressIcon,
     'A platform that offers CSS challenges to improve your skills.',
     'https://css-challenges.com/'
   ),
   new ChallengeClass(
     'Frontend Mentor',
-    `${frontendMentorIcon}`,
+    frontendMentorIcon,
     'A platform that offers real-world frontend challenges to improve your skills.',
     'https://www.frontendmentor.io/challenges'
   ),
   new ChallengeClass(
     'Scribda',
-    'https://css-challenges.com/favicon.ico',
+    wordpressIcon,
     'A platform that offers coding challenges and projects to improve your skills.',
     'https://scrimba.com/css-challenges-c02p'
   ),

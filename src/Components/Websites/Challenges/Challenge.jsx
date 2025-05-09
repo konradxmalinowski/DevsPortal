@@ -19,7 +19,7 @@ const Challenge = ({
   }, [handleScrollIntoView]);
   return (
     <div className="challenge reveal" ref={ref}>
-      <img src={logo} alt={`${title} logo`} />
+      <img src={logo} alt={`${title} logo`} loading="lazy" />
       <h2>{title}</h2>
       <p>{description}</p>
       <Button

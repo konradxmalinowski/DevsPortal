@@ -1,5 +1,5 @@
-@import './../../../Global\ styles/functions/function.scss';
-@import './../../../Global\ styles/variables/variables.scss';
+@import './../../../../Global\ styles/functions/function.scss';
+@import './../../../../Global\ styles/variables/variables.scss';
 
 .custom-button *:is(:hover, :visited, :active, :link) {
   text-decoration: none;
@@ -60,6 +60,3 @@
 .purple-button:focus {
   border-color: $clr-2-download;
 }
-
-
-

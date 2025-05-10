@@ -171,16 +171,6 @@ const Login = () => {
                   onClick={handleLogin}
                   aria-label="Log in to your account"
                 />
-                <Button
-                  label="Continue with Google"
-                  className="continue-with-google continue-with"
-                  aria-label="Continue login with Google"
-                />
-                <Button
-                  label="Continue with Apple"
-                  className="continue-with-apple continue-with"
-                  aria-label="Continue login with Apple"
-                />
               </form>
               <p className="login-details">
                 Forgot Password?{' '}

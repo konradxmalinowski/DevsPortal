@@ -7,8 +7,6 @@ footer {
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  -moz-column-gap: 30px;
-       column-gap: 30px;
   row-gap: 10px;
   margin-top: 100px;
   flex-wrap: wrap;
@@ -24,6 +22,20 @@ footer ul {
   -moz-column-gap: 19px;
        column-gap: 19px;
   row-gap: 10px;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+footer ul:nth-of-type(1) {
+  justify-content: flex-end;
+}
+
+footer ul:nth-of-type(2) {
+  margin-inline: 25px;
+}
+
+footer ul:nth-of-type(3) {
+  justify-content: flex-start;
 }
 
 footer li {

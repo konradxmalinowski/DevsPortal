@@ -1,12 +1,12 @@
 @font-face {
   font-family: "Inter", sans-serif;
-  src: url("./assets/Inter_18pt-Medium.ttf");
+  src: url("../../assets/Roboto-Medium.ttf");
 }
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Inter", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 *::-moz-selection {

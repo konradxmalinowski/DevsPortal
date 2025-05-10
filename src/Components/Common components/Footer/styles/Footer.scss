@@ -7,7 +7,6 @@ footer {
   background-color: $background-clr;
   border-top: 1px solid $clr-hr;
   @include basicFlexBox;
-  column-gap: 30px;
   row-gap: 10px;
   margin-top: 100px;
   flex-wrap: wrap;
@@ -19,6 +18,19 @@ footer ul {
   @include basicFlexBox;
   column-gap: 19px;
   row-gap: 10px;
+  width: fit-content;
+}
+
+footer ul:nth-of-type(1) {
+  justify-content: flex-end;
+}
+
+footer ul:nth-of-type(2) {
+  margin-inline: 25px;
+}
+
+footer ul:nth-of-type(3) {
+  justify-content: flex-start;
 }
 
 footer li {

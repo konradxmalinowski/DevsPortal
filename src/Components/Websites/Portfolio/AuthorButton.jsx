@@ -11,7 +11,7 @@ const AuthorButton = ({ logo, link, name }) => {
         loading="lazy"
         className={`${name.toLowerCase()}-icon author-icon`}
       />
-      <p className={`${name.toLowerCase()}-text author-text`}>Click me</p>
+      <p className={`${name.toLowerCase()}-text author-text`}>{name}</p>
     </button>
   );
 };

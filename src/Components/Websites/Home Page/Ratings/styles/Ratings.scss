@@ -15,12 +15,21 @@
   width: 500px;
   background-color: $background-clr2;
   border-radius: 15px;
+  @include basicFlexBox(column);
 }
 
 .rating > div {
   width: 100%;
-  height: 50%;
   padding: 20px;
+}
+
+.rating > div:nth-of-type(1) {
+  height: 40%;
+}
+
+.rating > div:nth-of-type(2) {
+  height: 60%;
+  padding-top: 0;
 }
 
 .rating .ratings-top-wrapper {

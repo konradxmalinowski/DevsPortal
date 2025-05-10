@@ -61,6 +61,13 @@
   }
 }
 
+
+@media (width <= 400px) {
+  h1 {
+    max-width: 300px
+  }
+}
+
 .author-button {
   @include basicFlexBox;
   padding: 10px 15px;
@@ -70,6 +77,7 @@
   border-radius: 5px;
   border: none;
   margin-right: 10px;
+  font-size: 20px;
 }
 
 .author-button .author-text {

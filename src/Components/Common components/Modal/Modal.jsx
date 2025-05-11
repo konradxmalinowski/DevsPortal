@@ -9,21 +9,15 @@ const Modal = ({ children, ref, isFormShown = true, ...props }) => {
 
   function handleClose() {
     dialog.current?.close();
-    document.body.classList.remove('no-scroll');
-    document.querySelector('#root').classList.remove('no-scroll');
   }
 
   useImperativeHandle(ref, () => ({
     open() {
       dialog.current?.showModal();
       dialog.current?.scrollTo(0, 0);
-      document.querySelector('#root').classList.add('no-scroll');
-      document.body.classList.add('no-scroll');
     },
     close() {
       dialog.current?.close();
-      document.querySelector('#root').classList.remove('no-scroll');
-      document.body.classList.remove('no-scroll');
     },
   }));
 

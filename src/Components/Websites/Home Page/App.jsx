@@ -5,10 +5,12 @@ import Partners from './Partners/Partners.jsx';
 import Applications from './Applications/Applications.jsx';
 import Cookies from '../../Common components/Cookies/Cookies.jsx';
 import Ratings from './Ratings/Ratings.jsx';
+import Faq from './Faq/Faq.jsx';
 
 import './styles/App.css';
 
 import { handleScrollIntoView } from '../../../utils/handleScrollIntoView.js';
+import Contact from './Contact/Contact.jsx';
 
 export default function App() {
   return (
@@ -18,6 +20,8 @@ export default function App() {
       <Partners handleScrollIntoView={handleScrollIntoView} />
       <Applications handleScrollIntoView={handleScrollIntoView} />
       <Ratings handleScrollIntoView={handleScrollIntoView} />
+      <Faq handleScrollIntoView={handleScrollIntoView} />
+      <Contact handleScrollIntoView={handleScrollIntoView} />
       <Footer />
       <Cookies />
     </>

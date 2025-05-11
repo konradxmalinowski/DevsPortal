@@ -1,0 +1,58 @@
+@import '../../../../../Global\ styles/variables/variables.scss';
+@import '../../../../../Global\ styles/functions/function.scss';
+
+.faq-wrapper > section {
+  @include basicFlexBox(column);
+  gap: 20px 10px;
+  width: max(55%, 300px);
+  min-height: 100px;
+}
+
+.faq-item {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  padding: 20px;
+  background-color: $background-clr2;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.faq-wrapper .faq-wrapper .answer.hidden {
+  height: 0 !important;
+  overflow: hidden;
+}
+
+.faq-wrapper > h1 {
+  margin-bottom: 30px;
+}
+
+.faq-item {
+  cursor: pointer;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid $clr-2-download;
+  padding: 15px;
+  box-sizing: content-box;
+
+  .question {
+    font-weight: 700;
+    font-size: 23px;
+  }
+
+  .answer-wrapper {
+    transition: max-height 0.4s ease;
+  }
+
+  .answer {
+    padding: 0;
+    background-color: transparent;
+    transition: all 1s ease-in-out;
+    text-align: left;
+    padding: 0.5rem 0;
+    font-size: 0.95rem;
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
+}

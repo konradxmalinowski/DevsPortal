@@ -44,6 +44,11 @@
   box-shadow: 0 5px 0 #2b52c2;
   transition: all 0.1s ease;
   padding: 9px 20px;
+  transition: transform 0.2s ease-in-out;
+}
+.purple-button:hover {
+  transform: scale(1.03);
+  transition: transform 0.2s ease-in-out;
 }
 
 .purple-button:active {

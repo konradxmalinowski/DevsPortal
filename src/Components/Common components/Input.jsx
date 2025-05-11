@@ -1,6 +1,13 @@
 import { useState } from 'react';
 
-const Input = ({ type, label, hideIcon = null, showIcon = null, ...props }) => {
+const Input = ({
+  type,
+  label,
+  hideIcon = null,
+  showIcon = null,
+  // name,
+  ...props
+}) => {
   const [isPasswordShown, setIsPasswordShown] = useState(false);
 
   const lowerCaseLabel = label.toLowerCase();
@@ -10,12 +17,19 @@ const Input = ({ type, label, hideIcon = null, showIcon = null, ...props }) => {
       <label htmlFor={lowerCaseLabel}>{label}</label>
       <div className="password-wrapper">
         <input
-          type={type === 'password' && !isPasswordShown ? 'password' : 'text'}
+          type={
+            type === 'password' && !isPasswordShown
+              ? 'password'
+              : type === 'password' && isPasswordShown
+              ? 'text'
+              : type
+          }
           id={lowerCaseLabel}
-          name={lowerCaseLabel}
           aria-label={label}
+          // name={name}
           {...props}
         />
+
         {type === 'password' && (
           <span
             onClick={() => setIsPasswordShown(!isPasswordShown)}

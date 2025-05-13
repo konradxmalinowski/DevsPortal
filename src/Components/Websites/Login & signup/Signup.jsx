@@ -145,8 +145,6 @@ const Signup = () => {
       additionalCheck
     );
 
-    console.log(inputValue, isValid);
-
     if (!isValid) return;
 
     if (type === 'username' || type === 'email' || type === 'phone') {

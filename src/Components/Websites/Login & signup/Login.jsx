@@ -22,7 +22,7 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [dialogContent, setDialogContent] = useState('');
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [isFormShown, setIsFormShown] = useState(false);
+  const [isFormShown, setIsFormShown] = useState(true);
 
   const dialogRef = useRef(null);
   const navigate = useNavigate();
@@ -46,19 +46,15 @@ const Login = () => {
 
   const handleLogin = async () => {
     if (!emailRegEx.test(email)) {
-      setIsFormShown(true);
       setDialogContent('Enter correct email format');
       dialogRef.current?.open();
       return;
     }
     if (!passwordRegEx.test(password)) {
-      setIsFormShown(true);
       setDialogContent('Enter correct password');
       dialogRef.current?.open();
       return;
     }
-
-    setIsFormShown(false);
 
     await handleFetchData();
   };
@@ -86,22 +82,17 @@ const Login = () => {
           navigate('/adminPanel');
         }, 4000);
       } else {
-        setIsFormShown(true);
-        setDialogContent(data.message || 'Login failed');
+        setDialogContent('Login failed');
         dialogRef.current?.open();
       }
-
-      setIsFormShown(false);
-    } catch (error) {
-      setIsFormShown(true);
-      setDialogContent('Server error: ' + error.message);
+    } catch {
+      setDialogContent('Login failed. Enter correct data');
       dialogRef.current?.open();
     }
-
-    setIsFormShown(false);
   };
 
   const handleLogout = () => {
+    setIsFormShown(false);
     localStorage.removeItem('token');
     setDialogContent(<DialogContentHTML content="Logout" />);
     dialogRef.current.open();

@@ -611,3 +611,44 @@ export const blogs = [];
 ### Query 21
 
 > Za pomocą jakiej technologii mogę wysyłać maila ze strony
+
+---
+
+<br>
+
+### Wersja polska
+
+## 📖 Spis Treści
+
+- [O Projekcie](#-o-projekcie)
+- [Funkcje](#-funkcje)
+- [Wykorzystane Technologie](#-wykorzystane-technologie)
+- [Instalacja](#-instalacja)
+- [Przegląd Stron](#-przegląd-stron)
+- [Projekt Graficzny](#-projekt-graficzny)
+
+  - [Kolory](#-kolory)
+  - [Typografia](#-typografia)
+
+- [Współtworzenie](#-współtworzenie)
+- [Kontakt](#-kontakt)
+- [Instrukcje](#-instrukcje)
+
+---
+
+## 📚 O Projekcie
+
+Developers Portal to nowoczesna i wszechstronna platforma zaprojektowana z myślą o programistach, studentach i entuzjastach technologii. Stanowi kompleksowe rozwiązanie do nauki, rozwijania umiejętności i korzystania z narzędzi zwiększających produktywność. Łączy w sobie wiele funkcji, takich jak interaktywne quizy, generatory kodu, blogi, wyzwania programistyczne oraz profesjonalne portfolio.
+
+Pomysł na projekt narodził się z potrzeby stworzenia centralnego miejsca, w którym programiści mogliby nie tylko uczyć się i ćwiczyć, ale także korzystać z narzędzi ułatwiających codzienną pracę. Niezależnie od tego, czy dopiero zaczynasz swoją przygodę z programowaniem, czy jesteś zaawansowanym deweloperem szukającym wyzwań – Developers Portal ma coś dla każdego.
+
+Platforma została stworzona z naciskiem na użyteczność, dostępność i responsywność, co zapewnia płynne działanie na wszystkich urządzeniach. Dodatkowo zawiera panel administratora umożliwiający łatwe zarządzanie treścią, co sprawia, że nadaje się zarówno dla użytkowników indywidualnych, jak i zespołów.
+
+Główne cele projektu:
+
+- **Nauka i rozwój umiejętności**: Dostarczanie zasobów, takich jak quizy i wyzwania, wspomagających rozwój wiedzy programistycznej.
+- **Efektywność i produktywność**: Udostępnianie narzędzi, np. generatorów kodu, które oszczędzają czas i upraszczają pracę.
+- **Społeczność i współpraca**: Promowanie dzielenia się wiedzą poprzez blogi i artykuły o nowoczesnych technologiach i trendach.
+- **Rozwój zawodowy**: Prezentacja portfolio autora jako inspiracja i wskazówka w planowaniu ścieżki kariery.
+
+Platforma została zaprojektowana tak, aby mogła się rozwijać i wzbogacać o nowe funkcje, a także docierać do coraz szerszej grupy odbiorców.

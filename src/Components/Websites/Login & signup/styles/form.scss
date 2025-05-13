@@ -1,12 +1,12 @@
 @import '../../../../Global\ styles/variables/variables.scss';
 @import '../../../../Global\ styles/functions/function.scss';
 
-.password-wrapper {
+.input-wrapper {
   position: relative;
   width: 100%;
 }
 
-.password-wrapper span {
+.input-wrapper span {
   cursor: pointer;
   position: absolute;
   top: 50%;

@@ -15,7 +15,7 @@ const Input = ({
   return (
     <div>
       <label htmlFor={lowerCaseLabel}>{label}</label>
-      <div className="password-wrapper">
+      <div className="input-wrapper">
         <input
           type={
             type === 'password' && !isPasswordShown
@@ -26,7 +26,6 @@ const Input = ({
           }
           id={lowerCaseLabel}
           aria-label={label}
-          // name={name}
           {...props}
         />
 

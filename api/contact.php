@@ -1,30 +1,40 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $to = "malinowski.konrad45@gmail.com";
+header("Access-Control-Allow-Origin: http://localhost:5173");
+header("Access-Control-Allow-Credentials: true");
+header("Content-Type: application/json; charset=UTF-8");
+header("Access-Control-Allow-Methods: POST");
+header("Access-Control-Allow-Headers: Content-Type");
 
-    $name = trim($_POST['name']);
-    $phone = trim($_POST['phone']);
-    $email = trim($_POST['email']);
-    $message = trim($_POST['message']);
-
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        echo "Invalid email address.";
-        exit;
+try {
+    if ($_SERVER["REQUEST_METHOD"] !== "POST") {
+        throw new Exception("Invalid request method.");
     }
 
-    $subject = "New Contact Message from $name";
-    $message = "You've received a new message:\n\n"
-        . "Name: $name\n"
-        . "Phone: $phone\n"
-        . "Email: $email\n"
-        . "Message: $message";
+    $data = json_decode(file_get_contents("php://input"), true);
 
-    $headers = "From: $email";
+    $name = htmlspecialchars(trim($data['name']));
+    $email = filter_var($data['email']);
+    $phone = htmlspecialchars(trim($data['phone']));
+    $message = htmlspecialchars(trim($data['message']));
 
-    if (mail($to, $subject, $message, $headers)) {
-        echo "Message sent successfully.";
-    } else {
-        echo "Error sending message.";
+    $to = "devsportal@m4linaa.ct8.pl";
+    $subject = "Message from Contact Page";
+
+    $headers = "From: devsportal@m4linaa.ct8.pl\r\n";
+    $headers .= "Reply-To: $email\r\n";
+    $headers .= "Content-Type: text/plain; charset=utf-8\r\n";
+
+    $body = "Name: $name\nEmail: $email\nPhone: $phone\n\nMessage:\n$message\n";
+
+    if (!mail($to, $subject, $body, $headers)) {
+        throw new Exception("Error sending the message.");
     }
+
+    mail($email, $subject, $body, $headers);
+
+    echo json_encode(["success" => true, "message" => "✅ Message has been sent."]);
+} catch (Exception $e) {
+    error_log($e->getMessage());
+    echo json_encode(["success" => false, "message" => "❌ " . $e->getMessage()]);
 }
 ?>

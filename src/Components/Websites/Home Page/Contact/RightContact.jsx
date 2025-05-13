@@ -21,15 +21,17 @@ const RightContact = () => {
 
   const validatePhone = () => {
     if (phone.trim() && numberRegEx.test(phone)) return true;
-    return 'Enter correct phone number eg. +48111111111';
+    return 'Enter a valid phone number, e.g., +48111111111';
   };
 
   const validateEmail = () => {
     if (email.trim() && emailRegEx.test(email)) return true;
-    return 'Enter correct email eg. test@example.com';
+    return 'Enter a valid email, e.g., test@example.com';
   };
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
     const validatedPhone = validatePhone();
     const validatedName = validateName();
     const validatedEmail = validateEmail();
@@ -52,48 +54,65 @@ const RightContact = () => {
       return;
     }
 
-    try {
-      const formData = new FormData();
-      formData.append('name', name);
-      formData.append('phone', phone);
-      formData.append('email', email);
-      formData.append('message', message);
+    if (message.trim() === '') {
+      setModalContent('Message cannot be empty.');
+      modalRef.current.open();
+      return;
+    }
 
+    try {
       const response = await fetch(
-        'https://devsportal.ct8.pl/api/contact.php',
+        'http://localhost/Developers%20portal/api/contact.php',
         {
           method: 'POST',
-          body: formData,
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          credentials: 'include',
+          body: JSON.stringify({
+            name,
+            phone,
+            email,
+            message,
+          }),
         }
       );
 
-      const result = await response.json();
-      setModalContent(result);
-    } catch {
-      setModalContent('Error with fetching data');
-    }
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
 
+      const result = await response.json();
+
+      console.log(result);
+
+      if (result.success) {
+        setModalContent('✅ Message has been sent!');
+        setName('');
+        setPhone('');
+        setEmail('');
+        setMessage('');
+      } else {
+        setModalContent('❌ ' + result.message);
+      }
+    } catch (error) {
+      setModalContent('❌ Something went wrong. Please try again.');
+    }
     modalRef.current.open();
   };
 
   return (
     <>
       <div className="right-contact">
-        <form
-          autoComplete="true"
-          onSubmit={(event) => {
-            event.preventDefault();
-            handleSubmit();
-          }}
-        >
+        <form autoComplete="on" onSubmit={handleSubmit}>
           <Input
             type="text"
             label="Name: "
             required={true}
             onChange={(event) => {
-              setName(event.target.value.toString().trim());
+              setName(event.target.value.trim());
             }}
-            defaultValue={name}
+            value={name}
           />
 
           <Input
@@ -101,9 +120,9 @@ const RightContact = () => {
             label="Phone: "
             required={false}
             onChange={(event) => {
-              setPhone(event.target.value.toString().trim());
+              setPhone(event.target.value.trim());
             }}
-            defaultValue={phone}
+            value={phone}
           />
 
           <Input
@@ -111,9 +130,9 @@ const RightContact = () => {
             label="Email: "
             required={true}
             onChange={(event) => {
-              setEmail(event.target.value.toString().trim());
+              setEmail(event.target.value.trim());
             }}
-            defaultValue={email}
+            value={email}
           />
 
           <div>
@@ -124,16 +143,21 @@ const RightContact = () => {
                 id="message"
                 required={true}
                 onChange={(event) => {
-                  setMessage(event.target.value.toString().trim());
+                  setMessage(event.target.value.trim());
                 }}
-                defaultValue={message}
+                value={message}
               ></textarea>
             </div>
           </div>
 
-          <Button className="purple-button" label="Send message" />
+          <Button
+            className="purple-button"
+            label="Send message"
+            type="submit"
+          />
         </form>
       </div>
+
       <Modal ref={modalRef} isFormShown={true}>
         {modalContent}
       </Modal>

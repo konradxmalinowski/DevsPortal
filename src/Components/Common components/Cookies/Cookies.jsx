@@ -20,7 +20,7 @@ const Cookies = () => {
     <>
       {cookies == null ? (
         <div className="card-cookies">
-          <h4 className="cookie-heading">Cookie Policy 🍪</h4>
+          <h3 className="cookie-heading">Cookie Policy 🍪</h3>
           <p className="cookie-description">
             By clicking "Accept all", you agree that our website may store
             cookies on your device and disclose information in accordance with

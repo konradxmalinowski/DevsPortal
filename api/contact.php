@@ -30,8 +30,6 @@ try {
         throw new Exception("Error sending the message.");
     }
 
-    mail($email, $subject, $body, $headers);
-
     echo json_encode(["success" => true, "message" => "✅ Message has been sent."]);
 } catch (Exception $e) {
     error_log($e->getMessage());

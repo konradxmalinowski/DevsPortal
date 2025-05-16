@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { data, Link, useNavigate } from 'react-router-dom';
 import { useRef, useState, useEffect } from 'react';
 
 import './styles/Login.css';
@@ -87,6 +87,7 @@ const Login = () => {
       }
     } catch {
       setDialogContent('Login failed. Enter correct data');
+      console.log(data.message);
       dialogRef.current?.open();
     }
   };

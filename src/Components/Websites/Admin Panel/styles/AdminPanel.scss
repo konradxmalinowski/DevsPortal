@@ -12,30 +12,22 @@
   display: none;
 }
 
-#canvas-h2 {
-  display: none;
-}
-
-@media (width >= 640px) {
-  #admin-canvas {
-    display: block;
-    background-color: $background-clr2;
-    border: {
-      color: $clr-grey;
-      style: solid;
-      width: 1px;
-      radius: 8px;
-    }
-    width: 100%;
-    max-width: 600px;
-    min-width: 300px;
-    padding: 20px;
-    box-sizing: content-box;
+#admin-canvas {
+  display: block;
+  background-color: $background-clr2;
+  border: {
+    color: $clr-grey;
+    style: solid;
+    width: 1px;
+    radius: 8px;
   }
-
-  #canvas-h2 {
-    display: block;
-  }
+  width: 100%;
+  max-width: 1000px;
+  min-width: 300px;
+  padding: 20px;
+  padding-left: 0;
+  padding-right: 30px;
+  box-sizing: content-box;
 }
 
 .admin-panel-wrapper h2 {

@@ -113,7 +113,7 @@ const Signup = () => {
         }, 4000);
       } else {
         setIsFormShown(true);
-        setDialogContent(data.message || 'Signup failed');
+        setDialogContent('Signup failed. Enter correct data');
         dialogRef.current?.open();
 
         setTimeout(() => {
@@ -125,7 +125,7 @@ const Signup = () => {
       setIsFormShown(false);
     } catch (error) {
       setIsFormShown(true);
-      setDialogContent('Server error: ' + error.message);
+      setDialogContent('Signup failed. Enter correct data.');
       dialogRef.current?.open();
 
       setTimeout(() => {

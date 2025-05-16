@@ -12,28 +12,22 @@
   display: none;
 }
 
-#canvas-h2 {
-  display: none;
+#admin-canvas {
+  display: block;
+  background-color: #0e0f10;
+  border-color: #c5c5c6;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 1000px;
+  min-width: 300px;
+  padding: 20px;
+  padding-left: 0;
+  padding-right: 30px;
+  box-sizing: content-box;
 }
 
-@media (width >= 640px) {
-  #admin-canvas {
-    display: block;
-    background-color: #0e0f10;
-    border-color: #c5c5c6;
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 8px;
-    width: 100%;
-    max-width: 600px;
-    min-width: 300px;
-    padding: 20px;
-    box-sizing: content-box;
-  }
-  #canvas-h2 {
-    display: block;
-  }
-}
 .admin-panel-wrapper h2 {
   margin-bottom: 20px;
   text-align: center;

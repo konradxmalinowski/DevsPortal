@@ -12,6 +12,7 @@
   background-color: $background-clr2;
   padding: 20px;
   border-radius: 10px;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
 
   &:not(:hover) {
     transition: transform 0.3s ease-in-out 0s;

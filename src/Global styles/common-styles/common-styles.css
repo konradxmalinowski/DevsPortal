@@ -32,6 +32,7 @@ body,
   justify-content: space-between;
   background-color: #08090a;
   color: #ffffff;
+  overflow-x: hidden;
 }
 
 .grey {

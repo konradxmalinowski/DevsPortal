@@ -15,6 +15,7 @@ import Step4 from './Steps/Step4.jsx';
 import Step5 from './Steps/Step5.jsx';
 
 import { handleScrollIntoView } from '../../../utils/handleScrollIntoView.js';
+import Message from '../../Common components/Message/Message.jsx';
 
 const userDataBasic = {
   username: '',
@@ -28,9 +29,10 @@ const Signup = () => {
   const [userData, setUserData] = useState({ ...userDataBasic });
   const [DialogContent, setDialogContent] = useState('');
   const [isFormShown, setIsFormShown] = useState(true);
+  const [message, setMessage] = useState('');
+  const [isMessageShown, setIsMessageShown] = useState(false);
   const dialogRef = useRef(null);
   const navigate = useNavigate();
-
   const ref = useRef();
 
   useEffect(() => {
@@ -40,6 +42,15 @@ const Signup = () => {
       if (element) observer.unobserve(element);
     };
   }, []);
+
+  const handleShowMessage = (content) => {
+    setMessage(content);
+    setIsMessageShown(false);
+
+    setTimeout(() => {
+      setIsMessageShown(true);
+    }, 500);
+  };
 
   const validateData = (regEx, ref, type, additionalCheck = null) => {
     let inputValue;
@@ -59,7 +70,7 @@ const Signup = () => {
       (additionalCheck && !additionalCheck(inputValue))
     ) {
       setIsFormShown(true);
-      setDialogContent(
+      handleShowMessage(
         `Please enter a valid ${type} (e.g., ${
           type === 'email'
             ? 'user@example.com'
@@ -68,14 +79,12 @@ const Signup = () => {
             : 'minimum 3 characters'
         })`
       );
-      dialogRef.current?.open();
       isValid = false;
     }
 
     if (type === 'phone' && !regEx.test(inputValue)) {
       setIsFormShown(true);
-      setDialogContent('Please enter a valid phone number');
-      dialogRef.current?.open();
+      handleShowMessage('Please enter a valid phone number');
       isValid = false;
     }
 
@@ -85,8 +94,7 @@ const Signup = () => {
   const handleEndStep = async (inputValue) => {
     if (inputValue !== userData.password) {
       setIsFormShown(true);
-      setDialogContent('Passwords do not match');
-      dialogRef.current?.open();
+      handleShowMessage('Passwords do not match');
       return;
     }
 
@@ -113,8 +121,7 @@ const Signup = () => {
         }, 4000);
       } else {
         setIsFormShown(true);
-        setDialogContent('Signup failed. Enter correct data');
-        dialogRef.current?.open();
+        handleShowMessage('Signup failed. Enter correct data');
 
         setTimeout(() => {
           dialogRef.current.close();
@@ -125,8 +132,7 @@ const Signup = () => {
       setIsFormShown(false);
     } catch (error) {
       setIsFormShown(true);
-      setDialogContent('Signup failed. Enter correct data.');
-      dialogRef.current?.open();
+      handleShowMessage('Signup failed. Enter correct data.');
 
       setTimeout(() => {
         dialogRef.current.close();
@@ -164,7 +170,7 @@ const Signup = () => {
 
         if (!data.available) {
           setIsFormShown(true);
-          setDialogContent(
+          handleShowMessage(
             `${
               type === 'username'
                 ? 'Username'
@@ -180,7 +186,7 @@ const Signup = () => {
         setIsFormShown(false);
       } catch (error) {
         setIsFormShown(true);
-        setDialogContent('Server error: ' + error.message);
+        handleShowMessage('Server error: ' + error.message);
         dialogRef.current?.open();
         return;
       }
@@ -245,6 +251,7 @@ const Signup = () => {
           </p>
         </div>
       </section>
+      <Footer />
       <Modal
         className="login-and-signup"
         ref={dialogRef}
@@ -253,7 +260,7 @@ const Signup = () => {
       >
         {DialogContent}
       </Modal>
-      <Footer />
+      <Message content={message} isShownMessage={isMessageShown} />
     </>
   );
 };

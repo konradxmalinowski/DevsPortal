@@ -133,10 +133,6 @@
   line-height: 1.9;
 }
 
-.project {
-  box-shadow: 0 0 10px 2px #0e0f10;
-}
-
 .projects-wrapper h1 ~ p {
   margin-bottom: 70px;
 }
@@ -196,10 +192,6 @@
   max-width: 1000px;
 }
 
-.language {
-  box-shadow: 0 0 10px 2px #0e0f10;
-}
-
 /* rates */
 .rates-wrapper {
   display: flex;
@@ -219,8 +211,13 @@
   place-items: center;
 }
 
+.gallery-wrapper {
+  margin-top: 100px;
+}
+
 .gallery-wrapper h1 {
   font-size: 2em;
+  margin-bottom: 20px;
 }
 
 .gallery img {

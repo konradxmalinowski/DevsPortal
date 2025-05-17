@@ -1,14 +1,18 @@
-import { useRef } from 'react';
+import { useState } from 'react';
 import Button from '../../../Common components/Button/Button.jsx';
-import Modal from '../../../Common components/Modal/Modal.jsx';
+import Message from '../../../Common components/Message/Message.jsx';
 import './styles/Project.css';
 
 const Project = ({ name, description, link }) => {
-  const modalRef = useRef(null);
+  const [isMessageShow, setIsMessageShow] = useState(false);
 
   function handleCopy() {
-    navigator.clipboard.writeText(link);
-    modalRef.current.open();
+    setIsMessageShow(false);
+
+    setTimeout(() => {
+      navigator.clipboard.writeText(link);
+      setIsMessageShow(true);
+    }, 500);
   }
 
   function handleOpen() {
@@ -33,9 +37,8 @@ const Project = ({ name, description, link }) => {
           aria-label={`Copy project link for: ${name}`}
         />
       </div>
-      <Modal ref={modalRef} aria-label="Link copied notification">
-        Copied
-      </Modal>
+
+      <Message content="Link copied" isShownMessage={isMessageShow} />
     </div>
   );
 };

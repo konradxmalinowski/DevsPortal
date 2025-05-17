@@ -8,7 +8,7 @@ import ResultSection from './ResultSection.jsx';
 import Buttons from './Buttons.jsx';
 import LengthSection from './LengthSection.jsx';
 import AdditionalOptions from './AdditionalOptions.jsx';
-import Modal from '../../Common components/Modal/Modal.jsx';
+import Message from '../../Common components/Message/Message.jsx';
 
 import { handleScrollIntoView } from '../../../utils/handleScrollIntoView.js';
 
@@ -22,8 +22,7 @@ const PasswordGenerator = () => {
     symbols: false,
   });
   const [message, setMessage] = useState('');
-  const modalRef = useRef(null);
-
+  const [isMessageShow, setIsMessageShow] = useState(false);
   const ref = useRef();
 
   useEffect(() => {
@@ -35,8 +34,12 @@ const PasswordGenerator = () => {
   }, []);
 
   const createMessage = (content) => {
+    setIsMessageShow(false);
     setMessage(content);
-    modalRef.current.open();
+
+    setTimeout(() => {
+      setIsMessageShow(true);
+    }, 500);
   };
 
   return (
@@ -65,9 +68,7 @@ const PasswordGenerator = () => {
       </section>
       <Footer />
 
-      <Modal ref={modalRef} aria-label="Password generator message modal">
-        {message}
-      </Modal>
+      <Message content={message} isShownMessage={isMessageShow} />
     </>
   );
 };

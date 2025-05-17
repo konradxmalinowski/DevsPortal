@@ -9,6 +9,7 @@ import programmizIcon from '../../../assets/Challenges images/programmiz.jpg';
 import frontendMentorIcon from '../../../assets/Challenges images/frontend-mentor.png';
 import wordpressIcon from '../../../assets/Challenges images/wordpress-icon.png';
 import cssBattlesIcon from '../../../assets/Challenges images/cssBattle-icon.ico';
+import codeWarsIcon from '../../../assets/Challenges images/code-wars-icon.png'
 
 class ChallengeClass {
   constructor(title, logo, description, link) {
@@ -22,7 +23,7 @@ class ChallengeClass {
 const challengesData = [
   new ChallengeClass(
     'CodeWars',
-    'https://www.codewars.com/favicon.ico',
+    codeWarsIcon,
     'A nonprofit organization that offers free coding challenges.',
     'https://www.codewars.com/collections/js-code-challenges'
   ),

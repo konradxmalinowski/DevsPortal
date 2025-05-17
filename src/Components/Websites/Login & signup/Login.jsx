@@ -16,16 +16,28 @@ import DialogContentHTML from './DialogContentHTML.jsx';
 
 import { emailRegEx, passwordRegEx } from '../../../utils/RegEx.js';
 import { handleScrollIntoView } from '../../../utils/handleScrollIntoView.js';
+import Message from '../../Common components/Message/Message.jsx';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [dialogContent, setDialogContent] = useState('');
+  const [message, setMessage] = useState('');
+  const [isMessageShown, setIsMessageShown] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isFormShown, setIsFormShown] = useState(true);
 
   const dialogRef = useRef(null);
   const navigate = useNavigate();
+
+  const handleShowMessage = (content) => {
+    setMessage(content);
+    setIsMessageShown(false);
+
+    setTimeout(() => {
+      setIsMessageShown(true);
+    }, 500);
+  };
 
   useEffect(() => {
     const token = localStorage.getItem('token');
@@ -46,13 +58,11 @@ const Login = () => {
 
   const handleLogin = async () => {
     if (!emailRegEx.test(email)) {
-      setDialogContent('Enter correct email format');
-      dialogRef.current?.open();
+      handleShowMessage('Enter correct email format');
       return;
     }
     if (!passwordRegEx.test(password)) {
-      setDialogContent('Enter correct password');
-      dialogRef.current?.open();
+      handleShowMessage('Enter correct password');
       return;
     }
 
@@ -82,13 +92,10 @@ const Login = () => {
           navigate('/adminPanel');
         }, 4000);
       } else {
-        setDialogContent('Login failed');
-        dialogRef.current?.open();
+        handleShowMessage('Login failed');
       }
     } catch {
-      setDialogContent('Login failed. Enter correct data');
-      console.log(data.message);
-      dialogRef.current?.open();
+      handleShowMessage('Login failed. Enter correct data');
     }
   };
 
@@ -190,6 +197,7 @@ const Login = () => {
       >
         {dialogContent}
       </Modal>
+      <Message content={message} isShownMessage={isMessageShown} />
       <Footer />
     </>
   );

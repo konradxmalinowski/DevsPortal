@@ -6,11 +6,11 @@ import Applications from './Applications/Applications.jsx';
 import Cookies from '../../Common components/Cookies/Cookies.jsx';
 import Ratings from './Ratings/Ratings.jsx';
 import Faq from './Faq/Faq.jsx';
+import Contact from './Contact/Contact.jsx';
 
 import './styles/App.css';
 
 import { handleScrollIntoView } from '../../../utils/handleScrollIntoView.js';
-import Contact from './Contact/Contact.jsx';
 
 export default function App() {
   return (

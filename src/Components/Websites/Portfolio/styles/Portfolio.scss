@@ -1,13 +1,11 @@
 @import '../../../../Global\ styles/functions/function.scss';
 @import '../../../../Global\ styles/variables/variables.scss';
 
-
 .author-wrapper {
   min-height: calc(100svh - 100px);
   display: flex;
   flex-direction: row;
 }
-
 
 .author-wrapper .image-wrapper {
   align-items: center;
@@ -23,7 +21,6 @@
   align-items: flex-start;
   min-width: 300px;
 }
-
 
 .author-wrapper .description-wrapper {
   padding: 30px;
@@ -61,10 +58,9 @@
   }
 }
 
-
 @media (width <= 400px) {
   h1 {
-    max-width: 300px
+    max-width: 300px;
   }
 }
 
@@ -153,10 +149,6 @@
   line-height: 1.9;
 }
 
-.project {
-  box-shadow: 0 0 10px 2px $background-clr2;
-}
-
 .projects-wrapper h1 ~ p {
   margin-bottom: 70px;
 }
@@ -178,7 +170,6 @@
 .projects-wrapper > section {
   width: max(70%, 400px);
 }
-
 
 @media (width <= 500px) {
   .projects-wrapper > section {
@@ -215,10 +206,6 @@
   max-width: 1000px;
 }
 
-.language {
-  box-shadow: 0 0 10px 2px $background-clr2;
-}
-
 /* rates */
 .rates-wrapper {
   display: flex;
@@ -238,8 +225,13 @@
   place-items: center;
 }
 
+.gallery-wrapper {
+  margin-top: 100px;
+}
+
 .gallery-wrapper h1 {
   font-size: 2em;
+  margin-bottom: 20px;
 }
 
 .gallery img {

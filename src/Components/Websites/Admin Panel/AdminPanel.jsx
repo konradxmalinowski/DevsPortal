@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import Header from '../../Common components/Header/Header.jsx';
 import Footer from '../../Common components/Footer/Footer.jsx';
@@ -10,15 +10,25 @@ import { handleScrollIntoView } from '../../../utils/handleScrollIntoView.js';
 import './styles/AdminPanel.css';
 
 const AdminPanel = () => {
+  const ref = useRef();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      navigate('/login');
+    }
+  }, [navigate]);
+
   useEffect(() => {
     const canvas = document.getElementById('admin-canvas');
     const ctx = canvas.getContext('2d');
 
-    canvas.width = 500;
+    canvas.width = 400;
     canvas.height = 340;
 
-    const data = [120, 200, 150, 300, 250, 400, 350];
-    const labels = ['Pon', 'Wt', 'Śr', 'Czw', 'Pt', 'Sob', 'Nd'];
+    const data = [400, 250, 100];
+    const labels = ['Mobile', 'Desktop', 'Tablet'];
 
     const barWidth = 50;
     const gap = 40;
@@ -55,8 +65,6 @@ const AdminPanel = () => {
     });
   }, []);
 
-  const ref = useRef();
-
   useEffect(() => {
     const [element, observer] = handleScrollIntoView(ref);
 
@@ -72,13 +80,11 @@ const AdminPanel = () => {
         className="admin-panel-wrapper wrapper"
         aria-label="Admin Panel Section"
       >
-        <section>
+        <section className="reveal" ref={ref}>
           <div className="canvas">
-            <h2 id="canvas-h2">Statystyki odwiedzin</h2>
+            <h2 id="canvas-h2">Visiting statistics</h2>
             <canvas
               id="admin-canvas"
-              className="reveal"
-              ref={ref}
               aria-label="Visit statistics chart"
             ></canvas>
           </div>

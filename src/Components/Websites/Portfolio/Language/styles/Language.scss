@@ -5,9 +5,10 @@
   height: 100px;
   background-color: $background-clr2;
   display: grid;
-  grid-template-columns: 40px 1fr;
-  grid-template-rows: repeat(2, 1fr);
-  // box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+  grid: {
+    template-columns: 40px 1fr;
+    template-rows: repeat(2, 1fr);
+  }
   justify-items: center;
   align-items: center;
   border-radius: 10px;

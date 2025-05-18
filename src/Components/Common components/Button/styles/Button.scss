@@ -34,8 +34,10 @@
 .purple-button {
   @include basicFlexBox;
   gap: 1rem;
-  font-size: 17px;
-  font-weight: 700;
+  font: {
+    size: 17px;
+    weight: 700;
+  }
   letter-spacing: 1px;
   color: #fff;
   background: $clr-1-download;

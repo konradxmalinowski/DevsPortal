@@ -35,8 +35,10 @@
   box-sizing: content-box;
 
   .question {
-    font-weight: 700;
-    font-size: 23px;
+    font: {
+      weight: 700;
+      size: 23px;
+    }
   }
 
   .answer-wrapper {

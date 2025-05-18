@@ -3,7 +3,7 @@
 
 .snippets-wrapper {
   width: 100%;
- @include basicFlexBox;
+  @include basicFlexBox;
   padding: 80px 0;
 }
 
@@ -50,7 +50,6 @@
   width: 50px;
 }
 
-
 .snippet {
   opacity: 0;
   transform: translateY(50px);
@@ -60,4 +59,4 @@
 .snippet.active {
   opacity: 1;
   transform: translateY(0);
-} 
+}

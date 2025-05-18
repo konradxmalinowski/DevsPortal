@@ -22,8 +22,10 @@
 }
 
 .ghost-bold-paragraph {
-  font-size: 30px;
-  font-weight: 600;
+  font: {
+    size: 30px;
+    weight: 600;
+  }
 }
 
 .ghost-image {
@@ -40,6 +42,6 @@
   }
 
   .ghost-text button {
-    justify-self: center; 
+    justify-self: center;
   }
 }

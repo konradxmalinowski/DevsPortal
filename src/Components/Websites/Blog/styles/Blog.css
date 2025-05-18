@@ -4,9 +4,7 @@
 }
 
 .blog-item {
-  width: 60%;
-  min-width: 300px;
-  max-width: 800px;
+  width: clamp(300px, 60%, 800px);
   padding: 20px;
   background-color: #0e0f10;
   border-radius: 10px;
@@ -90,7 +88,7 @@ button.learn-more .circle .icon {
   top: 0;
   bottom: 0;
   margin: auto;
-  background: #fff;
+  background-color: #fff;
 }
 
 button.learn-more .circle .icon.arrow {

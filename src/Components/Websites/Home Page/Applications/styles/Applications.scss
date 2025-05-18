@@ -33,7 +33,7 @@
 }
 
 .apps-wrapper > section {
- @include basicFlexBox(column);
+  @include basicFlexBox(column);
   row-gap: 30px;
 }
 
@@ -42,7 +42,7 @@
 }
 
 .apps-wrapper > section > div:nth-of-type(1) {
- @include basicFlexBox;
+  @include basicFlexBox;
   gap: 30px;
   width: 100%;
 }

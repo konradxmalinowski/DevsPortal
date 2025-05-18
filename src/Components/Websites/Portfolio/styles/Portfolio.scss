@@ -208,10 +208,7 @@
 
 /* rates */
 .rates-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  @include basicFlexBox(column);
   gap: 30px;
   margin-top: 150px;
   padding: 70px 20px;

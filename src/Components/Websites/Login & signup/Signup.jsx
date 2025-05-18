@@ -120,25 +120,13 @@ const Signup = () => {
           dialogRef.current.close();
         }, 4000);
       } else {
-        setIsFormShown(true);
         handleShowMessage('Signup failed. Enter correct data');
-
-        setTimeout(() => {
-          dialogRef.current.close();
-        }, 1000);
         return;
       }
 
       setIsFormShown(false);
     } catch (error) {
-      setIsFormShown(true);
       handleShowMessage('Signup failed. Enter correct data.');
-
-      setTimeout(() => {
-        dialogRef.current.close();
-      }, 1000);
-
-      setIsFormShown(false);
       return;
     }
   };
@@ -169,7 +157,6 @@ const Signup = () => {
         const data = await response.json();
 
         if (!data.available) {
-          setIsFormShown(true);
           handleShowMessage(
             `${
               type === 'username'
@@ -179,18 +166,12 @@ const Signup = () => {
                 : 'Phone'
             } is already taken`
           );
-          dialogRef.current?.open();
           return;
         }
-
-        setIsFormShown(false);
       } catch (error) {
-        setIsFormShown(true);
-        handleShowMessage('Server error: ' + error.message);
-        dialogRef.current?.open();
+        handleShowMessage('Signup failed');
         return;
       }
-      setIsFormShown(false);
     }
 
     if (step === 5) {

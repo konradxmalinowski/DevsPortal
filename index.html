@@ -27,9 +27,17 @@
     <meta property="og:type" content="website" />
 
     <link
-      rel="stylesheet"
+      rel="preload"
       href="./src/Global styles/common-styles/common-styles.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="./src/Global styles/common-styles/common-styles.css"
+    /></noscript>
+
     <link rel="shortcut icon" href="/logo.png" type="image/x-icon" />
 
     <title>DevsPortal</title>

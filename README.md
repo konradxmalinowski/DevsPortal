@@ -1,5 +1,7 @@
 # 🌐 Developers Portal
 
+**Figma**: []()
+
 [English version](#-table-of-contents) 🇬🇧  
 [Polska wersja](#-spis-treści) 🇵🇱
 
@@ -218,7 +220,7 @@ developers-portal/
 
 ## 🎨 Design
 
-Certainly! Here's the refined **Colors** section focusing only on the specified variables:
+![Colors](README%20images/Colors.png)
 
 ### Colors
 
@@ -797,6 +799,8 @@ developers-portal/
 ## 🎨 Design
 
 ### Colors
+
+![Colors](README%20images/Colors.png)
 
 | Nazwa zmiennej     | Kod HEX     | Zastosowanie                                                     |
 | ------------------ | ----------- | ---------------------------------------------------------------- |

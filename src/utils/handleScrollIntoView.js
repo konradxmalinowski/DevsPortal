@@ -8,12 +8,12 @@ export const handleScrollIntoView = (ref) => {
           setTimeout(() => {
             element.classList.add('active');
             observer.unobserve(element);
-          }, 100);
+          });
         }
       });
     },
     {
-      threshold: 0.2,
+      threshold: 0.3,
     }
   );
 

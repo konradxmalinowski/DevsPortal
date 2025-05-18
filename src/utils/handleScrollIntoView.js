@@ -5,8 +5,10 @@ export const handleScrollIntoView = (ref) => {
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          element.classList.add('active');
-          observer.unobserve(element);
+          setTimeout(() => {
+            element.classList.add('active');
+            observer.unobserve(element);
+          }, 100);
         }
       });
     },

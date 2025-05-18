@@ -1,4 +1,4 @@
-const LeftContact = () => {
+const Links = () => {
   return (
     <div className="left-contact">
       <p>
@@ -50,4 +50,4 @@ const LeftContact = () => {
   );
 };
 
-export default LeftContact;
+export default Links;

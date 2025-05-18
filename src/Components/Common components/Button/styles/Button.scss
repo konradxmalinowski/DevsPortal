@@ -1,6 +1,7 @@
 @import './../../../../Global\ styles/functions/function.scss';
 @import './../../../../Global\ styles/variables/variables.scss';
 
+// common classes for all Buttons
 .custom-button *:is(:hover, :visited, :active, :link) {
   text-decoration: none;
   color: white;
@@ -31,6 +32,7 @@
   }
 }
 
+// purple button - all pages
 .purple-button {
   @include basicFlexBox;
   gap: 1rem;
@@ -48,23 +50,23 @@
     radius: 75rem;
   }
   box-shadow: 0 5px 0 $clr-2-download;
-  transition: all 0.1s ease;
+  transition: all 0.1s ease-in-out;
   padding: 9px 20px;
-  transition: transform 0.2s ease-in-out;
 
   &:hover {
     transform: scale(1.03);
-    transition: transform 0.2s ease-in-out;
+    transition: all 0.1s ease-in-out;
   }
-}
 
-.purple-button:active {
-  letter-spacing: 0px;
-  transform: translateY(8px);
-  box-shadow: 0 0 0 $clr-3-download;
-  border: 2px solid $clr-2-download;
-}
+  &:active {
+    transform: translateY(8px);
+    box-shadow: 0 0 0 $clr-3-download;
+    border: 2px solid $clr-2-download;
+    transition: all 0.1s ease-in-out;
+  }
 
-.purple-button:focus {
-  border-color: $clr-2-download;
+  &:focus {
+    border-color: $clr-2-download;
+    transition: all 0.1s ease-in-out;
+  }
 }

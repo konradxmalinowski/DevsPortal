@@ -42,22 +42,20 @@
   border-color: #2b52c2;
   border-radius: 75rem;
   box-shadow: 0 5px 0 #2b52c2;
-  transition: all 0.1s ease;
+  transition: all 0.1s ease-in-out;
   padding: 9px 20px;
-  transition: transform 0.2s ease-in-out;
 }
 .purple-button:hover {
   transform: scale(1.03);
-  transition: transform 0.2s ease-in-out;
+  transition: all 0.1s ease-in-out;
 }
-
 .purple-button:active {
-  letter-spacing: 0px;
   transform: translateY(8px);
   box-shadow: 0 0 0 rgba(58, 110, 255, 0.3882352941);
   border: 2px solid #2b52c2;
+  transition: all 0.1s ease-in-out;
 }
-
 .purple-button:focus {
   border-color: #2b52c2;
+  transition: all 0.1s ease-in-out;
 }/*# sourceMappingURL=Button.css.map */

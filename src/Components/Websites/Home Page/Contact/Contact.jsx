@@ -1,7 +1,8 @@
 import { useEffect, useRef } from 'react';
-import LeftContact from './LeftContact.jsx';
+
 import './styles/Contact.css';
-import RightContact from './RightContact.jsx';
+import Links from './Links.jsx';
+import Form from './Form.jsx';
 
 const Contact = ({ handleScrollIntoView }) => {
   const ref = useRef();
@@ -17,8 +18,8 @@ const Contact = ({ handleScrollIntoView }) => {
     <div className="contact-wrapper wrapper reveal" ref={ref}>
       <h1>Contact with me!</h1>
       <section>
-        <LeftContact />
-        <RightContact />
+        <Links />
+        <Form />
       </section>
     </div>
   );

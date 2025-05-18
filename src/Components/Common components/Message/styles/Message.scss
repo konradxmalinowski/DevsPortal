@@ -21,6 +21,7 @@
   transform: translateX(100%);
 }
 
+// wrappers
 .message > div {
   height: 100%;
   @include basicFlexBox;
@@ -34,13 +35,24 @@
   width: 60%;
 }
 
+// message icon
 .message img {
   width: 50px;
   height: 50px;
 }
 
+// date and time
 .message .grey {
   font-weight: 600;
+}
+
+// class added/removed to start/end animation
+.hide {
+  animation: hide 1s ease-in-out forwards;
+}
+
+.show {
+  animation: show 1s ease-in-out forwards;
 }
 
 @keyframes hide {
@@ -59,12 +71,4 @@
   to {
     transform: translateX(0%);
   }
-}
-
-.hide {
-  animation: hide 1s ease-in-out forwards;
-}
-
-.show {
-  animation: show 1s ease-in-out forwards;
 }

@@ -86,6 +86,7 @@ export default function Header() {
         </section>
       </header>
 
+      {/* navigation for mobile and tablets */}
       <section
         className={`navigation ${isExtended ? 'navigation--active' : ''}`}
       >

@@ -46,6 +46,14 @@
   font-weight: 600;
 }
 
+.hide {
+  animation: hide 1s ease-in-out forwards;
+}
+
+.show {
+  animation: show 1s ease-in-out forwards;
+}
+
 @keyframes hide {
   from {
     transform: translateX(0%);
@@ -61,11 +69,4 @@
   to {
     transform: translateX(0%);
   }
-}
-.hide {
-  animation: hide 1s ease-in-out forwards;
-}
-
-.show {
-  animation: show 1s ease-in-out forwards;
 }/*# sourceMappingURL=Message.css.map */

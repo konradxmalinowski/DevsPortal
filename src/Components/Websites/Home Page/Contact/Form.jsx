@@ -6,7 +6,7 @@ import { emailRegEx, numberRegEx } from '../../../../utils/RegEx.js';
 
 import { useRef, useState } from 'react';
 
-const RightContact = () => {
+const Form = () => {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
@@ -95,7 +95,7 @@ const RightContact = () => {
       } else {
         setModalContent('❌ ' + result.message);
       }
-    } catch (error) {
+    } catch {
       setModalContent('❌ Something went wrong. Please try again.');
     }
     modalRef.current.open();
@@ -165,4 +165,4 @@ const RightContact = () => {
   );
 };
 
-export default RightContact;
+export default Form;

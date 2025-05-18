@@ -1,6 +1,7 @@
 @import '../../../../Global\ styles/variables/variables.scss';
 @import '../../../../Global\ styles/functions/function.scss';
 
+// container
 .card-cookies {
   width: 400px;
   height: 300px;
@@ -50,6 +51,7 @@
   padding: 18px !important;
 }
 
+// cookies for mobile
 @media (width <= 500px) {
   .card-cookies {
     width: 95vw;

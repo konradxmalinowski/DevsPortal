@@ -29,6 +29,7 @@ const Input = ({
           {...props}
         />
 
+        {/* show/hide password  */}
         {type === 'password' && (
           <span
             onClick={() => setIsPasswordShown(!isPasswordShown)}

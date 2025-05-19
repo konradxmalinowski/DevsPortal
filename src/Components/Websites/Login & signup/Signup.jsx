@@ -75,7 +75,7 @@ const Signup = () => {
           type === 'email'
             ? 'user@example.com'
             : type === 'password'
-            ? 'minimum 8 characters'
+            ? 'min 8 chars, 1 num, 1 upper, 1 lower, 1 special'
             : 'minimum 3 characters'
         })`
       );

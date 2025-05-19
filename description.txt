@@ -1,0 +1,19 @@
+Zdarzenia:
+onKeyDown (Modal, set[2-5])
+onChange (Contact, Login, Step5, Additional options)
+onSubmit (Contect, Login, Signup, ResetPassword)
+onClick (Input, Cookies, Header, Blog, Challenge)
+onClose (Modal)
+
+Atrybuty: (button, message, Modal, aria label - button, ListItem)
+
+regEx (Contact, Step[2-5], regEx.js)
+
+input/button/textarea (Input.jsx, Contact, Login, Signup)
+
+slajder (portoflio)
+
+canvas (admin panel)
+
+Operacje na DOM:
+Singup - trim(), .value .event,

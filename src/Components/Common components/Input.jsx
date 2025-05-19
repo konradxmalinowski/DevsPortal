@@ -1,13 +1,6 @@
 import { useState } from 'react';
 
-const Input = ({
-  type,
-  label,
-  hideIcon = null,
-  showIcon = null,
-  // name,
-  ...props
-}) => {
+const Input = ({ type, label, hideIcon = null, showIcon = null, ...props }) => {
   const [isPasswordShown, setIsPasswordShown] = useState(false);
 
   const lowerCaseLabel = label.toLowerCase();

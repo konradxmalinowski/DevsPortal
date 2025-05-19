@@ -88,8 +88,6 @@ const Form = () => {
 
       const result = await response.json();
 
-      console.log(result);
-
       if (result.success) {
         handleShowMessage('✅ Message has been sent!');
         setName('');

@@ -1,19 +1,27 @@
 import Input from '../../../Common components/Input.jsx';
 import Button from '../../../Common components/Button/Button.jsx';
-import Modal from '../../../Common components/Modal/Modal.jsx';
+import Message from '../../../Common components/Message/Message.jsx';
 
 import { emailRegEx, numberRegEx } from '../../../../utils/RegEx.js';
 
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 
 const Form = () => {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
-  const [modalContent, setModalContent] = useState('Sent!');
+  const [messageContent, setMessageContent] = useState('Sent!');
+  const [isMessageShown, setIsMessageShown] = useState(false);
 
-  const modalRef = useRef();
+  const handleShowMessage = (content) => {
+    setMessageContent(content);
+    setIsMessageShown(false);
+
+    setTimeout(() => {
+      setIsMessageShown(true);
+    }, 500);
+  };
 
   const validateName = () => {
     return name.trim() !== '' ? true : "Name's length should be more than 1.";
@@ -37,26 +45,22 @@ const Form = () => {
     const validatedEmail = validateEmail();
 
     if (validatedPhone !== true) {
-      setModalContent(validatedPhone);
-      modalRef.current.open();
+      handleShowMessage(validatedPhone);
       return;
     }
 
     if (validatedEmail !== true) {
-      setModalContent(validatedEmail);
-      modalRef.current.open();
+      handleShowMessage(validatedEmail);
       return;
     }
 
     if (validatedName !== true) {
-      setModalContent(validatedName);
-      modalRef.current.open();
+      handleShowMessage(validatedName);
       return;
     }
 
     if (message.trim() === '') {
-      setModalContent('Message cannot be empty.');
-      modalRef.current.open();
+      handleShowMessage('Message cannot be empty.');
       return;
     }
 
@@ -87,18 +91,17 @@ const Form = () => {
       console.log(result);
 
       if (result.success) {
-        setModalContent('✅ Message has been sent!');
+        handleShowMessage('✅ Message has been sent!');
         setName('');
         setPhone('');
         setEmail('');
         setMessage('');
       } else {
-        setModalContent('❌ ' + result.message);
+        handleShowMessage(result.message);
       }
     } catch {
-      setModalContent('❌ Something went wrong. Please try again.');
+      handleShowMessage('Something went wrong. Please try again.');
     }
-    modalRef.current.open();
   };
 
   return (
@@ -158,9 +161,7 @@ const Form = () => {
         </form>
       </div>
 
-      <Modal ref={modalRef} isFormShown={true}>
-        {modalContent}
-      </Modal>
+      <Message content={messageContent} isShownMessage={isMessageShown} />
     </>
   );
 };

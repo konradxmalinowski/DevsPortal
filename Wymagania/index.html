@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DevsPortal 2.0</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <section class="info">
+        <h1 id="main-heading">DevsPortal - playground</h1>
+        <p><strong>Moje ulubione technologie</strong></p>
+        <ul id="tech-list">
+          <li>HTML</li>
+          <li>TypeScript</li>
+          <li>React</li>
+        </ul>
+      </section>
+
+      <section class="actions">
+        <button class="purple-button" id="change-style">Zmień styl</button>
+        <button class="purple-button" id="add-item">Dodaj element</button>
+        <button class="purple-button" id="remove-heading">Usuń nagłówek</button>
+      </section>
+
+      <section class="attributes">
+        <img
+          id="logo"
+          src="https://devsportal.ct8.pl/logo.png"
+          alt="logo"
+          data-info="placeholder"
+        />
+        <p id="image-info">Logo strony powyżej</p>
+      </section>
+
+      <section class="form-section">
+        <h2>Prosty kalkulator</h2>
+        <form id="calc-form">
+          <input type="number" id="num1" placeholder="Liczba 1" required />
+          <input type="number" id="num2" placeholder="Liczba 2" required />
+          <select id="operation">
+            <option value="add">Dodaj</option>
+            <option value="subtract">Odejmij</option>
+            <option value="multiply">Pomnóż</option>
+            <option value="divide">Podziel</option>
+          </select>
+          <button class="purple-button" type="submit">Oblicz</button>
+        </form>
+        <p id="result"></p>
+      </section>
+
+      <section class="advanced-form">
+        <h2>Zaawansowany formularz</h2>
+        <form id="advanced-form">
+          <input
+            type="text"
+            id="username"
+            placeholder="Nazwa użytkownika"
+            required
+          />
+          <input type="password" id="password" placeholder="Hasło" required />
+          <input
+            type="email"
+            id="email"
+            placeholder="Email"
+            pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
+            required
+          />
+          <input type="number" id="age" placeholder="Wiek" required />
+
+          <br />
+          <br />
+          <br />
+
+          <p>Płeć:</p>
+          <label
+            ><input type="radio" name="gender" value="male" /> Mężczyzna</label
+          >
+          <label
+            ><input type="radio" name="gender" value="female" /> Kobieta</label
+          >
+
+          <p>Zainteresowania:</p>
+          <label
+            ><input type="checkbox" class="interest" value="html" /> HTML</label
+          >
+          <label
+            ><input type="checkbox" class="interest" value="css" /> CSS</label
+          >
+          <label
+            ><input type="checkbox" class="interest" value="js" />
+            JavaScript</label
+          >
+
+          <br />
+          <button class="purple-button" type="button" id="select-all">
+            Zaznacz wszystkie
+          </button>
+
+          <br />
+          <br />
+          <br />
+
+          <textarea id="message" placeholder="Wiadomość..." rows="4"></textarea>
+
+          <button class="purple-button" type="submit" id="submit-btn">
+            Wyślij
+          </button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Dev Tricks by Konrad</p>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>

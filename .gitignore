@@ -24,3 +24,4 @@ dist-ssr
 *.sw?
 
 Wymagania
+myapp_db.sql

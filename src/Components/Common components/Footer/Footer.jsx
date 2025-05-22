@@ -47,7 +47,9 @@ export default function Footer() {
 
       <ul className="footer-center">
         <ListItem>
-          <Link to="/">&copy; {new Date().getFullYear()} DevsPortal</Link>
+          <Link to="/">
+            &copy; {new Date().getFullYear()} Konrad Malinowski
+          </Link>
         </ListItem>
       </ul>
 

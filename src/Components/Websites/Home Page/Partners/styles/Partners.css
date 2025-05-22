@@ -35,7 +35,9 @@
   flex-direction: row;
   scale: 1;
   transition: scale 0.3s ease-in-out;
+  cursor: pointer;
 }
+
 .partner:hover {
   scale: 1.1;
   transition: scale 0.3s ease-in-out;
@@ -45,15 +47,15 @@
   height: 35px;
 }
 
-.partner img[alt="Dell logo"] {
+.partner img[alt='Dell logo'] {
   height: 60px;
 }
 
-.partner img[alt="OpenAI logo"] {
+.partner img[alt='OpenAI logo'] {
   height: 25px;
 }
 
-.partner img[alt="Apple logo"] {
+.partner img[alt='Apple logo'] {
   height: 50px;
 }
 
@@ -74,7 +76,7 @@
 }
 
 .words::after {
-  content: "";
+  content: '';
   position: absolute;
   inset: 0;
   z-index: 20;
@@ -116,4 +118,4 @@
   100% {
     transform: translateY(-400%);
   }
-}/*# sourceMappingURL=Partners.css.map */
+} /*# sourceMappingURL=Partners.css.map */

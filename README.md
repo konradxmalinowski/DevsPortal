@@ -594,6 +594,25 @@ export const blogs = [];
 
 ---
 
+### Query 23
+
+> W jakim sposób mogę sprawdzic czy np. login jest dostępny w bazie?
+
+---
+
+### Query 24
+
+> W jakim sposób mogę zalogowac użytkownika w php?
+
+---
+
+### Query 25
+
+> W jakim sposób mogę zarejestrować użytkownika w php?
+
+---
+
+
 <br>
 
 ### Wersja po polsku
@@ -1169,5 +1188,23 @@ export const blogs = [];
 ### Zapytanie 22
 
 > Dlaczego strona devsportal.ct8.pl (moja) w security headers dało ocenę F, jak mogę to naprawić?
+
+---
+
+### Zapytanie 23
+
+> W jakim sposób mogę sprawdzic czy np. login jest dostępny w bazie?
+
+---
+
+### Zapytanie 24
+
+> W jakim sposób mogę zalogowac użytkownika w php?
+
+---
+
+### Zapytanie 25
+
+> W jakim sposób mogę zarejestrować użytkownika w php?
 
 ---

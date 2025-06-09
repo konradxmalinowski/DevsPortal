@@ -1,77 +1,107 @@
+import Language from './Language/Language';
 import { useEffect, useRef } from 'react';
-
-import htmlImg from '../../../assets/Languages/html-icon.png';
-import cssImg from '../../../assets/Languages/css-icon.png';
-import jsImg from '../../../assets/Languages/javascript-icon.png';
-import reactImg from '../../../assets/Languages/react-icon.png';
-import wordpressImg from '../../../assets/Languages/wordpress-icon.png';
-import sqlImg from '../../../assets/Languages/sql-icon.png';
-import mysqlImg from '../../../assets/Languages/mysql-icon.png';
-import gitImage from '../../../assets/Languages/git.svg';
-
-import Language from './Language/Language.jsx';
 
 const NAMES = [
   'HTML',
   'CSS',
+  'SASS',
+  'Tailwind CSS',
+  'Bootstrap',
   'JavaScript',
+  'Typescript',
   'React',
-  'Wordpress',
-  'SQL',
+  'Python',
+  'C#',
+  'Selenium',
   'MySQL',
+  'SQL',
+  'PHP',
+  'SQLite',
   'Git',
+  'Figma',
+  'Postman',
+  'Wordpress',
 ];
 
 const IMAGES = [
-  htmlImg,
-  cssImg,
-  jsImg,
-  reactImg,
-  wordpressImg,
-  sqlImg,
-  mysqlImg,
-  gitImage,
+  'https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg',
+  'https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg',
+  'https://raw.githubusercontent.com/devicons/devicon/master/icons/sass/sass-original.svg',
+  'https://img.icons8.com/color/200/tailwindcss.png',
+  'https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-original.svg',
+  'https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg',
+  'https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg',
+  'https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg',
+  'https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg',
+  'https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg',
+  'https://raw.githubusercontent.com/devicons/devicon/master/icons/selenium/selenium-original.svg',
+  'https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg',
+  'https://www.svgrepo.com/show/303229/microsoft-sql-server-logo.svg',
+  'https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg',
+  'https://raw.githubusercontent.com/devicons/devicon/master/icons/sqlite/sqlite-original.svg',
+  'https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg',
+  'https://www.vectorlogo.zone/logos/figma/figma-icon.svg',
+  'https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg',
+  'https://raw.githubusercontent.com/devicons/devicon/master/icons/wordpress/wordpress-original.svg',
 ];
 
 const LEVELS = [
-  'Experienced',
-  'Experienced',
-  'Experienced',
-  'Experienced',
-  'Experienced',
-  'Basics',
-  'Basics',
-  'Basics',
-];
-
-const IDs = [
-  'html-img',
-  'css-img',
-  'js-img',
-  'react-img',
-  'wordpress-img',
-  'sql-img',
-  'mysql-img',
-  'git-img',
+  'Experienced', // HTML
+  'Experienced', // CSS
+  'Experienced', // SASS
+  'Experienced', // Tailwind CSS
+  'Experienced', // Bootstrap
+  'Experienced', // JavaScript
+  'Experienced', // TypeScript
+  'Experienced', // React
+  'Experienced', // Python
+  'Basics', // C#
+  'Basics', // Selenium
+  'Basics', // MySQL
+  'Basics', // SQL
+  'Basics', // PHP
+  'Basics', // SQLite
+  'Basics', // Git
+  'Basics', // Figma
+  'Basics', // Postman
+  'Experienced', // Wordpress
 ];
 
 const LINKS = [
   'https://developer.mozilla.org/en-US/docs/Web/HTML',
   'https://developer.mozilla.org/en-US/docs/Web/CSS',
+  'https://sass-lang.com',
+  'https://tailwindcss.com/',
+  'https://getbootstrap.com/',
   'https://www.javascript.com',
+  'https://www.typescriptlang.org',
   'https://reactjs.org',
-  'https://wordpress.org',
-  'https://www.microsoft.com/en-us/sql-server',
+  'https://www.python.org/',
+  'https://learn.microsoft.com/en-us/dotnet/csharp/',
+  'https://www.selenium.dev/',
   'https://www.mysql.com',
+  'https://www.w3schools.com/sql/',
+  'https://www.php.net/',
+  'https://www.sqlite.org/index.html',
   'https://git-scm.com',
+  'https://www.figma.com',
+  'https://www.postman.com/',
+  'https://wordpress.org',
 ];
+
+const IDs = NAMES.map(
+  (name) =>
+    name
+      .toLowerCase()
+      .replace(/\s+/g, '-')
+      .replace(/[^a-z\-]/g, '') + '-img'
+);
 
 const Skills = ({ handleScrollIntoView }) => {
   const ref = useRef();
 
   useEffect(() => {
     const [element, observer] = handleScrollIntoView(ref);
-
     return () => {
       if (element) observer.unobserve(element);
     };
@@ -84,13 +114,14 @@ const Skills = ({ handleScrollIntoView }) => {
       level={LEVELS[idx]}
       key={idx}
       id={IDs[idx]}
-      onClick={() => window.open(LINKS[idx])}
+      onClick={() => window.open(LINKS[idx], '_blank')}
     />
   ));
 
   return (
     <div
       className="skills-wrapper wrapper reveal"
+      id="skills"
       ref={ref}
       aria-label="Skills Section"
     >

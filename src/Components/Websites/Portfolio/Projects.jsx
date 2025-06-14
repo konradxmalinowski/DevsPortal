@@ -9,9 +9,9 @@ const descriptions = [
   'An exam test for the INF.03 certification focused on JavaScript, jQuery, and React.',
 ];
 const links = [
-  'https://portfolio-website.ct8.pl/websites/shop/',
-  'https://portfolio-website.ct8.pl/websites/todo-list/',
-  'https://portfolio-website.ct8.pl/websites/exam-test/',
+  'https://shop-react.ct8.pl/',
+  'https://to-do-app2.ct8.pl/',
+  'https://konradxmalinowski.github.io/exam-test-quiz/',
 ];
 
 const Projects = ({ handleScrollIntoView }) => {
